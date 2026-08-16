@@ -808,3 +808,45 @@ section+section{border-top:0}
   .posts{grid-template-columns:1fr}
   .cform .rowx{grid-template-columns:1fr}
 }
+
+/* ============================================================
+   PER-PAGE COLOUR THEMES
+   ============================================================ */
+.th-white{
+  --pgbg:#FFFFFF;
+  --hero-g:linear-gradient(168deg,#FFFFFF 0%,#F3F8FD 44%,#FFFFFF 100%);
+  --hero-glow:rgba(110,175,240,.34);
+  --tint-g:linear-gradient(180deg,#FFFFFF,#EFF6FD);
+  --tintb:#F8FBFE;
+  --band:#EAF2FA;
+}
+.th-sun{
+  --pgbg:#FFFDF6;
+  --hero-g:linear-gradient(168deg,#FFFCF5 0%,#FFF3D6 42%,#FFFFFF 100%);
+  --hero-glow:rgba(255,204,74,.55);
+  --tint-g:linear-gradient(180deg,#FFFFFF,#FFF6DE);
+  --tintb:#FFFCF3;
+  --band:#FFF1CE;
+}
+.th-sky{
+  --pgbg:#F9FCFF;
+  --hero-g:linear-gradient(168deg,#F7FBFF 0%,#DFEEFB 44%,#FFFFFF 100%);
+  --hero-glow:rgba(72,158,232,.44);
+  --tint-g:linear-gradient(180deg,#FFFFFF,#E7F2FC);
+  --tintb:#F5FAFE;
+  --band:#DCEBF9;
+}
+body{background:#fff}
+.pg{background:var(--pgbg,#fff)}
+.th-white,.th-sun,.th-sky{background:var(--pgbg)}
+.phero{background:var(--hero-g,linear-gradient(168deg,#fff,#F3F8FD 44%,#fff))}
+.phero::after{background:radial-gradient(circle,var(--hero-glow,rgba(110,175,240,.34)),transparent 70%)}
+.tint{background:var(--tint-g,linear-gradient(180deg,#fff,#EFF6FD))}
+.tint-b{background:var(--tintb,#F8FBFE)}
+.callband{background:linear-gradient(150deg,var(--band,#EAF2FA),#fff 62%,var(--band,#EAF2FA));
+  border-color:color-mix(in srgb,var(--band,#EAF2FA) 70%,#fff)}
+.soon{background:var(--tintb,#F8FBFE)}
+.jrnyx .dot{box-shadow:0 0 0 5px var(--band,#EAF2FA)}
+.jrnyx.now .dot{box-shadow:0 0 0 5px var(--band,#EAF2FA),0 0 0 7px var(--gold)}
+.fgroup h3{border-bottom-color:var(--gold)}
+.ccard .ci{background:linear-gradient(150deg,var(--band,#EAF2FA),color-mix(in srgb,var(--band,#EAF2FA) 55%,var(--gold)))}
