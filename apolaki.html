@@ -323,6 +323,7 @@ footer{background:var(--night);color:#fff;padding-top:clamp(52px,6vw,76px)}
 .fc h4{font-family:var(--disp);font-weight:600;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.36);margin-bottom:16px}
 .fc ul{list-style:none;display:grid;gap:10px}
 .fc a{font-size:.855rem;color:rgba(255,255,255,.66);transition:color .3s}
+.fc li{font-size:.855rem;color:rgba(255,255,255,.66)}
 .fc a:hover{color:#fff}
 .fbot{border-top:1px solid var(--hair-dk);padding:22px 0 30px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center}
 .fbot p,.fbot a{font-size:.76rem;color:rgba(255,255,255,.36)}
@@ -779,6 +780,9 @@ section+section{border-top:0}
 .post h3{font-size:1.04rem;margin-bottom:8px;line-height:1.3}
 .post p{font-size:.88rem;flex:1}
 .post .rd{margin-top:16px;font-family:var(--disp);font-weight:600;font-size:.83rem;color:var(--blue)}
+.post.np:hover{transform:none;box-shadow:none;border-color:var(--hair)}
+.post .rd-soon{color:var(--ink-45);display:inline-flex;align-items:center;gap:7px}
+.post .rd-soon:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);flex:none}
 .postrow{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.4vw,30px);margin-bottom:clamp(18px,2.4vw,30px)}
 .post.wide{flex-direction:row}
 .post.wide .thumb{aspect-ratio:auto;width:44%;flex:none}
@@ -864,6 +868,12 @@ body{background:#fff}
 .jrnyx.now .dot{box-shadow:0 0 0 5px var(--band,#EAF2FA),0 0 0 7px var(--gold)}
 .fgroup h3{border-bottom-color:var(--gold)}
 .ccard .ci{background:linear-gradient(150deg,var(--band,#EAF2FA),color-mix(in srgb,var(--band,#EAF2FA) 55%,var(--gold)))}
+
+/* legal pages */
+.legal{max-width:760px}
+.legal h2{font-size:1.18rem;margin:34px 0 10px}
+.legal h2:first-child{margin-top:0}
+.legal p{font-size:.96rem;line-height:1.72;color:var(--ink-70);margin-bottom:12px}
 
 /* ---- single-file router ---- */
 .pg[hidden]{display:none}
@@ -1163,7 +1173,7 @@ body{background:#fff}
       </div>
       <div class="fi">
         <button class="fq-q" aria-expanded="false">What is net metering?<span class="fic"></span></button>
-        <div class="fq-a"><p>It lets you send extra solar power back to the grid and get credits on your bill. Under RA 9513 anything up to 100 kW qualifies, which covers every home system. The credit comes at the generation rate, roughly half of what you pay, so it's usually smarter to size your system around what you use during the day than to go as big as possible. <a href="/net-metering-philippines">Full net metering guide</a>.</p></div>
+        <div class="fq-a"><p>It lets you send extra solar power back to the grid and get credits on your bill. Under RA 9513 anything up to 100 kW qualifies, which covers every home system. The credit comes at the generation rate, roughly half of what you pay, so it's usually smarter to size your system around what you use during the day than to go as big as possible. Full net metering guide.</p></div>
       </div>
     </div>
   </div>
@@ -1373,7 +1383,7 @@ body{background:#fff}
       <h1 class="r">Spend less time chasing leads. <em>More time on roofs.</em></h1>
       <p class="psub r">Join the Apolaki trusted installer pool and meet homeowners who already know their system size, their savings and their budget.</p>
       <div class="pcta r">
-        <a href="/contact?type=installer" class="b b-blue">Become a trusted installer <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#/contact?type=installer" class="b b-blue">Become a trusted installer <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a href="#join" class="b b-glass">How to join</a>
       </div>
     </div>
@@ -1482,7 +1492,7 @@ body{background:#fff}
         <h3>Book an onboarding call</h3>
         <p>Twenty minutes with our team. We will walk through verification, your service areas and where the commercial terms stand.</p>
       </div>
-      <div class="cb-act"><a href="/contact?type=onboarding" class="b b-blue">Book an onboarding call <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="cb-act"><a href="#/contact?type=onboarding" class="b b-blue">Book an onboarding call <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </div>
 </section>
@@ -1582,8 +1592,8 @@ body{background:#fff}
     <h2 class="r">Become a trusted installer.</h2>
     <p class="r">Tell us about your company and we will walk you through verification. Pilot partners help shape the commercial terms.</p>
     <div class="b-row r">
-      <a href="/contact?type=installer" class="b b-blue">Become a trusted installer <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a href="/contact?type=onboarding" class="b b-glass">Book an onboarding call</a>
+      <a href="#/contact?type=installer" class="b b-blue">Become a trusted installer <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#/contact?type=onboarding" class="b b-glass">Book an onboarding call</a>
     </div>
     <p class="fine r">No listing fee during the pilot.</p>
   </div>
@@ -1599,7 +1609,7 @@ body{background:#fff}
       <p class="psub r">Solar loans backed by real electricity bills, where the savings that repay the loan are worked out before a peso goes out.</p>
       <div class="pcta r">
         <a href="#model" class="b b-blue">See what you would earn <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="/contact?type=call" class="b b-glass">Book a discovery call</a>
+        <a href="#/contact?type=call" class="b b-glass">Book a discovery call</a>
       </div>
     </div>
     <div class="phero-shot r">
@@ -1845,7 +1855,7 @@ body{background:#fff}
         <h3>Book a discovery call</h3>
         <p>Twenty minutes. We will walk through the borrower profile, the underwriting and where the structure stands with counsel.</p>
       </div>
-      <div class="cb-act"><a href="/contact?type=call" class="b b-blue">Book a discovery call <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="cb-act"><a href="#/contact?type=call" class="b b-blue">Book a discovery call <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </div>
 </section>
@@ -1855,7 +1865,7 @@ body{background:#fff}
     <h2 class="r">Let us show you the book.</h2>
     <p class="r">Tell us your mandate and we will walk you through the borrower profile, the underwriting and where the structure stands with counsel.</p>
     <div class="b-row r">
-      <a href="/contact?type=financing" class="b b-blue">Start a conversation <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#/contact?type=financing" class="b b-blue">Start a conversation <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a href="mailto:hello@apolaki.ai" class="b b-glass">hello@apolaki.ai</a>
     </div>
     <p class="fine r">Nothing on this page is an offer of securities.</p>
@@ -1880,61 +1890,61 @@ body{background:#fff}
   <div class="w">
     <div class="sh r"><h2>Start here.</h2></div>
     <div class="postrow">
-      <a class="post wide r" href="/blog/is-solar-worth-it-philippines-2026">
+      <div class="post wide r np">
         <div class="thumb"><span class="tag">Guides</span>
           <img src="https://images.pexels.com/photos/11645008/pexels-photo-11645008.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
         <div class="pb">
           <h3 style="font-size:1.34rem">Is solar worth it in the Philippines in 2026?</h3>
           <p>The honest answer depends on your bill, your roof and how long you plan to stay. Here is how to work it out.</p>
-          <span class="rd">Read the guide <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="rd rd-soon">Guide coming soon</span>
         </div>
-      </a>
+      </div>
     </div>
     <div class="posts">
-      <a class="post r" href="/blog/magkano-ang-solar-panel-pilipinas">
+      <div class="post r np">
         <div class="thumb"><span class="tag">Tagalog</span><img src="https://images.pexels.com/photos/6961091/pexels-photo-6961091.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
-        <div class="pb"><h3>Magkano ang solar panel sa Pilipinas?</h3><p>Ang totoong presyo ng solar system para sa bahay, at kung paano ito nakadepende sa kuryente mo.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-      </a>
-      <a class="post r" href="/blog/how-net-metering-works-philippines">
+        <div class="pb"><h3>Magkano ang solar panel sa Pilipinas?</h3><p>Ang totoong presyo ng solar system para sa bahay, at kung paano ito nakadepende sa kuryente mo.</p><span class="rd rd-soon">Coming soon</span></div>
+      </div>
+      <div class="post r np">
         <div class="thumb"><span class="tag">Net metering</span><img src="https://images.pexels.com/photos/38171120/pexels-photo-38171120.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
-        <div class="pb"><h3>How net metering actually works</h3><p>Export your extra solar to the grid and get credits. What qualifies, what you get paid, and the catch.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-      </a>
-      <a class="post r" href="/blog/reading-your-meralco-bill-solar">
+        <div class="pb"><h3>How net metering actually works</h3><p>Export your extra solar to the grid and get credits. What qualifies, what you get paid, and the catch.</p><span class="rd rd-soon">Coming soon</span></div>
+      </div>
+      <div class="post r np">
         <div class="thumb"><span class="tag">MERALCO</span><img src="https://images.pexels.com/photos/29206488/pexels-photo-29206488.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
-        <div class="pb"><h3>How to read your MERALCO bill</h3><p>Generation charge, distribution charge, and the one number that decides whether solar makes sense for you.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-      </a>
-      <a class="post r" href="/blog/solar-financing-philippines">
+        <div class="pb"><h3>How to read your MERALCO bill</h3><p>Generation charge, distribution charge, and the one number that decides whether solar makes sense for you.</p><span class="rd rd-soon">Coming soon</span></div>
+      </div>
+      <div class="post r np">
         <div class="thumb"><span class="tag">Financing</span><img src="https://images.pexels.com/photos/35454190/pexels-photo-35454190.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
-        <div class="pb"><h3>Ways to pay for solar in the Philippines</h3><p>Bank loans, Pag-IBIG, GSIS, rent-to-own and credit card promos, with the real rates on each.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-      </a>
-      <a class="post r" href="/blog/will-solar-work-on-my-roof">
+        <div class="pb"><h3>Ways to pay for solar in the Philippines</h3><p>Bank loans, Pag-IBIG, GSIS, rent-to-own and credit card promos, with the real rates on each.</p><span class="rd rd-soon">Coming soon</span></div>
+      </div>
+      <div class="post r np">
         <div class="thumb"><span class="tag">Guides</span><img src="https://images.pexels.com/photos/6961088/pexels-photo-6961088.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
-        <div class="pb"><h3>Will solar work on my roof?</h3><p>Roof space, direction, pitch and shade. What makes a roof good for solar, and what rules one out.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-      </a>
-      <a class="post r" href="/blog/solar-and-brownouts-backup">
+        <div class="pb"><h3>Will solar work on my roof?</h3><p>Roof space, direction, pitch and shade. What makes a roof good for solar, and what rules one out.</p><span class="rd rd-soon">Coming soon</span></div>
+      </div>
+      <div class="post r np">
         <div class="thumb"><span class="tag">Guides</span><img src="https://images.pexels.com/photos/11644973/pexels-photo-11644973.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
-        <div class="pb"><h3>Will solar keep my lights on during a brownout?</h3><p>On its own, no. Here is why, and what a battery actually adds to the cost.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-      </a>
-      <a class="post r" href="/blog/battery-vs-net-metering-philippines">
+        <div class="pb"><h3>Will solar keep my lights on during a brownout?</h3><p>On its own, no. Here is why, and what a battery actually adds to the cost.</p><span class="rd rd-soon">Coming soon</span></div>
+      </div>
+      <div class="post r np">
         <div class="thumb"><span class="tag">Net metering</span><img src="https://images.pexels.com/photos/6961110/pexels-photo-6961110.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
-        <div class="pb"><h3>Battery or net metering?</h3><p>Two different ways to deal with the power you do not use during the day. Which one suits your home.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-      </a>
-      <a class="post r" href="/blog/paano-pumili-ng-solar-installer">
+        <div class="pb"><h3>Battery or net metering?</h3><p>Two different ways to deal with the power you do not use during the day. Which one suits your home.</p><span class="rd rd-soon">Coming soon</span></div>
+      </div>
+      <div class="post r np">
         <div class="thumb"><span class="tag">Tagalog</span><img src="https://images.pexels.com/photos/11645006/pexels-photo-11645006.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
-        <div class="pb"><h3>Paano pumili ng solar installer</h3><p>Ano ang dapat mong hanapin, at ang mga red flag na dapat mong iwasan.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-      </a>
-      <a class="post r" href="/blog/solar-for-small-business-philippines">
+        <div class="pb"><h3>Paano pumili ng solar installer</h3><p>Ano ang dapat mong hanapin, at ang mga red flag na dapat mong iwasan.</p><span class="rd rd-soon">Coming soon</span></div>
+      </div>
+      <div class="post r np">
         <div class="thumb"><span class="tag">Business</span><img src="https://images.pexels.com/photos/6961215/pexels-photo-6961215.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
-        <div class="pb"><h3>Solar for a small business</h3><p>Different usage pattern, different sizing, different payback. What changes when it is a business.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-      </a>
-      <a class="post r" href="/blog/solar-myths-philippines-debunked">
+        <div class="pb"><h3>Solar for a small business</h3><p>Different usage pattern, different sizing, different payback. What changes when it is a business.</p><span class="rd rd-soon">Coming soon</span></div>
+      </div>
+      <div class="post r np">
         <div class="thumb"><span class="tag">Guides</span><img src="https://images.pexels.com/photos/8853504/pexels-photo-8853504.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
-        <div class="pb"><h3>Six solar myths, checked</h3><p>Panels do not work when it rains, they need constant cleaning, they damage your roof. Sorting fact from sales talk.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-      </a>
-      <a class="post r" href="/blog/solar-co2-philippines-energy-transition">
+        <div class="pb"><h3>Six solar myths, checked</h3><p>Panels do not work when it rains, they need constant cleaning, they damage your roof. Sorting fact from sales talk.</p><span class="rd rd-soon">Coming soon</span></div>
+      </div>
+      <div class="post r np">
         <div class="thumb"><span class="tag">Impact</span><img src="https://images.pexels.com/photos/35454190/pexels-photo-35454190.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
-        <div class="pb"><h3>What one rooftop actually does for emissions</h3><p>A typical 5 kW home system and its real carbon effect in the Philippine grid.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-      </a>
+        <div class="pb"><h3>What one rooftop actually does for emissions</h3><p>A typical 5 kW home system and its real carbon effect in the Philippine grid.</p><span class="rd rd-soon">Coming soon</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -2273,7 +2283,7 @@ body{background:#fff}
             <h3>Rather just talk?</h3>
             <p>Book a free twenty minute call. Homeowners can walk through their bill with us. Installers and lenders can go straight to onboarding.</p>
             <div class="cb-act" style="margin-top:20px">
-              <a href="/contact?type=call" class="b b-blue">Book a discovery call <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              <a href="#/contact?type=call" class="b b-blue">Book a discovery call <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             </div>
           </div>
         </div>
@@ -2289,6 +2299,70 @@ body{background:#fff}
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+</div>
+<div class="pg th-white" id="pg-privacy" hidden>
+
+<section class="phero">
+  <div class="w">
+    <div class="ph-in">
+      <h1>Privacy</h1>
+      <p class="lead">What we collect, why we collect it, and how to get it deleted. Plain version, no legal fog.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="w">
+    <div class="legal r">
+      <h2>What we collect</h2>
+      <p>When you use the free assessment we ask for your name, email or mobile number, your address or barangay, and a photo or reading of your electricity bill. If you send us a message we keep that message. That is it. We do not ask for financial account details, and we never will over email.</p>
+      <h2>Why we collect it</h2>
+      <p>To work out what a solar system would do for your bill, and to match you with installers who serve your area. If you ask us to introduce you to an installer, we share your name, contact details and roof information with that installer so they can quote you. We do not share your details with anyone you have not asked to be introduced to.</p>
+      <h2>Your rights</h2>
+      <p>Under the Data Privacy Act of 2012 (RA 10173) you can ask us what we hold about you, ask us to correct it, or ask us to delete it. Email hello@apolaki.ai and we will action it within fifteen working days.</p>
+      <h2>How long we keep it</h2>
+      <p>Assessment data stays for two years so you can come back to it, then it is deleted. If you ask us to delete it sooner, we do.</p>
+      <h2>Cookies</h2>
+      <p>We use a small number of cookies to keep the site working and to count visits. No advertising trackers.</p>
+      <h2>Who to contact</h2>
+      <p>VESS Corp., Mandaluyong City, Metro Manila. Email hello@apolaki.ai. If you are not happy with how we handled your data you can raise it with the National Privacy Commission.</p>
+
+    </div>
+  </div>
+</section>
+
+</div>
+<div class="pg th-white" id="pg-terms" hidden>
+
+<section class="phero">
+  <div class="w">
+    <div class="ph-in">
+      <h1>Terms of use</h1>
+      <p class="lead">The short version: our estimates are estimates, your contract is with your installer, and we are not a lender.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="w">
+    <div class="legal r">
+      <h2>What Apolaki is</h2>
+      <p>Apolaki is a platform run by VESS Corp. We give you an estimate of what solar could do for your electricity bill, and we connect you with installers. We are not an installer, a lender, or a licensed financial adviser.</p>
+      <h2>Estimates are estimates</h2>
+      <p>Every number on this site, including anything the calculators produce, is illustrative. It is based on the information you give us and on public data about rates and equipment prices. It is not a quote, not an offer, not a forecast, and not a promise of return. Your actual savings depend on your roof, your usage, your utility, the equipment installed and how rates move. Always rely on the written quote and contract from your installer, and on the terms from your lender.</p>
+      <h2>Installers</h2>
+      <p>We check the installers on our platform for registration, track record and workmanship, and we drop the ones that stop meeting the standard. The contract for your installation is between you and the installer. We are not a party to it and we do not warrant their work.</p>
+      <h2>Financing</h2>
+      <p>Any financing shown or discussed comes from third-party lenders and partners on their own terms. We do not lend, and we do not give financial advice. Read the loan documents and, if you need to, get independent advice before you sign.</p>
+      <h2>Using the site</h2>
+      <p>Do not scrape it, do not try to break it, and do not use it to mislead anyone. We can suspend access if you do. Everything on this site, including the Apolaki name and logo, belongs to VESS Corp.</p>
+      <h2>Changes and governing law</h2>
+      <p>We may update these terms. The version on this page is the one that applies. These terms are governed by the laws of the Republic of the Philippines.</p>
+
     </div>
   </div>
 </section>
@@ -2311,23 +2385,23 @@ body{background:#fff}
       </div>
       <div class="fc"><h4>Platform</h4><ul>
         <li><a href="#/homeowners">Solar Adopters</a></li><li><a href="#/installers">Installers</a></li>
-        <li><a href="#/financing">Financing</a></li><li><a href="/solar-assessment-philippines">Free Assessment</a></li>
+        <li><a href="#/financing">Financing</a></li><li><a href="#/homeowners">Free Assessment</a></li>
         <li><a href="https://app.apolaki.ai/signup">Create account</a></li></ul></div>
       <div class="fc"><h4>Guides</h4><ul>
-        <li><a href="/solar-installer-philippines">Trusted Installers</a></li><li><a href="/net-metering-philippines">Net Metering</a></li>
-        <li><a href="/solar-financing-philippines">Solar Financing</a></li><li><a href="/meralco-solar-bill-savings">MERALCO Savings</a></li>
+        <li><a href="#/homeowners">Trusted Installers</a></li><li><a href="#/faqs">Net Metering</a></li>
+        <li><a href="#/financing">Solar Financing</a></li><li><a href="#/faqs">MERALCO bill and savings</a></li>
         <li><a href="#/blog">All guides</a></li></ul></div>
-      <div class="fc"><h4>Cities</h4><ul>
-        <li><a href="/solar-installers-makati">Makati</a></li><li><a href="/solar-installers-quezon-city">Quezon City</a></li>
-        <li><a href="/solar-installers-taguig">Taguig</a></li><li><a href="/solar-installers-cebu">Cebu</a></li>
-        <li><a href="/solar-installers-davao">Davao</a></li></ul></div>
+      <div class="fc"><h4>Where we work</h4><ul>
+        <li>Makati</li><li>Quezon City</li>
+        <li>Taguig</li><li>Cebu</li>
+        <li>Davao</li></ul></div>
       <div class="fc"><h4>Company</h4><ul>
         <li><a href="#/about">About</a></li><li><a href="#/blog">Blog</a></li><li><a href="#/faqs">FAQ</a></li>
-        <li><a href="#/contact">Contact</a></li><li><a href="/contact?type=installer">Become a partner</a></li></ul></div>
+        <li><a href="#/contact">Contact</a></li><li><a href="#/contact?type=installer">Become a partner</a></li></ul></div>
     </div>
     <div class="fbot">
       <p>© 2026 Apolaki · VESS Corp. · Mandaluyong City, Metro Manila</p>
-      <div class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="mailto:hello@apolaki.ai">hello@apolaki.ai</a></div>
+      <div class="fl"><a href="#/privacy">Privacy</a><a href="#/terms">Terms</a><a href="mailto:hello@apolaki.ai">hello@apolaki.ai</a></div>
     </div>
   </div>
 </footer>
@@ -2356,14 +2430,18 @@ var nv=document.getElementById('nv');
 var bg=document.getElementById('bg'), mm=document.getElementById('mm');
 
 /* ---------- router ---------- */
-var PAGES=['home','homeowners','installers','financing','blog','about','faqs','contact'];
+var PAGES=['home','homeowners','installers','financing','blog','about','faqs','contact','privacy','terms'];
 function route(){
-  var k=(location.hash||'#/home').replace('#/','');
+  var raw=(location.hash||'#/home').replace('#/','');
+  var k=raw.split('?')[0], q=raw.split('?')[1]||'';
   if(PAGES.indexOf(k)<0) k='home';
   PAGES.forEach(function(p){
     var el=document.getElementById('pg-'+p);
     if(el) el.hidden = (p!==k);
   });
+  if(k==='contact'&&q){var t=(q.split('type=')[1]||'').split('&')[0],sel=document.getElementById('ct'),
+      m={installer:1,financing:2,call:0,onboarding:2};
+    if(sel&&t in m) sel.selectedIndex=m[t];}
   document.querySelectorAll('[data-pg]').forEach(function(a){
     a.classList.toggle('active', a.dataset.pg===k && a.classList.contains('ml')===false);
   });
