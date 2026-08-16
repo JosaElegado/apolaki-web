@@ -741,6 +741,88 @@ section+section{border-top:0}
   .jstep .jid{font-size:2.4rem;min-width:1.6em}
 }
 
+/* ===== spacing rebalance ===== */
+.sec{padding-block:clamp(68px,7.5vw,108px)}
+.sec-tight{padding-block:clamp(52px,6vw,80px)}
+.sh{margin-bottom:clamp(28px,3vw,40px)}
+.phero{padding:calc(var(--nav) + clamp(56px,7vw,92px)) 0 clamp(52px,6vw,80px)}
+
+/* ===== journey timeline (About) ===== */
+.tl{position:relative;margin-top:clamp(30px,3.4vw,44px)}
+.tl::before{content:'';position:absolute;left:19px;top:8px;bottom:8px;width:0;
+  border-left:2px dashed var(--blue-lt);opacity:.5}
+.tlx{position:relative;padding-left:60px;padding-bottom:clamp(26px,3vw,38px)}
+.tlx:last-child{padding-bottom:0}
+.tlx .dot{position:absolute;left:8px;top:4px;width:24px;height:24px;border-radius:50%;
+  background:var(--gold);box-shadow:0 0 0 5px var(--sun-100)}
+.tlx.now .dot{box-shadow:0 0 0 5px var(--sun-200),0 0 0 7px var(--gold)}
+.tlx .lbl{font-family:var(--disp);font-weight:700;font-size:.74rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-45)}
+.tlx .dte{font-family:var(--disp);font-weight:800;font-size:clamp(1.25rem,2.2vw,1.6rem);
+  letter-spacing:-.03em;color:var(--blue);margin:2px 0 7px}
+.tlx.now .dte{color:#D89A0C}
+.tlx p{font-size:.94rem;max-width:56ch}
+.tl-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
+
+/* ===== blog ===== */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px)}
+.post{display:flex;flex-direction:column;border:1px solid var(--hair);border-radius:20px;overflow:hidden;
+  background:#fff;transition:transform .5s var(--e),box-shadow .5s var(--e),border-color .5s var(--e)}
+.post:hover{transform:translateY(-3px);box-shadow:0 22px 50px -24px rgba(10,23,41,.26);border-color:transparent}
+.post .thumb{aspect-ratio:16/10;position:relative;overflow:hidden;
+  background:linear-gradient(150deg,var(--sun-200),#CFE6FA)}
+.post .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.post .tag{position:absolute;left:13px;top:13px;z-index:2;padding:5px 11px;border-radius:100px;
+  background:rgba(255,255,255,.94);font-family:var(--disp);font-weight:700;font-size:.63rem;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--ink-70)}
+.post .pb{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
+.post h3{font-size:1.04rem;margin-bottom:8px;line-height:1.3}
+.post p{font-size:.88rem;flex:1}
+.post .rd{margin-top:16px;font-family:var(--disp);font-weight:600;font-size:.83rem;color:var(--blue)}
+.postrow{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.4vw,30px);margin-bottom:clamp(18px,2.4vw,30px)}
+.post.wide{flex-direction:row}
+.post.wide .thumb{aspect-ratio:auto;width:44%;flex:none}
+
+/* ===== faq groups ===== */
+.fgroup{margin-bottom:clamp(30px,3.4vw,46px)}
+.fgroup:last-child{margin-bottom:0}
+.fgroup h3{font-size:1.16rem;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid var(--sun-300)}
+
+/* ===== contact ===== */
+.ccards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.8vw,20px)}
+.ccard{background:#fff;border:1px solid var(--hair);border-radius:20px;padding:clamp(24px,2.6vw,30px);
+  transition:transform .5s var(--e),border-color .5s var(--e)}
+.ccard:hover{transform:translateY(-3px);border-color:rgba(14,108,189,.4)}
+.ccard .ci{width:40px;height:40px;border-radius:12px;background:linear-gradient(150deg,var(--sun-200),var(--sun-300));
+  color:#8A6A08;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.ccard h3{font-size:1.02rem;margin-bottom:6px}
+.ccard p{font-size:.88rem;margin-bottom:12px}
+.ccard a{font-family:var(--disp);font-weight:600;font-size:.9rem;color:var(--blue);word-break:break-word}
+.cform{display:grid;gap:12px;max-width:560px}
+.cform .rowx{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cform label{font-size:.82rem;color:var(--ink-45);font-weight:600;display:block;margin-bottom:6px}
+.cform input,.cform select,.cform textarea{width:100%;padding:12px 15px;border-radius:12px;
+  border:1px solid var(--hair);background:#fff;font-family:var(--body);font-size:.92rem;color:var(--ink);outline:none}
+.cform textarea{min-height:120px;resize:vertical}
+.cform input:focus,.cform select:focus,.cform textarea:focus{border-color:var(--blue)}
+.cform .b{justify-self:start;margin-top:4px}
+.cform-ok{display:none;padding:16px 18px;border-radius:14px;background:rgba(21,121,74,.08);
+  color:#15794A;font-weight:600;font-size:.9rem}
+.cform-ok.on{display:block}
+
+@media(max-width:920px){
+  .posts{grid-template-columns:1fr 1fr}
+  .postrow{grid-template-columns:1fr}
+  .post.wide{flex-direction:column}
+  .post.wide .thumb{width:100%;aspect-ratio:16/10}
+  .ccards{grid-template-columns:1fr}
+  .tl-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .posts{grid-template-columns:1fr}
+  .cform .rowx{grid-template-columns:1fr}
+}
+
 /* ---- single-file router ---- */
 .pg[hidden]{display:none}
 .nv-links a.active{color:var(--gold)}
@@ -761,6 +843,10 @@ section+section{border-top:0}
       <a href="#/homeowners" data-pg="homeowners">Solar Adopters</a>
       <a href="#/installers" data-pg="installers">Installers</a>
       <a href="#/financing" data-pg="financing">Financing</a>
+      <a href="#/blog" data-pg="blog">Blog</a>
+      <a href="#/about" data-pg="about">About</a>
+      <a href="#/faqs" data-pg="faqs">FAQ</a>
+      <a href="#/contact" data-pg="contact">Contact</a>
       <a href="#/home" style="pointer-events:none;opacity:0;width:0;padding:0"></a>
     </div>
     <div class="nv-act">
@@ -776,6 +862,10 @@ section+section{border-top:0}
   <a class="ml" href="#/homeowners" data-pg="homeowners">Solar Adopters <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
   <a class="ml" href="#/installers" data-pg="installers">Installers <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
   <a class="ml" href="#/financing" data-pg="financing">Financing <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
+  <a class="ml" href="#/blog" data-pg="blog">Blog <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
+  <a class="ml" href="#/about" data-pg="about">About <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
+  <a class="ml" href="#/faqs" data-pg="faqs">FAQ <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
+  <a class="ml" href="#/contact" data-pg="contact">Contact <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
   <div class="mm-b">
     <a href="https://app.apolaki.ai/assessment" class="b b-blue">See my free estimate</a>
     <a href="https://app.apolaki.ai/login" class="b b-line">Log in</a>
@@ -960,21 +1050,21 @@ section+section{border-top:0}
         <span class="tag">Homeowners</span>
         <h3>Know before you spend</h3>
         <p>What size your roof needs, what it costs all in, and how much you&rsquo;ll save each month. Then a short list of installers we&rsquo;ve already checked, so you&rsquo;re not guessing who to call.</p>
-        <a class="lnk" href="/homeowners">For solar adopters <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="lnk" href="#/homeowners">For solar adopters <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
 
       <div class="th r">
         <span class="tag">Installers</span>
         <h3>Meet people who are ready</h3>
         <p>Everyone who reaches you already knows their system size, their budget and what they&rsquo;ll save. No cold lists, no chasing. And you&rsquo;re ranked on the jobs you&rsquo;ve finished, not on what you spend on ads.</p>
-        <a class="lnk" href="/installers">For installers <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="lnk" href="#/installers">For installers <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
 
       <div class="th r">
         <span class="tag">Financing partners</span>
         <h3>Lend on real numbers</h3>
         <p>Every borrower comes with a real electricity bill behind them, so you can see what they use and what they can afford. Same specs on every project, and you can check how the panels perform after.</p>
-        <a class="lnk" href="/financing-partners">For financing partners <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="lnk" href="#/financing">For financing partners <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
 
     </div>
@@ -1050,7 +1140,7 @@ section+section{border-top:0}
         See my free estimate
         <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="/installers" class="b b-glass">I'm an installer</a>
+      <a href="#/installers" class="b b-glass">I'm an installer</a>
     </div>
     <p class="fine r">It&rsquo;s free. No card, and your number stays with you.</p>
   </div>
@@ -1212,19 +1302,7 @@ section+section{border-top:0}
           <div class="fq-a"><p>The assessment is about three minutes. After that it is your pace. Most homeowners take a few weeks to compare installers and sort financing.</p></div>
         </div>
     </div>
-    <div class="center" style="margin-top:40px"><a href="/faqs" class="tl">See all questions <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-  </div>
-</section>
-
-<section class="sec-tight">
-  <div class="w">
-    <div class="callband r">
-      <div>
-        <h3>Rather talk it through first?</h3>
-        <p>Book a free 20 minute call. We will walk through your bill together and answer anything before you commit to a thing.</p>
-      </div>
-      <div class="cb-act"><a href="/contact?type=call" class="b b-blue">Book a discovery call <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-    </div>
+    <div class="center" style="margin-top:40px"><a href="#/faqs" class="tl">See all questions <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </div>
 </section>
 
@@ -1238,7 +1316,7 @@ section+section{border-top:0}
     <p class="r">Grab your latest bill. Three minutes from now you will know.</p>
     <div class="b-row r">
       <a href="https://app.apolaki.ai/assessment" class="b b-blue">Start my free assessment <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a href="/installers" class="b b-glass">I am an installer</a>
+      <a href="#/installers" class="b b-glass">I am an installer</a>
     </div>
     <p class="fine r">It is free. No card, and your number stays with you.</p>
   </div>
@@ -1743,6 +1821,437 @@ section+section{border-top:0}
 </section>
 
 </div>
+<div class="pg" id="pg-blog" hidden>
+
+<header class="phero">
+  <div class="w phero-in">
+    <div>
+      <h1 class="r">Solar in the Philippines, <em>explained properly.</em></h1>
+      <p class="psub r">No sales talk. Just the numbers, the rules and the trade-offs, written for people deciding whether to spend a few hundred thousand pesos.</p>
+      <div class="pcta r"><a href="#all" class="b b-blue">Browse the guides <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="https://app.apolaki.ai/assessment" class="b b-glass">Get my free estimate</a></div>
+    </div>
+    <div class="phero-shot r"><img src="https://images.pexels.com/photos/38171120/pexels-photo-38171120.jpeg?auto=compress&cs=tinysrgb&w=1400&h=1050&fit=crop" alt="Rooftop solar array in bright sunlight" fetchpriority="high" width="1400" height="1050" onerror="this.remove()"></div>
+  </div>
+</header>
+
+<section class="sec" id="all">
+  <div class="w">
+    <div class="sh r"><h2>Start here.</h2></div>
+    <div class="postrow">
+      <a class="post wide r" href="/blog/is-solar-worth-it-philippines-2026">
+        <div class="thumb"><span class="tag">Guides</span>
+          <img src="https://images.pexels.com/photos/11645008/pexels-photo-11645008.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="pb">
+          <h3 style="font-size:1.34rem">Is solar worth it in the Philippines in 2026?</h3>
+          <p>The honest answer depends on your bill, your roof and how long you plan to stay. Here is how to work it out.</p>
+          <span class="rd">Read the guide <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+    <div class="posts">
+      <a class="post r" href="/blog/magkano-ang-solar-panel-pilipinas">
+        <div class="thumb"><span class="tag">Tagalog</span><img src="https://images.pexels.com/photos/6961091/pexels-photo-6961091.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="pb"><h3>Magkano ang solar panel sa Pilipinas?</h3><p>Ang totoong presyo ng solar system para sa bahay, at kung paano ito nakadepende sa kuryente mo.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </a>
+      <a class="post r" href="/blog/how-net-metering-works-philippines">
+        <div class="thumb"><span class="tag">Net metering</span><img src="https://images.pexels.com/photos/38171120/pexels-photo-38171120.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="pb"><h3>How net metering actually works</h3><p>Export your extra solar to the grid and get credits. What qualifies, what you get paid, and the catch.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </a>
+      <a class="post r" href="/blog/reading-your-meralco-bill-solar">
+        <div class="thumb"><span class="tag">MERALCO</span><img src="https://images.pexels.com/photos/29206488/pexels-photo-29206488.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="pb"><h3>How to read your MERALCO bill</h3><p>Generation charge, distribution charge, and the one number that decides whether solar makes sense for you.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </a>
+      <a class="post r" href="/blog/solar-financing-philippines">
+        <div class="thumb"><span class="tag">Financing</span><img src="https://images.pexels.com/photos/35454190/pexels-photo-35454190.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="pb"><h3>Ways to pay for solar in the Philippines</h3><p>Bank loans, Pag-IBIG, GSIS, rent-to-own and credit card promos, with the real rates on each.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </a>
+      <a class="post r" href="/blog/will-solar-work-on-my-roof">
+        <div class="thumb"><span class="tag">Guides</span><img src="https://images.pexels.com/photos/6961088/pexels-photo-6961088.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="pb"><h3>Will solar work on my roof?</h3><p>Roof space, direction, pitch and shade. What makes a roof good for solar, and what rules one out.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </a>
+      <a class="post r" href="/blog/solar-and-brownouts-backup">
+        <div class="thumb"><span class="tag">Guides</span><img src="https://images.pexels.com/photos/11644973/pexels-photo-11644973.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="pb"><h3>Will solar keep my lights on during a brownout?</h3><p>On its own, no. Here is why, and what a battery actually adds to the cost.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </a>
+      <a class="post r" href="/blog/battery-vs-net-metering-philippines">
+        <div class="thumb"><span class="tag">Net metering</span><img src="https://images.pexels.com/photos/6961110/pexels-photo-6961110.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="pb"><h3>Battery or net metering?</h3><p>Two different ways to deal with the power you do not use during the day. Which one suits your home.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </a>
+      <a class="post r" href="/blog/paano-pumili-ng-solar-installer">
+        <div class="thumb"><span class="tag">Tagalog</span><img src="https://images.pexels.com/photos/11645006/pexels-photo-11645006.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="pb"><h3>Paano pumili ng solar installer</h3><p>Ano ang dapat mong hanapin, at ang mga red flag na dapat mong iwasan.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </a>
+      <a class="post r" href="/blog/solar-for-small-business-philippines">
+        <div class="thumb"><span class="tag">Business</span><img src="https://images.pexels.com/photos/6961215/pexels-photo-6961215.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="pb"><h3>Solar for a small business</h3><p>Different usage pattern, different sizing, different payback. What changes when it is a business.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </a>
+      <a class="post r" href="/blog/solar-myths-philippines-debunked">
+        <div class="thumb"><span class="tag">Guides</span><img src="https://images.pexels.com/photos/8853504/pexels-photo-8853504.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="pb"><h3>Six solar myths, checked</h3><p>Panels do not work when it rains, they need constant cleaning, they damage your roof. Sorting fact from sales talk.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </a>
+      <a class="post r" href="/blog/solar-co2-philippines-energy-transition">
+        <div class="thumb"><span class="tag">Impact</span><img src="https://images.pexels.com/photos/35454190/pexels-photo-35454190.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="pb"><h3>What one rooftop actually does for emissions</h3><p>A typical 5 kW home system and its real carbon effect in the Philippine grid.</p><span class="rd">Read <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight tint">
+  <div class="w">
+    <div class="callband r">
+      <div>
+        <h3>Reading is useful. Your own numbers are better.</h3>
+        <p>Every guide here is general. Three minutes with your electricity bill gives you the version that applies to your roof.</p>
+      </div>
+      <div class="cb-act"><a href="https://app.apolaki.ai/assessment" class="b b-blue">See my free estimate <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+</div>
+<div class="pg" id="pg-about" hidden>
+
+<header class="phero">
+  <div class="w phero-in">
+    <div>
+      <h1 class="r">We got tired of watching Filipinos <em>guess.</em></h1>
+      <p class="psub r">Apolaki is the Philippines' first solar adoption platform. We started it because everyone we spoke to wanted solar and nobody could get a straight answer about it.</p>
+      <div class="pcta r"><a href="#journey" class="b b-blue">Our journey <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="#/contact" class="b b-glass">Work with us</a></div>
+    </div>
+    <div class="phero-shot r"><img src="https://images.pexels.com/photos/6961123/pexels-photo-6961123.jpeg?auto=compress&cs=tinysrgb&w=1400&h=1050&fit=crop" alt="Solar technicians installing panels under a clear sky" fetchpriority="high" width="1400" height="1050" onerror="this.remove()"></div>
+  </div>
+</header>
+
+<section class="sec-tight">
+  <div class="w">
+    <div class="statrow r">
+      <div class="stat-c"><div class="sv mono"><span data-c="2025" data-d="0">2025</span></div><div class="sl">Founded at the Asian Institute of Management</div></div>
+      <div class="stat-c"><div class="sv mono"><span data-c="1" data-d="0">1</span><span class="u">st</span></div><div class="sl">Verified installer partner onboarded, March 2026</div></div>
+      <div class="stat-c"><div class="sv mono">UNLEASH</div><div class="sl">Selected for the 2026 Prototyping Programme</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tint">
+  <div class="w">
+    <div class="tl-grid">
+      <div>
+        <div class="sh r" style="margin-bottom:18px"><h2>Why we started.</h2></div>
+        <p class="lede r">Filipino homes pay some of the highest electricity rates in Southeast Asia. Solar obviously makes sense here. Yet every homeowner we met was stuck at the same place: three quotes that did not agree, no way to check who was legitimate, and a phone that would not stop ringing once they asked a single question.</p>
+        <p class="lede r" style="margin-top:16px">That is not a technology problem. It is a trust problem. So we built the thing we kept wishing existed: an independent first step that gives you the numbers before anyone gets your number.</p>
+      </div>
+      <div class="r">
+        <div class="bacard good" style="max-width:none">
+          <div class="ph"><span class="badge">What we believe</span>
+            <img src="https://images.pexels.com/photos/11645008/pexels-photo-11645008.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="Installers fitting solar panels on a rooftop" loading="lazy" width="900" height="560" onerror="this.remove()"></div>
+          <div class="bd">
+            <h3>Solar energy, made simple</h3>
+            <div class="lines">
+              <p>Every Filipino deserves a simpler path to clean energy.</p>
+              <p>We educate before we persuade, and guide before we sell.</p>
+              <p>A future where every Filipino home can power itself.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="journey">
+  <div class="w">
+    <div class="sh r"><h2>How we got here.</h2><p>From a classroom in Makati to a roof in Metro Manila, in about sixteen months.</p></div>
+    <div class="tl">
+      <div class="tlx r"><span class="dot"></span>
+        <div class="lbl">The beginning</div><div class="dte">April 2025</div><p>Three of us met through the Asian Institute of Management's Master in Innovation and Business programme.</p>
+      </div>
+      <div class="tlx r"><span class="dot"></span>
+        <div class="lbl">The idea</div><div class="dte">June 2025</div><p>We went looking at carbon markets and clean energy. CarbonConnect was born.</p>
+      </div>
+      <div class="tlx r"><span class="dot"></span>
+        <div class="lbl">The validation</div><div class="dte">July 2025</div><p>We stopped guessing and went and asked. Dozens of conversations confirmed the same thing: going solar in the Philippines is confusing, and nobody trusts the quotes.</p>
+      </div>
+      <div class="tlx r"><span class="dot"></span>
+        <div class="lbl">The prototype</div><div class="dte">September 2025</div><p>First working prototype. Rough, but it read a bill and produced a number.</p>
+      </div>
+      <div class="tlx r"><span class="dot"></span>
+        <div class="lbl">The evolution</div><div class="dte">January to March 2026</div><p>CarbonConnect became Apolaki, and we were selected for the UNLEASH Prototyping Programme.</p>
+      </div>
+      <div class="tlx r"><span class="dot"></span>
+        <div class="lbl">The first installation</div><div class="dte">March 2026</div><p>We onboarded our first verified installer partner and completed our first solar installation. The idea stopped being an idea.</p>
+      </div>
+      <div class="tlx r"><span class="dot"></span>
+        <div class="lbl">The soft launch</div><div class="dte">April to July 2026</div><p>Soft launched the platform, expanded what it could do, and put up our website and Facebook page.</p>
+      </div>
+      <div class="tlx now r"><span class="dot"></span>
+        <div class="lbl">Demo day</div><div class="dte">29 August 2026</div><p>Presenting Apolaki at the AIM MIB Demo Day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tint-b">
+  <div class="w">
+    <div class="sh r"><h2>What we hold to.</h2></div>
+    <div class="feat">
+      <div class="fcard r">
+        <div class="fi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 16v6M2 12h6M16 12h6"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <h3>Clarity</h3><p>We make a complicated decision simple with clear, honest, practical information.</p>
+      </div>
+      <div class="fcard r">
+        <div class="fi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Trust</h3><p>Transparency, integrity and accountability. We would rather lose a sale than a reputation.</p>
+      </div>
+      <div class="fcard r">
+        <div class="fi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h8l-1 8 10-12h-8z"/></svg></div>
+        <h3>Impact</h3><p>Every decision should create real value for homeowners, partners, and the wider shift to clean energy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight">
+  <div class="w">
+    <div class="callband r">
+      <div>
+        <h3>Built by three MIB students, and still building</h3>
+        <p>Apolaki is operated by VESS Corp. from Mandaluyong City. If you want to partner, invest, or just ask what we are up to, we answer our own email.</p>
+      </div>
+      <div class="cb-act"><a href="#/contact" class="b b-blue">Get in touch <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec cta">
+  <div class="w">
+    <h2 class="r">Our journey continues with yours.</h2>
+    <p class="r">Start with your electricity bill and find out where you stand.</p>
+    <div class="b-row r">
+      <a href="https://app.apolaki.ai/assessment" class="b b-blue">See my free estimate <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#/installers" class="b b-glass">Partner with us</a>
+    </div>
+  </div>
+</section>
+
+</div>
+<div class="pg" id="pg-faqs" hidden>
+
+<header class="phero">
+  <div class="w phero-in">
+    <div>
+      <h1 class="r">Questions, <em>answered straight.</em></h1>
+      <p class="psub r">The things homeowners, installers and partners ask us most. If yours is not here, email us and we will add it.</p>
+      <div class="pcta r"><a href="#/contact" class="b b-blue">Ask us something <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="https://app.apolaki.ai/assessment" class="b b-glass">Get my free estimate</a></div>
+    </div>
+    <div class="phero-shot r"><img src="https://images.pexels.com/photos/9875422/pexels-photo-9875422.jpeg?auto=compress&cs=tinysrgb&w=1400&h=1050&fit=crop" alt="Solar technician installing panels on a house roof" fetchpriority="high" width="1400" height="1050" onerror="this.remove()"></div>
+  </div>
+</header>
+
+<section class="sec">
+  <div class="w" style="max-width:880px">
+    <div class="fgroup r">
+      <h3>For homeowners</h3>
+      <div class="fq">
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">Is the assessment really free?<span class="fic"></span></button>
+          <div class="fq-a"><p>Free forever, and no card is needed. We earn from installer partners who receive consented, bill-verified opportunities, never from selling your contact details.</p></div>
+        </div>
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">How accurate are the numbers?<span class="fic"></span></button>
+          <div class="fq-a"><p>They are built on your real electricity bill, satellite analysis of your actual roof, and sunshine data for your location. That puts them well ahead of a generic online calculator. An installer confirms the final design after a site visit.</p></div>
+        </div>
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">How long does it take?<span class="fic"></span></button>
+          <div class="fq-a"><p>About three minutes. Enter your city and your monthly bill, or upload a photo of a recent bill for a sharper result.</p></div>
+        </div>
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">Do I need my MERALCO bill?<span class="fic"></span></button>
+          <div class="fq-a"><p>It helps but it is not required. You can upload a photo or type the amount in. More bills means better accuracy.</p></div>
+        </div>
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">How much does solar cost?<span class="fic"></span></button>
+          <div class="fq-a"><p>Roughly &#8369;50,000 to &#8369;65,000 per kilowatt installed, so a typical 5 kW home system lands between &#8369;250,000 and &#8369;325,000. Equipment tier, roof complexity and battery storage move that range.</p></div>
+        </div>
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">What is the payback period?<span class="fic"></span></button>
+          <div class="fq-a"><p>Usually three to five years for a Filipino home. After that the power is close to free for another twenty years or so.</p></div>
+        </div>
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">Will solar power my home during a brownout?<span class="fic"></span></button>
+          <div class="fq-a"><p>Not on its own. A normal grid-tied system shuts off during an outage so it cannot send power into lines that linemen are working on. Backup needs a battery and a different kind of inverter.</p></div>
+        </div>
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">Is my data private?<span class="fic"></span></button>
+          <div class="fq-a"><p>Yes. Your data is encrypted, kept anonymous, and handled under the Data Privacy Act, RA 10173. You can delete it at any time.</p></div>
+        </div>
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">Will I get spam calls?<span class="fic"></span></button>
+          <div class="fq-a"><p>No. Installers cannot contact you directly. Introductions only happen when you approve them.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="fgroup r">
+      <h3>For installers</h3>
+      <div class="fq">
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">What does Apolaki give installers?<span class="fic"></span></button>
+          <div class="fq-a"><p>Qualified, consented opportunity profiles rather than raw contact lists. Each one includes bill range, location, system size and how far along the homeowner is.</p></div>
+        </div>
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">How is this different from buying leads?<span class="fic"></span></button>
+          <div class="fq-a"><p>Lead lists are sold on volume and sold more than once. Every profile here is bill-backed, consent-driven, and shown to you because the homeowner chose you.</p></div>
+        </div>
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">Do homeowners contact us directly?<span class="fic"></span></button>
+          <div class="fq-a"><p>Connections stay mediated. Homeowners remain anonymous until they consent to an introduction.</p></div>
+        </div>
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">What does it cost installers?<span class="fic"></span></button>
+          <div class="fq-a"><p>We are still finalising the commercial model and are piloting per-lead fees, subscriptions and success-based pricing with our first partners. There is no listing fee during the pilot.</p></div>
+        </div>
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">Can we list our portfolio and services?<span class="fic"></span></button>
+          <div class="fq-a"><p>Yes. Partners get a profile with portfolio, certifications, warranty terms and service areas, and can bid on matching opportunities.</p></div>
+        </div>
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">How do you vet installers?<span class="fic"></span></button>
+          <div class="fq-a"><p>We confirm SEC or DTI registration against public records, check that a licensed electrical practitioner is on record, and review completed projects including net metering approvals.</p></div>
+        </div>
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">How do I join?<span class="fic"></span></button>
+          <div class="fq-a"><p>Submit your company details, then we run verification and agree pilot terms. You can also book an onboarding call and we will walk you through it.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="fgroup r">
+      <h3>About Apolaki</h3>
+      <div class="fq">
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">What is Apolaki?<span class="fic"></span></button>
+          <div class="fq-a"><p>A digital solar readiness and partner-matching platform for Philippine homes and small businesses, built at the Asian Institute of Management and operated by VESS Corp.</p></div>
+        </div>
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">What data sources do you use?<span class="fic"></span></button>
+          <div class="fq-a"><p>Satellite rooftop analysis and location-specific solar irradiance data, anchored to your actual electricity bill.</p></div>
+        </div>
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">What is net metering?<span class="fic"></span></button>
+          <div class="fq-a"><p>It lets you export surplus solar to the grid in exchange for bill credits. Under RA 9513 systems up to 100 kW qualify, which covers every home installation.</p></div>
+        </div>
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">Where is Apolaki available?<span class="fic"></span></button>
+          <div class="fq-a"><p>Across the Philippines, with data and assumptions tuned locally. We are based in Mandaluyong City, Metro Manila.</p></div>
+        </div>
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">Is there a mobile app?<span class="fic"></span></button>
+          <div class="fq-a"><p>The web app is live now. Native iOS and Android apps are in development.</p></div>
+        </div>
+        <div class="fi">
+          <button class="fq-q" aria-expanded="false">Who built Apolaki?<span class="fic"></span></button>
+          <div class="fq-a"><p>Three students from the Master in Innovation and Business programme at the Asian Institute of Management, operating as VESS Corp.</p></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="sec-tight tint">
+  <div class="w">
+    <div class="callband r">
+      <div><h3>Still stuck on something?</h3><p>Email us and a real person answers. We are a small team, so it is usually one of the founders.</p></div>
+      <div class="cb-act"><a href="mailto:hello@apolaki.ai" class="b b-blue">hello@apolaki.ai <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+</div>
+<div class="pg" id="pg-contact" hidden>
+
+<header class="phero">
+  <div class="w phero-in">
+    <div>
+      <h1 class="r">Talk to <em>an actual person.</em></h1>
+      <p class="psub r">We are a small team in Mandaluyong City. Email, Viber or the form below all reach us, usually within a working day.</p>
+      <div class="pcta r"><a href="#form" class="b b-blue">Send a message <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="mailto:hello@apolaki.ai" class="b b-glass">hello@apolaki.ai</a></div>
+    </div>
+    <div class="phero-shot r"><img src="https://images.pexels.com/photos/6961123/pexels-photo-6961123.jpeg?auto=compress&cs=tinysrgb&w=1400&h=1050&fit=crop" alt="Solar technicians working together on a rooftop" fetchpriority="high" width="1400" height="1050" onerror="this.remove()"></div>
+  </div>
+</header>
+
+<section class="sec-tight">
+  <div class="w">
+    <div class="ccards">
+      <div class="ccard r">
+        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></div>
+        <h3>Email</h3><p>Best for anything detailed. A founder usually answers.</p>
+        <a href="mailto:hello@apolaki.ai">hello@apolaki.ai</a>
+      </div>
+      <div class="ccard r">
+        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8z"/></svg></div>
+        <h3>Viber</h3><p>Quick questions, quick answers. Mondays to Saturdays.</p>
+        <a href="viber://chat?number=%2B639178161707">+63 917 816 1707</a>
+      </div>
+      <div class="ccard r">
+        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z"/><circle cx="12" cy="11" r="3"/></svg></div>
+        <h3>Where we are</h3><p>Operated by VESS Corp. Built at the Asian Institute of Management.</p>
+        <a href="#/about">Mandaluyong City, Metro Manila</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="form">
+  <div class="w">
+    <div class="tl-grid">
+      <div>
+        <div class="sh r" style="margin-bottom:20px"><h2>Send us a message.</h2><p>Tell us who you are and we will point you at the right person.</p></div>
+        <form class="cform r" data-contact>
+          <div class="rowx">
+            <div><label for="cn">Your name</label><input id="cn" required placeholder="Juan dela Cruz"></div>
+            <div><label for="ce">Email</label><input id="ce" type="email" required placeholder="you@email.com"></div>
+          </div>
+          <div><label for="ct">I am a</label>
+            <select id="ct">
+              <option>Homeowner looking at solar</option>
+              <option>Solar installer</option>
+              <option>Financing partner or lender</option>
+              <option>Press or something else</option>
+            </select>
+          </div>
+          <div><label for="cm">Message</label><textarea id="cm" required placeholder="What can we help with?"></textarea></div>
+          <button type="submit" class="b b-blue">Send message <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </form>
+        <div class="cform-ok r">Thanks. We have got it and will reply within a working day.</div>
+      </div>
+      <div class="r">
+        <div class="callband" style="grid-template-columns:1fr">
+          <div>
+            <h3>Rather just talk?</h3>
+            <p>Book a free twenty minute call. Homeowners can walk through their bill with us. Installers and lenders can go straight to onboarding.</p>
+            <div class="cb-act" style="margin-top:20px">
+              <a href="/contact?type=call" class="b b-blue">Book a discovery call <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </div>
+        </div>
+        <div class="bacard good r" style="margin-top:18px;max-width:none">
+          <div class="ph"><span class="badge">Partner with us</span>
+            <img src="https://images.pexels.com/photos/11645006/pexels-photo-11645006.jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop" alt="Solar technician carrying equipment across a rooftop" loading="lazy" width="900" height="560" onerror="this.remove()"></div>
+          <div class="bd">
+            <h3>Installers and lenders</h3>
+            <div class="lines">
+              <p><a href="#/installers" style="color:var(--blue);font-weight:600">Become a trusted installer</a></p>
+              <p><a href="#/financing" style="color:var(--blue);font-weight:600">Fund solar as a financing partner</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
 </main>
 
 <footer>
@@ -1765,14 +2274,14 @@ section+section{border-top:0}
       <div class="fc"><h4>Guides</h4><ul>
         <li><a href="/solar-installer-philippines">Trusted Installers</a></li><li><a href="/net-metering-philippines">Net Metering</a></li>
         <li><a href="/solar-financing-philippines">Solar Financing</a></li><li><a href="/meralco-solar-bill-savings">MERALCO Savings</a></li>
-        <li><a href="/blog">All guides</a></li></ul></div>
+        <li><a href="#/blog">All guides</a></li></ul></div>
       <div class="fc"><h4>Cities</h4><ul>
         <li><a href="/solar-installers-makati">Makati</a></li><li><a href="/solar-installers-quezon-city">Quezon City</a></li>
         <li><a href="/solar-installers-taguig">Taguig</a></li><li><a href="/solar-installers-cebu">Cebu</a></li>
         <li><a href="/solar-installers-davao">Davao</a></li></ul></div>
       <div class="fc"><h4>Company</h4><ul>
-        <li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/faqs">FAQ</a></li>
-        <li><a href="/contact">Contact</a></li><li><a href="/contact?type=installer">Become a partner</a></li></ul></div>
+        <li><a href="#/about">About</a></li><li><a href="#/blog">Blog</a></li><li><a href="#/faqs">FAQ</a></li>
+        <li><a href="#/contact">Contact</a></li><li><a href="/contact?type=installer">Become a partner</a></li></ul></div>
     </div>
     <div class="fbot">
       <p>© 2026 Apolaki · VESS Corp. · Mandaluyong City, Metro Manila</p>
@@ -1805,7 +2314,7 @@ var nv=document.getElementById('nv');
 var bg=document.getElementById('bg'), mm=document.getElementById('mm');
 
 /* ---------- router ---------- */
-var PAGES=['home','homeowners','installers','financing'];
+var PAGES=['home','homeowners','installers','financing','blog','about','faqs','contact'];
 function route(){
   var k=(location.hash||'#/home').replace('#/','');
   if(PAGES.indexOf(k)<0) k='home';
@@ -1818,9 +2327,10 @@ function route(){
   });
   window.scrollTo(0,0);
   reveal(); watchHero(); steps(); if(window.__apolakiCalc) window.__apolakiCalc();
-  document.title = k==='home' ? 'Apolaki | Trusted Solar Installers Near You'
-    : (k==='homeowners' ? 'Solar for Your Home | Apolaki'
-    : (k==='installers' ? 'Become a Trusted Installer | Apolaki' : 'Financing Partners | Apolaki'));
+  var T={home:'Apolaki | Trusted Solar Installers Near You',homeowners:'Solar for Your Home | Apolaki',
+    installers:'Become a Trusted Installer | Apolaki',financing:'Financing Partners | Apolaki',
+    blog:'Solar Guides | Apolaki',about:'About Apolaki',faqs:'FAQ | Apolaki',contact:'Contact | Apolaki'};
+  document.title = T[k]||T.home;
 }
 addEventListener('hashchange',route);
 document.addEventListener('click',function(e){
@@ -1935,6 +2445,13 @@ document.addEventListener('submit',function(e){
   var inp=f.querySelector('input'); if(!inp.value) return;
   var ok=f.parentElement.querySelector('.wait-ok');
   f.style.display='none'; if(ok){ ok.classList.add('on'); ok.textContent='Thanks. '+inp.value+' is on the list.'; }
+});
+
+document.addEventListener('submit',function(e){
+  var f=e.target.closest('form[data-contact]'); if(!f) return;
+  e.preventDefault();
+  var ok=f.parentElement.querySelector('.cform-ok');
+  f.style.display='none'; if(ok) ok.classList.add('on');
 });
 
 route();
