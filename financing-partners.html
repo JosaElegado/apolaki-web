@@ -28,9 +28,7 @@
 <link rel="preload" href="assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://images.pexels.com" crossorigin>
 <link rel="stylesheet" href="assets/css/apolaki.css">
-<style>
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-</style>
+
 </head>
 <body>
 <nav class="nv" id="nv">
@@ -90,7 +88,7 @@
   <div class="w">
     <div class="sh r">
       <h2>Model a cohort.</h2>
-      <p>Move the sliders to see what a pool of solar loans would return, when the money comes back, and how much of it is interest.</p>
+      <p>Move the sliders. The numbers update as you go.</p>
     </div>
 
     <div class="r" style="margin-top:34px">
@@ -147,16 +145,22 @@
           </div>
         </div>
 
-        <div class="chartbox">
-          <div class="chart-t">Cash returned to you, month by month</div>
-          <div class="chart-s">The dashed line is the capital you put in. Where the blue crosses it, you are whole again.</div>
-          <div class="chart-wrap">
-            <svg id="chart" viewBox="0 0 640 210" width="100%" height="210" role="img" aria-labelledby="chartDesc"></svg>
-            <p id="chartDesc" class="sr-only">Cumulative cash returned rises steadily and crosses the capital line before the end of the term. A full month by month table is available below.</p>
-            <div class="tip" id="tip"></div>
+        <div class="tline">
+          <div class="tline-t">When your money comes back</div>
+          <div class="tline-s">You are repaid every month, so you are not waiting until the end to see anything.</div>
+          <div class="track">
+            <div class="fill" id="tFill" style="width:86%"></div>
+            <div class="mk start"></div>
+            <div class="mk" id="tMk" style="left:86%"></div>
+            <div class="mk end"></div>
+          </div>
+          <div class="tmarks">
+            <div><div class="tm">Month 1</div><div class="tb" id="tA">&#8369;33,214</div><div class="tsm">First payout</div></div>
+            <div><div class="tm" id="tBm">Month 31</div><div class="tb hl" id="tB">&#8369;1,000,000</div><div class="tsm">Capital back</div></div>
+            <div><div class="tm" id="tCm">Month 36</div><div class="tb" id="tC">&#8369;1,195,715</div><div class="tsm">Total returned</div></div>
           </div>
           <details class="tbl">
-            <summary>View the numbers as a table</summary>
+            <summary>View the month by month schedule</summary>
             <div style="max-height:280px;overflow:auto">
               <table id="schedTable"><thead><tr><th>Month</th><th>Payment</th><th>Interest</th><th>Principal</th><th>Cumulative</th></tr></thead><tbody></tbody></table>
             </div>
@@ -184,36 +188,64 @@
   </div>
 </section>
 
+<section class="sec-tight">
+  <div class="w">
+    <div class="sh r"><h2>Lending blind is the risky part.</h2></div>
+    <div class="ba">
+      <div class="ba-col r">
+        <div class="ba-h"><span>Consumer lending as usual</span><span class="ba-tag">Today</span></div>
+        <ul>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Underwriting against stated income</span></li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg><span>No idea who installed the equipment</span></li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Nothing visible after the money goes out</span></li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Every project specified differently</span></li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg><span>You source and chase borrowers yourself</span></li>
+        </ul>
+      </div>
+      <div class="ba-col after r">
+        <div class="ba-h"><span>With Apolaki</span><span class="ba-tag">Bill-verified</span></div>
+        <ul>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Twelve months of real bills behind every borrower</span></li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Only verified installers touch a financed system</span></li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Output monitored after the panels go up</span></li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>The same specs across the whole portfolio</span></li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Borrowers arrive already assessed</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sec-tight" style="background:var(--paper-2);border-block:1px solid var(--hair)">
   <div class="w">
     <div class="sh r">
       <h2>Why solar lending behaves differently.</h2>
-      <p>A solar loan is not a personal loan with panels attached. The thing you financed is what pays you back.</p>
+      <p>The thing you financed is what pays you back.</p>
     </div>
     <div class="feat">
       <div class="fcard r">
         <div class="fi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-7 9 7v10a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M12 22V12"/></svg></div>
-        <h3>The asset repays the loan</h3><p>The savings on the borrower's electricity bill are the repayment source. Very few consumer loans have collateral that generates the cash to repay itself.</p>
+        <h3>The asset repays the loan</h3><p>The savings on the borrower's bill are the repayment source. The collateral pays you back.</p>
       </div>
       <div class="fcard r">
         <div class="fi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 15h6M9 11h3"/></svg></div>
-        <h3>Affordability from bills, not claims</h3><p>Every borrower arrives with twelve months of real consumption data. You are underwriting against what they actually pay MERALCO, not against stated income.</p>
+        <h3>Affordability from bills, not claims</h3><p>Twelve months of real consumption. Not stated income.</p>
       </div>
       <div class="fcard r">
         <div class="fi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg></div>
-        <h3>The same specs on every project</h3><p>System sizing, equipment tiers and installation standards are consistent across the portfolio, so one loan is comparable to the next.</p>
+        <h3>The same specs on every project</h3><p>Sizing, equipment and standards are consistent, so one loan compares to the next.</p>
       </div>
       <div class="fcard r">
         <div class="fi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 3 5-8"/></svg></div>
-        <h3>Performance you can check</h3><p>Once the panels are up, output is monitored. If a system underperforms its model you find out early, not when a repayment is missed.</p>
+        <h3>Performance you can check</h3><p>If a system underperforms, you find out early, not when a repayment is missed.</p>
       </div>
       <div class="fcard r">
         <div class="fi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3>Installed by verified partners</h3><p>Only installers we have checked for registration and licensing touch a financed system, which protects the asset your loan sits behind.</p>
+        <h3>Installed by verified partners</h3><p>Only checked installers touch a financed system, which protects your collateral.</p>
       </div>
       <div class="fcard r">
         <div class="fi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <h3>Cash from month one</h3><p>Solar loans amortise monthly. You do not wait until maturity for a bullet repayment, you receive principal and interest every month from the first one.</p>
+        <h3>Cash from month one</h3><p>Principal and interest every month from the first. No waiting for maturity.</p>
       </div>
     </div>
   </div>
@@ -223,27 +255,27 @@
   <div class="w">
     <div class="sh r">
       <h2>How partners come on board.</h2>
-      <p>Three conversations, roughly. We would rather be slow and clear than quick and vague.</p>
+      <p>Three conversations. We would rather be slow and clear than quick and vague.</p>
     </div>
     <div class="vsteps">
       <article class="vstep r">
         <div class="vn">01</div>
         <div>
-          <h3>Tell us your mandate</h3><p>Ticket size, tenor, target return and any restrictions on borrower profile or region. Individual lenders and institutions get different structures, so this is where we work out which one fits.</p>
+          <h3>Tell us your mandate</h3><p>Ticket size, tenor, target return, and any limits on borrower profile or region.</p>
           <div class="vmeta"><span>Individual or institutional</span><span>Your tenor and ticket size</span><span>Your risk appetite</span></div>
         </div>
       </article>
       <article class="vstep r">
         <div class="vn">02</div>
         <div>
-          <h3>We match you to a loan pool</h3><p>Rather than one borrower, your capital sits across a pool of bill-verified solar loans in the regions you have chosen. Diversification is the point, particularly at smaller ticket sizes.</p>
+          <h3>We match you to a loan pool</h3><p>Your capital sits across many bill-verified loans, not one borrower.</p>
           <div class="vmeta"><span>Bill-verified borrowers</span><span>Spread across many loans</span><span>Regions you choose</span></div>
         </div>
       </article>
       <article class="vstep r">
         <div class="vn">03</div>
         <div>
-          <h3>Repayments land monthly</h3><p>Principal and interest arrive every month from the first. You can withdraw as it comes in, or roll it into the next cohort of borrowers.</p>
+          <h3>Repayments land monthly</h3><p>Withdraw as it arrives, or roll it into the next cohort.</p>
           <div class="vmeta"><span>Monthly principal and interest</span><span>Withdraw or reinvest</span><span>Performance reporting</span></div>
         </div>
       </article>
@@ -373,6 +405,25 @@ else{
   rev.forEach(function(e){rio.observe(e);});
 }
 
+/* sticky step sequence (only on pages that have it) */
+var steps=document.querySelectorAll('.hstep'), panes=document.querySelectorAll('.pane');
+if(steps.length){
+  var cur=0, tick=false;
+  function setStep(n){
+    steps.forEach(function(s){ s.classList.toggle('on', s.dataset.i===String(n)); });
+    panes.forEach(function(p){ p.classList.toggle('on', p.dataset.p===String(n)); });
+  }
+  function pick(){
+    var line=innerHeight*0.5, n=1;
+    for(var i=0;i<steps.length;i++){ if(steps[i].getBoundingClientRect().top<=line) n=+steps[i].dataset.i; }
+    if(n!==cur){ cur=n; setStep(n); }
+  }
+  function onScroll(){ if(tick) return; tick=true; requestAnimationFrame(function(){ pick(); tick=false; }); }
+  addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',onScroll,{passive:true});
+  pick();
+}
+
 function fmt(v,d){ return v.toLocaleString('en-PH',{minimumFractionDigits:d,maximumFractionDigits:d}); }
 var nums=document.querySelectorAll('[data-c]');
 if(RM||!('IntersectionObserver' in window)){ nums.forEach(function(n){ n.textContent=fmt(parseFloat(n.dataset.c),+n.dataset.d); }); }
@@ -405,8 +456,6 @@ var PRESETS={
 var mode='p2p', term=36;
 var amt=document.getElementById('amt'), rate=document.getElementById('rate');
 var amtOut=document.getElementById('amtOut'), rateOut=document.getElementById('rateOut'), termOut=document.getElementById('termOut');
-var svg=document.getElementById('chart'), tip=document.getElementById('tip');
-var NS='http://www.w3.org/2000/svg';
 
 function peso(n,d){ return '\u20B1'+Number(n).toLocaleString('en-PH',{minimumFractionDigits:d||0,maximumFractionDigits:d||0}); }
 function compact(n){
@@ -427,72 +476,6 @@ function schedule(P,annual,n){
           breakeven: Math.min(n, Math.ceil(P/M))};
 }
 
-function drawChart(P,rows){
-  while(svg.firstChild) svg.removeChild(svg.firstChild);
-  var W=640,H=210,padL=54,padR=14,padT=14,padB=28;
-  var n=rows.length, maxY=rows[n-1].cum;
-  var x=function(m){ return padL+(m-1)/(n-1)*(W-padL-padR); };
-  var y=function(v){ return H-padB-(v/maxY)*(H-padT-padB); };
-
-  function el(t,a){ var e=document.createElementNS(NS,t); for(var k in a) e.setAttribute(k,a[k]); return e; }
-
-  // recessive gridlines + y labels
-  for(var i=0;i<=3;i++){
-    var v=maxY*i/3, gy=y(v);
-    svg.appendChild(el('line',{x1:padL,y1:gy,x2:W-padR,y2:gy,stroke:'#E6ECF4','stroke-width':1}));
-    var tx=el('text',{x:padL-9,y:gy+4,'text-anchor':'end','font-size':'10.5',fill:'#7C8493'});
-    tx.textContent=compact(Math.round(v)); svg.appendChild(tx);
-  }
-  // x labels
-  [1,Math.round(n/2),n].forEach(function(m){
-    var t=el('text',{x:x(m),y:H-9,'text-anchor':m===1?'start':(m===n?'end':'middle'),'font-size':'10.5',fill:'#7C8493'});
-    t.textContent='Mo '+m; svg.appendChild(t);
-  });
-
-  // area + line (single series, sequential blue)
-  var d='M'+x(1)+','+y(rows[0].cum);
-  rows.forEach(function(p){ d+='L'+x(p.m)+','+y(p.cum); });
-  var grad=el('linearGradient',{id:'ag',x1:'0',y1:'0',x2:'0',y2:'1'});
-  grad.appendChild(el('stop',{offset:'0','stop-color':'#0E6CBD','stop-opacity':'.26'}));
-  grad.appendChild(el('stop',{offset:'1','stop-color':'#0E6CBD','stop-opacity':'.02'}));
-  var defs=el('defs',{}); defs.appendChild(grad); svg.appendChild(defs);
-  svg.appendChild(el('path',{d:d+'L'+x(n)+','+(H-padB)+'L'+x(1)+','+(H-padB)+'Z',fill:'url(#ag)'}));
-  svg.appendChild(el('path',{d:d,fill:'none',stroke:'#0E6CBD','stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round'}));
-
-  // principal reference line, neutral + direct label
-  var py=y(P);
-  svg.appendChild(el('line',{x1:padL,y1:py,x2:W-padR,y2:py,stroke:'#9AA3B2','stroke-width':1.5,'stroke-dasharray':'5 4'}));
-  var lab=el('text',{x:padL+6,y:py-9,'text-anchor':'start','font-size':'11','font-weight':'600',fill:'#5A6474'});
-  lab.textContent='Your capital  '+compact(P); svg.appendChild(lab);
-
-  // crossing marker
-  var be=Math.min(n,Math.ceil(P/rows[0].pay));
-  svg.appendChild(el('circle',{cx:x(be),cy:y(rows[be-1].cum),r:5,fill:'#0E6CBD',stroke:'#fff','stroke-width':2}));
-
-  // hover layer
-  var hl=el('line',{x1:0,y1:padT,x2:0,y2:H-padB,stroke:'#0A1729','stroke-width':1,opacity:'0'});
-  var hd=el('circle',{r:5,fill:'#0E6CBD',stroke:'#fff','stroke-width':2,opacity:'0'});
-  svg.appendChild(hl); svg.appendChild(hd);
-  var hit=el('rect',{x:padL,y:0,width:W-padL-padR,height:H,fill:'transparent',style:'cursor:crosshair'});
-  svg.appendChild(hit);
-  function move(ev){
-    var box=svg.getBoundingClientRect();
-    var px=(ev.clientX-box.left)/box.width*W;
-    var m=Math.round((px-padL)/(W-padL-padR)*(n-1))+1;
-    m=Math.max(1,Math.min(n,m));
-    var p=rows[m-1];
-    hl.setAttribute('x1',x(m)); hl.setAttribute('x2',x(m)); hl.setAttribute('opacity','.18');
-    hd.setAttribute('cx',x(m)); hd.setAttribute('cy',y(p.cum)); hd.setAttribute('opacity','1');
-    tip.style.opacity='1';
-    tip.style.left=(x(m)/W*100)+'%';
-    tip.style.top=(y(p.cum)/H*box.height-12)+'px';
-    tip.innerHTML='Month '+m+'<br><b>'+peso(Math.round(p.cum))+'</b> back so far';
-  }
-  hit.addEventListener('mousemove',move);
-  hit.addEventListener('touchmove',function(e){ if(e.touches[0]) move(e.touches[0]); },{passive:true});
-  hit.addEventListener('mouseleave',function(){ tip.style.opacity='0'; hl.setAttribute('opacity','0'); hd.setAttribute('opacity','0'); });
-}
-
 function fillTable(rows){
   var tb=document.querySelector('#schedTable tbody');
   tb.innerHTML=rows.map(function(p){
@@ -511,7 +494,14 @@ function update(){
   document.getElementById('kInterest').textContent=peso(Math.round(s.interest));
   document.getElementById('kInterestSub').textContent=(s.interest/P*100).toFixed(1)+'% of your capital over '+term+' months';
   document.getElementById('kBreak').textContent='Month '+s.breakeven;
-  drawChart(P,s.rows);
+  var pct=Math.max(6,Math.min(100,s.breakeven/term*100));
+  document.getElementById('tFill').style.width=pct+'%';
+  document.getElementById('tMk').style.left=pct+'%';
+  document.getElementById('tA').textContent=peso(Math.round(s.M));
+  document.getElementById('tBm').textContent='Month '+s.breakeven;
+  document.getElementById('tB').textContent=peso(P);
+  document.getElementById('tCm').textContent='Month '+term;
+  document.getElementById('tC').textContent=peso(Math.round(s.total));
   fillTable(s.rows);
 }
 
@@ -538,7 +528,6 @@ function setMode(m){
 }
 document.getElementById('tab-p2p').addEventListener('click',function(){setMode('p2p');});
 document.getElementById('tab-inst').addEventListener('click',function(){setMode('inst');});
-window.addEventListener('resize',function(){ update(); });
 update();
 })();
 </script>
