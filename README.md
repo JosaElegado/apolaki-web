@@ -1,118 +1,92 @@
 # Apolaki Website
 
-Landing page for [apolaki.ai](https://apolaki.ai). Built for VESS Corp.
+Marketing site for [apolaki.ai](https://apolaki.ai). Built for VESS Corp.
 
-**Live preview:** enable GitHub Pages (see below) and this deploys automatically at `https://<org>.github.io/<repo>/`
+Four pages, one shared stylesheet, no build step and no dependencies.
 
 ---
 
-## Quick look
-
-Clone and open `index.html` in any browser. No build step, no dependencies, no install.
+## Preview locally
 
 ```bash
 git clone <repo-url>
 cd apolaki-web
-open index.html          # macOS
-xdg-open index.html      # Linux
-start index.html         # Windows
+python3 -m http.server 8000
 ```
+
+Open `http://localhost:8000`. Serving it (rather than double-clicking the files) means the links between pages work the same way they will in production.
 
 ---
 
-## What's here
+## Pages
 
-```
-index.html                  the landing page, fully self-contained
-assets/
-  fonts/figtree.woff2       display + body typeface, subset to 11KB
-  fonts/quiapo.woff2        logo typeface, for future use
-  img/og-cover.png          social share card, 1200x630
-  img/logo-*.png            horizontal lockups, light and dark
-  img/logo-512.png          square mark, referenced by schema
-docs/
-  DESIGN-NOTES.md           copy, typography and colour decisions
-  SEO-AUDIT.md              audit of the previous site
-  font-specimen.png         typeface comparison
-```
-
-Fonts, logos and the favicon are base64-inlined into `index.html`, so the page renders correctly even opened on its own with no `assets/` folder present. The files in `assets/` are for the social card, the schema logo reference, and future pages.
-
----
-
-## Deploying
-
-Drop `index.html` and `assets/` at your web root. That's the whole deployment.
-
-### GitHub Pages
-
-Settings → Pages → Source: **Deploy from a branch** → Branch: **main**, folder: **/ (root)** → Save.
-
-Live in about a minute at `https://<org>.github.io/<repo>/`. Good enough for the team to review on real devices.
-
----
-
-## Before this goes to production
-
-| # | Item | Where |
+| File | URL | Who it's for |
 |---|---|---|
-| 1 | Replace the three testimonial placeholders | search `TESTIMONIAL` in `index.html` |
-| 2 | Swap stock photos for our own installation shots | three `<img>` tags, see Photography below |
-| 3 | Stand up `app.apolaki.ai` and redirect the Firebase URL | 9 CTA links |
-| 4 | Create the Facebook and LinkedIn pages | footer links and JSON-LD `sameAs` |
-| 5 | Build `/financing-partners` and `/terms` | linked from section 3 and the footer |
+| `index.html` | `/` | Everyone. Trusted installers near you. |
+| `homeowners.html` | `/homeowners` | Solar adopters |
+| `installers.html` | `/installers` | Solar installation companies |
+| `financing-partners.html` | `/financing-partners` | Individual and institutional lenders |
 
-### Photography
-
-The three photos are hotlinked from Pexels (free commercial licence, no attribution required) and show a Southeast Asian crew. They are placeholders for our own photos.
-
-To swap: save yours under `assets/img/`, then change the `src` on each `<img>`. Every photo already has an SVG fallback and an `onerror` handler behind it, so a missing or broken file degrades to a designed graphic rather than a broken icon.
-
-Original photography of a real Filipino crew on a real Metro Manila roof is the single highest-value change left on this page.
+Each page follows the same shape, adapted from the HomePay layout: hero, a before-and-after comparison, numbered steps, a feature grid, what's coming next, FAQ, then a closing CTA.
 
 ---
 
-## Structure
+## H1s
 
-Five sections:
-
-1. **Hero** — H1, sub, dual CTA, three live-counting stats, full-bleed photo with parallax
-2. **How Apolaki works** — three steps with a scroll-driven phone mockup that changes screen as you scroll. Works on mobile too.
-3. **Who it's for** — homeowners, installers, financing partners
-4. **What homeowners say** — testimonials
-5. **Questions we hear a lot** — FAQ accordion, then the closing CTA
-
-Navigation: Solar Adopters, Installers, Financing, Blog, About, FAQ, Contact, plus Log in and Sign up.
+| Page | H1 |
+|---|---|
+| Home | Trusted solar installers near you. |
+| Solar adopters | Know what solar costs for your home **before you spend a peso.** |
+| Installers | Spend less time chasing leads. **More time on roofs.** |
+| Financing | Put your money into **Filipino rooftops.** |
 
 ---
 
-## SEO
+## The financing calculator
 
-**H1:** Trusted solar installers near you.
-**Title:** Trusted Solar Installers Near You | Free Solar Estimate Philippines
+The interactive model on `/financing-partners` is the most complex piece on the site. It runs a standard amortising loan schedule in the browser:
 
-"Solar installer near me" is the highest-frequency autocomplete result for that stem in the Philippines. Full keyword reasoning in `docs/DESIGN-NOTES.md` and `docs/SEO-AUDIT.md`.
+```
+M = P × r / (1 − (1+r)^−n)        r = annual rate / 12
+```
 
-**Structured data:** Organization, WebSite, WebPage, Service, BreadcrumbList and FAQPage, all in one JSON-LD graph. The six FAQ answers in the markup match the visible copy word for word, which is required for rich results.
+**Two modes.** Individual lender (₱25k to ₱5M, 8–16% p.a.) and Institution (₱1M to ₱50M, 7–14% p.a.). The tabs reset the slider ranges and defaults.
 
-Also included: canonical, `lang="en-PH"`, geo tags, full Open Graph and Twitter cards, `max-image-preview:large`, semantic heading order, alt text on every image, lazy loading below the fold.
+**Outputs.** Monthly payment, total interest, interest as a percentage of capital, and the month your capital is fully recovered. Plus a chart of cumulative cash returned against a dashed capital line, with the crossing point marked, a hover tooltip, and the full schedule as a table.
 
-After deploying to the real domain, run it through the [Rich Results Test](https://search.google.com/test/rich-results).
+**Worked example.** ₱1,000,000 at 12% over 36 months returns ₱33,214 a month, ₱195,715 total interest, capital back by month 31. Verified against hand calculation.
+
+### The rates behind it
+
+Sliders are bounded by what Philippine lenders actually charge and pay today:
+
+| Source | Rate |
+|---|---|
+| GSIS Ginhawa Solar Loan | 5.0% p.a., 5 years, up to ₱500k |
+| Pag-IBIG Home Improvement | 5.75–6.25% p.a., 5 years, max ₱300k |
+| Bank solar lending (BPI, BDO, Security Bank) | ~7.5% p.a. |
+| Rent-to-own solar | ~15% effective |
+| SeedIn (P2P investor return) | from 7% annualised |
+| Vidalia (P2P investor return) | 1–1.5% monthly, ~18% p.a. |
+| Blend.PH (P2P investor return) | 6–30% p.a. |
+
+Solar loans through a platform sit between bank secured lending and rent-to-own, which is why the individual slider defaults to 12%.
+
+### One thing worth reading before your CEO does
+
+The page says this plainly, and it matters: **total interest is not the rate times the years.** On a 36-month loan at 12%, total interest is about 19.6% of the original capital, not 36%, because the loan amortises and your money is not all working for the full term. Lenders close that gap by reinvesting each monthly repayment.
+
+Better to have that in your own copy than to have a bank point it out in a meeting.
+
+### Disclaimer
+
+There is a prominent disclaimer under the calculator stating that the figures are illustrative, deduct no losses, fees or taxes, and are not an offer, forecast or promise of return. **Do not remove it.** Publishing modelled investment returns without one is a real regulatory exposure, and the FAQ reinforces it. Replace the assumptions with your actual terms once the structure is registered.
 
 ---
 
-## Browser support and accessibility
+## Editing
 
-- Verified with no horizontal overflow at 360, 390, 480, 600, 768, 900, 1024, 1180, 1440 and 1600px
-- Zero console and page errors on desktop and mobile
-- `prefers-reduced-motion` respected throughout: parallax, reveals and counters all disabled
-- Keyboard accessible, Escape closes the mobile menu, `aria-expanded` on every toggle
-
----
-
-## Editing notes
-
-Everything lives in `index.html`. Design tokens are CSS custom properties in the `:root` block at the top:
+`assets/css/apolaki.css` is the whole design system, shared by all four pages. Design tokens sit in the `:root` block at the top:
 
 ```css
 --night:  #0A2247   /* dark sections, from brand navy */
@@ -121,7 +95,43 @@ Everything lives in `index.html`. Design tokens are CSS custom properties in the
 --ink:    #0A1729   /* body text */
 ```
 
-Changing the typeface is a single `@font-face` swap. Changing the palette is four lines.
+Change the palette in four lines. Change the typeface in one `@font-face`.
+
+Typeface is **Figtree**, self-hosted and subset to the glyphs in use (11KB), loaded once and cached across all four pages.
+
+---
+
+## SEO
+
+Every page has canonical, `lang="en-PH"`, geo tags, Open Graph and Twitter cards, one H1, correct heading order, alt text on every image, and lazy loading below the fold.
+
+**Structured data.** Every page carries `Organization`. Sub-pages add `BreadcrumbList`, a page-specific `Service`, and `FAQPage`. All FAQ answers in the markup match the visible copy word for word, which Google requires.
+
+Run each URL through the [Rich Results Test](https://search.google.com/test/rich-results) after deploying.
+
+---
+
+## Before production
+
+| # | Item | Where |
+|---|---|---|
+| 1 | Replace the three testimonial placeholders | `index.html`, search `TESTIMONIAL` |
+| 2 | Swap stock photos for our own installation shots | `<img>` tags on all pages, Pexels URLs |
+| 3 | Stand up `app.apolaki.ai` and redirect the Firebase URL | every CTA |
+| 4 | Create the Facebook and LinkedIn pages | footer and JSON-LD `sameAs` |
+| 5 | Build `/terms` | linked in the footer |
+| 6 | Confirm the financing figures with counsel | `/financing-partners` |
+| 7 | Set up extensionless URLs on the host | `/homeowners` not `/homeowners.html` |
+
+### On the photos
+
+All photos come from one shoot by a Vietnamese photographer on Pexels, free for commercial use with no attribution required. They show a Southeast Asian crew, which is closer than the Western stock we started with, but they are **not Filipino**. There is effectively no stock photography of Filipino solar crews.
+
+Photographing one of your own installations remains the highest-value change available on this site.
+
+### Extensionless URLs
+
+Internal links point at `/homeowners`, not `/homeowners.html`. Most static hosts handle this automatically. On GitHub Pages, rename the files into folders (`homeowners/index.html`) or keep the `.html` links and update them. Netlify and Cloudflare Pages do it out of the box.
 
 ---
 
