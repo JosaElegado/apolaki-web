@@ -734,21 +734,21 @@ section+section{border-top:0}
 .phero{padding:calc(var(--nav) + clamp(56px,7vw,92px)) 0 clamp(52px,6vw,80px)}
 
 /* ===== journey timeline (About) ===== */
-.tl{position:relative;margin-top:clamp(30px,3.4vw,44px)}
-.tl::before{content:'';position:absolute;left:19px;top:8px;bottom:8px;width:0;
+.jrny{position:relative;margin-top:clamp(30px,3.4vw,44px)}
+.jrny::before{content:'';position:absolute;left:19px;top:8px;bottom:8px;width:0;
   border-left:2px dashed var(--blue-lt);opacity:.5}
-.tlx{position:relative;padding-left:60px;padding-bottom:clamp(26px,3vw,38px)}
-.tlx:last-child{padding-bottom:0}
-.tlx .dot{position:absolute;left:8px;top:4px;width:24px;height:24px;border-radius:50%;
+.jrnyx{position:relative;padding-left:60px;padding-bottom:clamp(26px,3vw,38px)}
+.jrnyx:last-child{padding-bottom:0}
+.jrnyx .dot{position:absolute;left:8px;top:4px;width:24px;height:24px;border-radius:50%;
   background:var(--gold);box-shadow:0 0 0 5px var(--sun-100)}
-.tlx.now .dot{box-shadow:0 0 0 5px var(--sun-200),0 0 0 7px var(--gold)}
-.tlx .lbl{font-family:var(--disp);font-weight:700;font-size:.74rem;letter-spacing:.12em;
+.jrnyx.now .dot{box-shadow:0 0 0 5px var(--sun-200),0 0 0 7px var(--gold)}
+.jrnyx .lbl{font-family:var(--disp);font-weight:700;font-size:.74rem;letter-spacing:.12em;
   text-transform:uppercase;color:var(--ink-45)}
-.tlx .dte{font-family:var(--disp);font-weight:800;font-size:clamp(1.25rem,2.2vw,1.6rem);
+.jrnyx .dte{font-family:var(--disp);font-weight:800;font-size:clamp(1.25rem,2.2vw,1.6rem);
   letter-spacing:-.03em;color:var(--blue);margin:2px 0 7px}
-.tlx.now .dte{color:#D89A0C}
-.tlx p{font-size:.94rem;max-width:56ch}
-.tl-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
+.jrnyx.now .dte{color:#D89A0C}
+.jrnyx p{font-size:.94rem;max-width:56ch}
+.tlg{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
 
 /* ===== blog ===== */
 .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px)}
@@ -802,7 +802,7 @@ section+section{border-top:0}
   .post.wide{flex-direction:column}
   .post.wide .thumb{width:100%;aspect-ratio:16/10}
   .ccards{grid-template-columns:1fr}
-  .tl-grid{grid-template-columns:1fr}
+  .tlg{grid-template-columns:1fr}
 }
 @media(max-width:600px){
   .posts{grid-template-columns:1fr}

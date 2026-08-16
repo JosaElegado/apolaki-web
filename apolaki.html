@@ -748,21 +748,21 @@ section+section{border-top:0}
 .phero{padding:calc(var(--nav) + clamp(56px,7vw,92px)) 0 clamp(52px,6vw,80px)}
 
 /* ===== journey timeline (About) ===== */
-.tl{position:relative;margin-top:clamp(30px,3.4vw,44px)}
-.tl::before{content:'';position:absolute;left:19px;top:8px;bottom:8px;width:0;
+.jrny{position:relative;margin-top:clamp(30px,3.4vw,44px)}
+.jrny::before{content:'';position:absolute;left:19px;top:8px;bottom:8px;width:0;
   border-left:2px dashed var(--blue-lt);opacity:.5}
-.tlx{position:relative;padding-left:60px;padding-bottom:clamp(26px,3vw,38px)}
-.tlx:last-child{padding-bottom:0}
-.tlx .dot{position:absolute;left:8px;top:4px;width:24px;height:24px;border-radius:50%;
+.jrnyx{position:relative;padding-left:60px;padding-bottom:clamp(26px,3vw,38px)}
+.jrnyx:last-child{padding-bottom:0}
+.jrnyx .dot{position:absolute;left:8px;top:4px;width:24px;height:24px;border-radius:50%;
   background:var(--gold);box-shadow:0 0 0 5px var(--sun-100)}
-.tlx.now .dot{box-shadow:0 0 0 5px var(--sun-200),0 0 0 7px var(--gold)}
-.tlx .lbl{font-family:var(--disp);font-weight:700;font-size:.74rem;letter-spacing:.12em;
+.jrnyx.now .dot{box-shadow:0 0 0 5px var(--sun-200),0 0 0 7px var(--gold)}
+.jrnyx .lbl{font-family:var(--disp);font-weight:700;font-size:.74rem;letter-spacing:.12em;
   text-transform:uppercase;color:var(--ink-45)}
-.tlx .dte{font-family:var(--disp);font-weight:800;font-size:clamp(1.25rem,2.2vw,1.6rem);
+.jrnyx .dte{font-family:var(--disp);font-weight:800;font-size:clamp(1.25rem,2.2vw,1.6rem);
   letter-spacing:-.03em;color:var(--blue);margin:2px 0 7px}
-.tlx.now .dte{color:#D89A0C}
-.tlx p{font-size:.94rem;max-width:56ch}
-.tl-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
+.jrnyx.now .dte{color:#D89A0C}
+.jrnyx p{font-size:.94rem;max-width:56ch}
+.tlg{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
 
 /* ===== blog ===== */
 .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px)}
@@ -816,7 +816,7 @@ section+section{border-top:0}
   .post.wide{flex-direction:column}
   .post.wide .thumb{width:100%;aspect-ratio:16/10}
   .ccards{grid-template-columns:1fr}
-  .tl-grid{grid-template-columns:1fr}
+  .tlg{grid-template-columns:1fr}
 }
 @media(max-width:600px){
   .posts{grid-template-columns:1fr}
@@ -1935,7 +1935,7 @@ section+section{border-top:0}
 
 <section class="sec tint">
   <div class="w">
-    <div class="tl-grid">
+    <div class="tlg">
       <div>
         <div class="sh r" style="margin-bottom:18px"><h2>Why we started.</h2></div>
         <p class="lede r">Filipino homes pay some of the highest electricity rates in Southeast Asia. Solar obviously makes sense here. Yet every homeowner we met was stuck at the same place: three quotes that did not agree, no way to check who was legitimate, and a phone that would not stop ringing once they asked a single question.</p>
@@ -1962,29 +1962,29 @@ section+section{border-top:0}
 <section class="sec" id="journey">
   <div class="w">
     <div class="sh r"><h2>How we got here.</h2><p>From a classroom in Makati to a roof in Metro Manila, in about sixteen months.</p></div>
-    <div class="tl">
-      <div class="tlx r"><span class="dot"></span>
+    <div class="jrny">
+      <div class="jrnyx r"><span class="dot"></span>
         <div class="lbl">The beginning</div><div class="dte">April 2025</div><p>Three of us met through the Asian Institute of Management's Master in Innovation and Business programme.</p>
       </div>
-      <div class="tlx r"><span class="dot"></span>
+      <div class="jrnyx r"><span class="dot"></span>
         <div class="lbl">The idea</div><div class="dte">June 2025</div><p>We went looking at carbon markets and clean energy. CarbonConnect was born.</p>
       </div>
-      <div class="tlx r"><span class="dot"></span>
+      <div class="jrnyx r"><span class="dot"></span>
         <div class="lbl">The validation</div><div class="dte">July 2025</div><p>We stopped guessing and went and asked. Dozens of conversations confirmed the same thing: going solar in the Philippines is confusing, and nobody trusts the quotes.</p>
       </div>
-      <div class="tlx r"><span class="dot"></span>
+      <div class="jrnyx r"><span class="dot"></span>
         <div class="lbl">The prototype</div><div class="dte">September 2025</div><p>First working prototype. Rough, but it read a bill and produced a number.</p>
       </div>
-      <div class="tlx r"><span class="dot"></span>
+      <div class="jrnyx r"><span class="dot"></span>
         <div class="lbl">The evolution</div><div class="dte">January to March 2026</div><p>CarbonConnect became Apolaki, and we were selected for the UNLEASH Prototyping Programme.</p>
       </div>
-      <div class="tlx r"><span class="dot"></span>
+      <div class="jrnyx r"><span class="dot"></span>
         <div class="lbl">The first installation</div><div class="dte">March 2026</div><p>We onboarded our first verified installer partner and completed our first solar installation. The idea stopped being an idea.</p>
       </div>
-      <div class="tlx r"><span class="dot"></span>
+      <div class="jrnyx r"><span class="dot"></span>
         <div class="lbl">The soft launch</div><div class="dte">April to July 2026</div><p>Soft launched the platform, expanded what it could do, and put up our website and Facebook page.</p>
       </div>
-      <div class="tlx now r"><span class="dot"></span>
+      <div class="jrnyx now r"><span class="dot"></span>
         <div class="lbl">Demo day</div><div class="dte">29 August 2026</div><p>Presenting Apolaki at the AIM MIB Demo Day.</p>
       </div>
     </div>
@@ -2204,7 +2204,7 @@ section+section{border-top:0}
 
 <section class="sec" id="form">
   <div class="w">
-    <div class="tl-grid">
+    <div class="tlg">
       <div>
         <div class="sh r" style="margin-bottom:20px"><h2>Send us a message.</h2><p>Tell us who you are and we will point you at the right person.</p></div>
         <form class="cform r" data-contact>
