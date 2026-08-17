@@ -1,0 +1,233 @@
+"""Shared shell for all Apolaki pages: head, nav, footer, schema."""
+
+NAV_ITEMS = [
+    ("/homeowners", "Solar Adopters", "homeowners"),
+    ("/installers", "Installers", "installers"),
+    ("/financing-partners", "Financing", "financing"),
+    ("/blog", "Blog", "blog"),
+    ("/about", "About", "about"),
+    ("/faqs", "FAQ", "faq"),
+    ("/contact", "Contact", "contact"),
+]
+
+AR = ('<svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+      'stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>')
+CHEV = ('<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+        'stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>')
+CK = ('<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" '
+      'stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>')
+XX = ('<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" '
+      'stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>')
+
+
+def head(title, desc, path, og_title=None, og_desc=None, extra=""):
+    ogt = og_title or title
+    ogd = og_desc or desc
+    return f"""<!DOCTYPE html>
+<html lang="en-PH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{title}</title>
+<meta name="description" content="{desc}">
+<link rel="canonical" href="https://apolaki.ai{path}">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#0A2247">
+<meta name="geo.region" content="PH">
+<meta name="geo.placename" content="Mandaluyong City, Metro Manila">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Apolaki">
+<meta property="og:locale" content="en_PH">
+<meta property="og:url" content="https://apolaki.ai{path}">
+<meta property="og:title" content="{ogt}">
+<meta property="og:description" content="{ogd}">
+<meta property="og:image" content="https://apolaki.ai/assets/img/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{ogt}">
+<meta name="twitter:description" content="{ogd}">
+<meta name="twitter:image" content="https://apolaki.ai/assets/img/og-cover.png">
+<link rel="icon" href="/assets/img/favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://images.pexels.com" crossorigin>
+<link rel="stylesheet" href="/assets/css/apolaki.css">
+{extra}
+</head>
+<body>
+"""
+
+
+def nav(active=None, primary_cta=("https://app.apolaki.ai/signup", "Sign up")):
+    links = "".join(
+        '      <a href="%s"%s>%s</a>\n' % (href, ' class="active"' if key == active else "", label)
+        for href, label, key in NAV_ITEMS
+    )
+    mob = "".join(
+        f'  <a class="ml" href="{href}">{label} {CHEV}</a>\n'
+        for href, label, key in NAV_ITEMS
+    )
+    return f"""<nav class="nv" id="nv">
+  <div class="nv-in">
+    <a href="/" aria-label="Apolaki home">
+      <img class="nv-lg" src="/assets/img/logo-lockup-white.png" alt="Apolaki" width="664" height="160">
+      <img class="nv-lg dark" src="/assets/img/logo-lockup.png" alt="Apolaki" width="664" height="160">
+    </a>
+    <div class="nv-links">
+{links}    </div>
+    <div class="nv-act">
+      <a href="https://app.apolaki.ai/login" class="lgin">Log in</a>
+      <a href="{primary_cta[0]}" class="b b-glass b-sm">{primary_cta[1]}</a>
+      <button class="bg" id="bg" aria-label="Menu" aria-expanded="false" aria-controls="mm"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="mm" id="mm">
+{mob}  <div class="mm-b">
+    <a href="https://app.apolaki.ai/assessment" class="b b-blue">See my free estimate</a>
+    <a href="https://app.apolaki.ai/login" class="b b-line">Log in</a>
+  </div>
+</div>
+"""
+
+
+FOOTER = """<footer>
+  <div class="w">
+    <div class="fg">
+      <div class="fb">
+        <img src="/assets/img/logo-lockup-white.png" alt="Apolaki" width="664" height="160">
+        <p>A catalyst for solar adoption. We help Filipino homeowners understand solar before they commit, and connect them with installers they can trust.</p>
+        <div class="fs">
+          <a href="https://www.facebook.com/apolaki.ph" aria-label="Facebook" rel="me noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0022 12z"/></svg></a>
+          <a href="https://www.linkedin.com/company/apolaki" aria-label="LinkedIn" rel="me noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3zM10 8.98h3.8v1.64h.06c.53-1 1.83-2.06 3.76-2.06 4.02 0 4.76 2.65 4.76 6.1v6.32h-4v-5.6c0-1.34-.02-3.06-1.86-3.06-1.87 0-2.16 1.46-2.16 2.96v5.7h-4z"/></svg></a>
+          <a href="viber://chat?number=%2B639178161707" aria-label="Viber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8z"/></svg></a>
+          <a href="mailto:hello@apolaki.ai" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></a>
+        </div>
+      </div>
+      <div class="fc"><h4>Platform</h4><ul>
+        <li><a href="/homeowners">Solar Adopters</a></li><li><a href="/installers">Installers</a></li>
+        <li><a href="/financing-partners">Financing Partners</a></li><li><a href="/homeowners">Free Assessment</a></li>
+        <li><a href="https://app.apolaki.ai/signup">Create account</a></li></ul></div>
+      <div class="fc"><h4>Guides</h4><ul>
+        <li><a href="/homeowners">Trusted Installers</a></li><li><a href="/faqs">Net Metering</a></li>
+        <li><a href="/financing-partners">Solar Financing</a></li><li><a href="/faqs">MERALCO bill and savings</a></li>
+        <li><a href="/blog">All guides</a></li></ul></div>
+      <div class="fc"><h4>Where we work</h4><ul>
+        <li>Makati</li><li>Quezon City</li>
+        <li>Taguig</li><li>Cebu</li>
+        <li>Davao</li></ul></div>
+      <div class="fc"><h4>Company</h4><ul>
+        <li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/faqs">FAQ</a></li>
+        <li><a href="/contact">Contact</a></li><li><a href="/contact?type=installer">Become a partner</a></li></ul></div>
+    </div>
+    <div class="fbot">
+      <p>&copy; 2026 Apolaki &middot; VESS Corp. &middot; Mandaluyong City, Metro Manila</p>
+      <div class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="mailto:hello@apolaki.ai">hello@apolaki.ai</a></div>
+    </div>
+  </div>
+</footer>
+"""
+
+BASE_JS = """<script>
+(function(){'use strict';
+var RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+var nv=document.getElementById('nv');
+var anchor=document.querySelector('.hero,.phero');
+if(anchor){
+  new IntersectionObserver(function(e){ nv.classList.toggle('solid', !e[0].isIntersecting); },
+    {rootMargin:'-64px 0px 0px 0px',threshold:0}).observe(anchor);
+}
+var bg=document.getElementById('bg'), mm=document.getElementById('mm');
+function shut(){mm.classList.remove('on');bg.classList.remove('on');bg.setAttribute('aria-expanded','false');
+  document.body.style.overflow='';nv.classList.toggle('solid',window.scrollY>60);}
+bg.addEventListener('click',function(){
+  var o=mm.classList.toggle('on'); bg.classList.toggle('on',o);
+  bg.setAttribute('aria-expanded',String(o)); document.body.style.overflow=o?'hidden':'';
+  if(o) nv.classList.add('solid');
+});
+mm.addEventListener('click',function(e){ if(e.target.closest('a')) shut(); });
+document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&mm.classList.contains('on')) shut(); });
+
+document.querySelectorAll('.fq-q').forEach(function(b){
+  b.addEventListener('click',function(){
+    var it=b.parentElement, pa=it.querySelector('.fq-a'), open=it.classList.contains('on');
+    document.querySelectorAll('.fi.on').forEach(function(o){
+      o.classList.remove('on'); o.querySelector('.fq-a').style.maxHeight=null;
+      o.querySelector('.fq-q').setAttribute('aria-expanded','false');
+    });
+    if(!open){ it.classList.add('on'); pa.style.maxHeight=pa.scrollHeight+'px'; b.setAttribute('aria-expanded','true'); }
+  });
+});
+
+var rev=document.querySelectorAll('.r');
+if(RM||!('IntersectionObserver' in window)){ rev.forEach(function(e){e.classList.add('in');}); }
+else{
+  var seen=new WeakSet();
+  var rio=new IntersectionObserver(function(en){
+    en.forEach(function(e){
+      if(!e.isIntersecting||seen.has(e.target))return; seen.add(e.target);
+      var sibs=Array.prototype.slice.call(e.target.parentElement.children).filter(function(c){return c.classList.contains('r');});
+      e.target.style.transitionDelay=Math.min(Math.max(0,sibs.indexOf(e.target)),4)*80+'ms';
+      e.target.classList.add('in'); rio.unobserve(e.target);
+    });
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  rev.forEach(function(e){rio.observe(e);});
+}
+
+/* sticky step sequence (only on pages that have it) */
+var steps=document.querySelectorAll('.hstep'), panes=document.querySelectorAll('.pane');
+if(steps.length){
+  var cur=0, tick=false;
+  function setStep(n){
+    steps.forEach(function(s){ s.classList.toggle('on', s.dataset.i===String(n)); });
+    panes.forEach(function(p){ p.classList.toggle('on', p.dataset.p===String(n)); });
+  }
+  function pick(){
+    var line=innerHeight*0.5, n=1;
+    for(var i=0;i<steps.length;i++){ if(steps[i].getBoundingClientRect().top<=line) n=+steps[i].dataset.i; }
+    if(n!==cur){ cur=n; setStep(n); }
+  }
+  function onScroll(){ if(tick) return; tick=true; requestAnimationFrame(function(){ pick(); tick=false; }); }
+  addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',onScroll,{passive:true});
+  pick();
+}
+
+function fmt(v,d){ return v.toLocaleString('en-PH',{minimumFractionDigits:d,maximumFractionDigits:d}); }
+var nums=document.querySelectorAll('[data-c]');
+if(RM||!('IntersectionObserver' in window)){ nums.forEach(function(n){ n.textContent=fmt(parseFloat(n.dataset.c),+n.dataset.d); }); }
+else{
+  var nio=new IntersectionObserver(function(en){
+    en.forEach(function(e){
+      if(!e.isIntersecting)return; nio.unobserve(e.target);
+      var el=e.target, to=parseFloat(el.dataset.c), d=+el.dataset.d, t0=null;
+      requestAnimationFrame(function tick(ts){
+        if(!t0)t0=ts; var p=Math.min((ts-t0)/1500,1), k=1-Math.pow(1-p,4);
+        el.textContent=fmt(to*k,d); if(p<1) requestAnimationFrame(tick);
+      });
+    });
+  },{threshold:.5});
+  nums.forEach(function(n){nio.observe(n);});
+}
+})();
+(function(){var m={installer:1,financing:2,call:0,onboarding:2};
+var t=(location.search.split('type=')[1]||'').split('&')[0], sel=document.getElementById('ct');
+if(sel&&t in m) sel.selectedIndex=m[t];})();
+</script>
+"""
+
+
+def org_schema():
+    return """{"@type":"Organization","@id":"https://apolaki.ai/#org","name":"Apolaki","legalName":"VESS Corp.","alternateName":["Apolaki Solar","Apolaki by VESS"],"url":"https://apolaki.ai/","logo":{"@type":"ImageObject","url":"https://apolaki.ai/assets/img/logo-512.png","width":512,"height":512},"slogan":"A catalyst for solar adoption","email":"hello@apolaki.ai","telephone":"+63-917-816-1707","address":{"@type":"PostalAddress","addressLocality":"Mandaluyong City","addressRegion":"Metro Manila","addressCountry":"PH"},"areaServed":{"@type":"Country","name":"Philippines"},"sameAs":["https://www.facebook.com/apolaki.ph","https://www.linkedin.com/company/apolaki"]}"""
+
+
+def page(title, desc, path, body, schema_nodes, active=None, extra_head="", extra_js="",
+         primary_cta=("https://app.apolaki.ai/signup", "Sign up")):
+    graph = ",".join([org_schema()] + schema_nodes)
+    schema = f'<script type="application/ld+json">\n{{"@context":"https://schema.org","@graph":[{graph}]}}\n</script>\n'
+    return (head(title, desc, path, extra=extra_head)
+            + nav(active, primary_cta)
+            + "\n<main>\n" + body + "\n</main>\n\n"
+            + FOOTER + "\n" + schema + BASE_JS + extra_js + "</body>\n</html>\n")
