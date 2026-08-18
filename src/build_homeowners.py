@@ -218,6 +218,7 @@ def build():
   </div>
 </section>
 
+{S.qband("Electricity in Metro Manila costs <em>27&#37; more</em> than it did two years ago.", "MERALCO published residential rates, August 2024 to August 2026", "https://images.pexels.com/photos/11645006/pexels-photo-11645006.jpeg?auto=compress&cs=tinysrgb&w=1800&h=900&fit=crop", wide=True)}
 <section class="sec tint-b">
   <div class="w">
     <div class="sh r"><h2>What is in your free report.</h2></div>

@@ -106,6 +106,7 @@ def build_about():
   </div>
 </section>
 
+{S.strip("https://images.pexels.com/photos/35454190/pexels-photo-35454190.jpeg?auto=compress&cs=tinysrgb&w=1800&h=900&fit=crop", "Solar panels catching the afternoon sun", caption="Three of us, one stubborn question")}
 <section class="sec tint-b">
   <div class="w">
     <div class="sh r"><h2>What we hold to.</h2></div>
@@ -208,6 +209,7 @@ def build_blog():
   </div>
 </section>
 
+{S.qband("Most solar quotes assume 4.5 hours of sun a day. Real Philippine rooftops average <em>3.6.</em>", "Measured output from 103 systems across 13 provinces, 2025", "https://images.pexels.com/photos/38171120/pexels-photo-38171120.jpeg?auto=compress&cs=tinysrgb&w=1800&h=900&fit=crop", wide=True)}
 <section class="sec-tight tint">
   <div class="w">
     <div class="callband r">
@@ -273,6 +275,7 @@ def build_faqs():
   </div>
 </section>
 
+{S.bigtype("There is no such thing as a <em>tanga</em> question about solar.", "If it is on your mind it is on everyone else&rsquo;s too. Ask us the one that is not here and we will add it.", sky=True)}
 <section class="sec-tight tint">
   <div class="w">
     <div class="callband r">

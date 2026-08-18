@@ -223,6 +223,24 @@ else{
 (function(){var m={installer:1,financing:2,call:0,onboarding:2};
 var t=(location.search.split('type=')[1]||'').split('&')[0], sel=document.getElementById('ct');
 if(sel&&t in m) sel.selectedIndex=m[t];})();
+(function(){
+var RMx=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var ps=[].slice.call(document.querySelectorAll('.pxs'));
+if(!ps.length||RMx) return;
+var tk=false;
+function d(){
+  var vh=innerHeight;
+  ps.forEach(function(s,i){
+    var im=s.querySelector('img'); if(!im) return;
+    var r=s.getBoundingClientRect();
+    if(r.bottom<-200||r.top>vh+200) return;
+    var mid=(r.top+r.height/2-vh/2)/vh;
+    im.style.setProperty('--py',(mid*-34).toFixed(1)+'px');
+  });
+}
+addEventListener('scroll',function(){if(tk)return;tk=true;requestAnimationFrame(function(){d();tk=false;});},{passive:true});
+addEventListener('resize',d,{passive:true}); d();
+})();
 </script>
 </body>
 </html>

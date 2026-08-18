@@ -143,6 +143,15 @@
   </div>
 </section>
 
+<section class="qband pxs wide">
+  <img src="https://images.pexels.com/photos/38171120/pexels-photo-38171120.jpeg?auto=compress&cs=tinysrgb&w=1800&h=900&fit=crop" alt="" loading="lazy" onerror="this.remove()">
+  <div class="w">
+    <span class="qm" aria-hidden="true">&ldquo;</span>
+    <blockquote class="r">Most solar quotes assume 4.5 hours of sun a day. Real Philippine rooftops average <em>3.6.</em></blockquote>
+    <cite class="r">Measured output from 103 systems across 13 provinces, 2025</cite>
+  </div>
+</section>
+
 <section class="sec-tight tint">
   <div class="w">
     <div class="callband r">
@@ -280,6 +289,24 @@ else{
 (function(){var m={installer:1,financing:2,call:0,onboarding:2};
 var t=(location.search.split('type=')[1]||'').split('&')[0], sel=document.getElementById('ct');
 if(sel&&t in m) sel.selectedIndex=m[t];})();
+(function(){
+var RMx=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var ps=[].slice.call(document.querySelectorAll('.pxs'));
+if(!ps.length||RMx) return;
+var tk=false;
+function d(){
+  var vh=innerHeight;
+  ps.forEach(function(s,i){
+    var im=s.querySelector('img'); if(!im) return;
+    var r=s.getBoundingClientRect();
+    if(r.bottom<-200||r.top>vh+200) return;
+    var mid=(r.top+r.height/2-vh/2)/vh;
+    im.style.setProperty('--py',(mid*-34).toFixed(1)+'px');
+  });
+}
+addEventListener('scroll',function(){if(tk)return;tk=true;requestAnimationFrame(function(){d();tk=false;});},{passive:true});
+addEventListener('resize',d,{passive:true}); d();
+})();
 </script>
 </body>
 </html>

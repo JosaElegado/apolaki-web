@@ -213,6 +213,7 @@ def build():
   </div>
 </section>
 
+{S.strip("https://images.pexels.com/photos/9799727/pexels-photo-9799727.jpeg?auto=compress&cs=tinysrgb&w=1800&h=900&fit=crop", "Installers fitting panels on a Philippine rooftop", caption="Work that gets checked")}
 <section class="sec tint-b">
   <div class="w">
     <div class="sh r">

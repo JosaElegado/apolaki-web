@@ -20,6 +20,41 @@ XX = ('<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="curre
       'stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>')
 
 
+
+# ---------- section breathers: give the eye a rest between dense sections ----------
+
+def strip(img_url, alt="", caption=None):
+    """Full-bleed photo divider. No words unless a short caption is passed."""
+    cap = ('\n  <div class="cap"><div class="w"><span>%s</span></div></div>' % caption) if caption else ""
+    return ('<section class="strip pxs">\n'
+            '  <img src="%s" alt="%s" loading="lazy" onerror="this.remove()">%s\n'
+            '</section>\n' % (img_url, alt, cap))
+
+
+def qband(quote, cite_text, img_url, wide=False):
+    """One big quote over a darkened photo."""
+    return ('<section class="qband pxs%s">\n'
+            '  <img src="%s" alt="" loading="lazy" onerror="this.remove()">\n'
+            '  <div class="w">\n'
+            '    <span class="qm" aria-hidden="true">&ldquo;</span>\n'
+            '    <blockquote class="r">%s</blockquote>\n'
+            '    <cite class="r">%s</cite>\n'
+            '  </div>\n'
+            '</section>\n' % (" wide" if wide else "", img_url, quote, cite_text))
+
+
+def bigtype(line, sub=None, sky=False):
+    """One oversized statement, no photo."""
+    subhtml = ('\n      <p class="sub">%s</p>' % sub) if sub else ""
+    return ('<section class="bigtype%s">\n'
+            '  <div class="w">\n'
+            '    <div class="r">\n'
+            '      <p>%s</p>%s\n'
+            '    </div>\n'
+            '  </div>\n'
+            '</section>\n' % (" sky" if sky else "", line, subhtml))
+
+
 def head(title, desc, path, og_title=None, og_desc=None, extra=""):
     ogt = og_title or title
     ogd = og_desc or desc
@@ -215,6 +250,24 @@ else{
 (function(){var m={installer:1,financing:2,call:0,onboarding:2};
 var t=(location.search.split('type=')[1]||'').split('&')[0], sel=document.getElementById('ct');
 if(sel&&t in m) sel.selectedIndex=m[t];})();
+(function(){
+var RMx=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var ps=[].slice.call(document.querySelectorAll('.pxs'));
+if(!ps.length||RMx) return;
+var tk=false;
+function d(){
+  var vh=innerHeight;
+  ps.forEach(function(s,i){
+    var im=s.querySelector('img'); if(!im) return;
+    var r=s.getBoundingClientRect();
+    if(r.bottom<-200||r.top>vh+200) return;
+    var mid=(r.top+r.height/2-vh/2)/vh;
+    im.style.setProperty('--py',(mid*-34).toFixed(1)+'px');
+  });
+}
+addEventListener('scroll',function(){if(tk)return;tk=true;requestAnimationFrame(function(){d();tk=false;});},{passive:true});
+addEventListener('resize',d,{passive:true}); d();
+})();
 </script>
 """
 

@@ -149,6 +149,15 @@
   </div>
 </section>
 
+<section class="qband pxs wide">
+  <img src="https://images.pexels.com/photos/11645006/pexels-photo-11645006.jpeg?auto=compress&cs=tinysrgb&w=1800&h=900&fit=crop" alt="" loading="lazy" onerror="this.remove()">
+  <div class="w">
+    <span class="qm" aria-hidden="true">&ldquo;</span>
+    <blockquote class="r">Electricity in Metro Manila costs <em>27&#37; more</em> than it did two years ago.</blockquote>
+    <cite class="r">MERALCO published residential rates, August 2024 to August 2026</cite>
+  </div>
+</section>
+
 <section class="sec tint-b">
   <div class="w">
     <div class="sh r"><h2>What is in your free report.</h2></div>
@@ -367,6 +376,24 @@ else{
 (function(){var m={installer:1,financing:2,call:0,onboarding:2};
 var t=(location.search.split('type=')[1]||'').split('&')[0], sel=document.getElementById('ct');
 if(sel&&t in m) sel.selectedIndex=m[t];})();
+(function(){
+var RMx=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var ps=[].slice.call(document.querySelectorAll('.pxs'));
+if(!ps.length||RMx) return;
+var tk=false;
+function d(){
+  var vh=innerHeight;
+  ps.forEach(function(s,i){
+    var im=s.querySelector('img'); if(!im) return;
+    var r=s.getBoundingClientRect();
+    if(r.bottom<-200||r.top>vh+200) return;
+    var mid=(r.top+r.height/2-vh/2)/vh;
+    im.style.setProperty('--py',(mid*-34).toFixed(1)+'px');
+  });
+}
+addEventListener('scroll',function(){if(tk)return;tk=true;requestAnimationFrame(function(){d();tk=false;});},{passive:true});
+addEventListener('resize',d,{passive:true}); d();
+})();
 </script>
 </body>
 </html>
