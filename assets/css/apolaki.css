@@ -1730,3 +1730,9 @@ footer .fb img{height:auto;width:min(260px,64%);max-width:none}
 .vm-c p{font-family:var(--disp);font-weight:600;font-size:clamp(1.02rem,1.35vw,1.22rem);
   letter-spacing:-.015em;line-height:1.5;color:var(--night);max-width:34ch;margin:0 auto}
 @media(max-width:760px){.vm{grid-template-columns:1fr}}
+
+/* blog: oversized bare-hero headline */
+.v-bare.vh-big{padding-bottom:clamp(26px,3vw,44px)}
+.v-bare.vh-big h1.vh-lite{font-size:clamp(2rem,3.6vw,3.2rem);max-width:20ch;letter-spacing:-.03em;line-height:1.12}
+/* contact: cards row sits close under the form */
+#form + .sec-tight{padding-top:0}

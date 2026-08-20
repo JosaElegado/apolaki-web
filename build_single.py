@@ -41,7 +41,7 @@ PAGES = [
     ('blog',        'blog.html',               'Blog'),
     ('about',       'about.html',              'About'),
     ('faqs',        'faqs.html',               'FAQ'),
-    ('contact',     'contact.html',            'Contact'),
+    ('contact',     'contact.html',            'Contact us'),
 ]
 
 def grab_main(fn):

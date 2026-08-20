@@ -208,14 +208,13 @@ def build_blog():
 
     body = hero(
         "Solar in the Philippines, <em>explained properly.</em>",
-        "No sales talk. Just the numbers, the rules and the trade-offs, written for people deciding whether to spend a few hundred thousand pesos.",
+        "",
         f'<a href="#all" class="b b-blue">Browse the guides {AR}</a><a href="https://app.apolaki.ai/assessment" class="b b-glass">Get my free estimate</a>',
-        px(38171120, 1400, 1050), "Rooftop solar array in bright sunlight", variant='bare', kicker='Guides', theme='th-sun', rail=[('<span data-c="12" data-d="0">12</span><span class="u">guides</span>', 'Written for people about to spend real money'),
+        px(38171120, 1400, 1050), "Rooftop solar array in bright sunlight", variant='bare', kicker='Guides', theme='th-sun vh-big', rail=[('<span data-c="12" data-d="0">12</span><span class="u">guides</span>', 'Written for people about to spend real money'),
               ('&#8369;<span data-c="0" data-d="0">0</span>', 'What reading them costs'),
               ('<span data-c="0" data-d="0">0</span><span class="u">sales talk</span>', 'Numbers, rules and trade-offs only')]) + f"""
 <section class="sec" id="all">
   <div class="w">
-    <div class="sh r"><h2>Start here.</h2></div>
     <div class="postrow">
 {featured}
     </div>
@@ -317,7 +316,7 @@ def build_contact():
     body = hero(
         "Contact <em>us.</em>",
         "We are a small team in Mandaluyong City. Email, Viber or the form below all reach us, usually within a working day.",
-        f'<a href="#form" class="b b-blue">Send a message {AR}</a><a href="mailto:hello@apolaki.ai" class="b b-glass">hello@apolaki.ai</a>',
+        '',
         px(6961123, 1400, 1050), "Solar technicians working together on a rooftop", variant='compact', kicker='Talk to us', theme='th-sun', rail=[('<span data-c="1" data-d="0">1</span><span class="u">working day</span>', 'How long we take to reply'),
               ('&#8369;<span data-c="0" data-d="0">0</span>', 'What a conversation costs'),
               ('<span data-c="0" data-d="0">0</span><span class="u">cold calls</span>', 'Nobody rings you unless you ask')]) + f"""

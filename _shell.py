@@ -7,7 +7,7 @@ NAV_ITEMS = [
     ("/blog", "Blog", "blog"),
     ("/about", "About", "about"),
     ("/faqs", "FAQ", "faq"),
-    ("/contact", "Contact", "contact"),
+    ("/contact", "Contact us", "contact"),
 ]
 
 AR = ('<svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
@@ -131,9 +131,11 @@ def phero(kicker, h1, sub, ctas, img, alt, rail=None, theme="", variant="band",
                  + '    </div>\n  </div>\n')
 
     head = ('    <div class="pkick r"><span class="pill">%s</span></div>\n'
-            '    <h1 class="r">%s</h1>\n'
-            '    <p class="psub r">%s</p>\n'
-            '    <div class="pcta r">%s</div>\n' % (kicker, h1, sub, ctas))
+            '    <h1 class="r">%s</h1>\n' % (kicker, h1))
+    if sub:
+        head += '    <p class="psub r">%s</p>\n' % sub
+    if ctas:
+        head += '    <div class="pcta r">%s</div>\n' % ctas
 
     sun = '  <div class="sunmark" aria-hidden="true"></div>\n'
     cls = "phero v-%s%s" % (variant, (" " + theme) if theme else "")
@@ -163,10 +165,10 @@ def phero(kicker, h1, sub, ctas, img, alt, rail=None, theme="", variant="band",
                      WAVE_ACCENT.get(theme, "#F1C84B")))
 
     if variant == "bare":
+        sub_html = ('    <p class="psub r">%s</p>\n' % sub) if sub else ''
         return ('<header class="%s">\n  <div class="w">\n'
-                '    <h1 class="r vh-lite">%s</h1>\n'
-                '    <p class="psub r">%s</p>\n'
-                '  </div>\n</header>\n' % (cls, h1, sub))
+                '    <h1 class="r vh-lite">%s</h1>\n%s'
+                '  </div>\n</header>\n' % (cls, h1, sub_html))
 
     if variant == "compact":
         return ('<header class="%s">\n%s  <div class="w">\n%s  </div>\n%s</header>\n'
@@ -328,7 +330,7 @@ FOOTER = """<footer>
         <li><a href="/blog">All guides</a></li></ul></div>
             <div class="fc"><h4>Company</h4><ul>
         <li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/faqs">FAQ</a></li>
-        <li><a href="/contact">Contact</a></li><li><a href="/contact?type=installer">Become a partner</a></li></ul></div>
+        <li><a href="/contact">Contact us</a></li><li><a href="/contact?type=installer">Become a partner</a></li></ul></div>
     </div>
     <div class="fbot">
       <p>&copy; 2026 Apolaki &middot; VESS Corp. &middot; Mandaluyong City, Metro Manila</p>

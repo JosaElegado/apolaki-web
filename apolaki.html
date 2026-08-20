@@ -1745,6 +1745,12 @@ footer .fb img{height:auto;width:min(260px,64%);max-width:none}
   letter-spacing:-.015em;line-height:1.5;color:var(--night);max-width:34ch;margin:0 auto}
 @media(max-width:760px){.vm{grid-template-columns:1fr}}
 
+/* blog: oversized bare-hero headline */
+.v-bare.vh-big{padding-bottom:clamp(26px,3vw,44px)}
+.v-bare.vh-big h1.vh-lite{font-size:clamp(2rem,3.6vw,3.2rem);max-width:20ch;letter-spacing:-.03em;line-height:1.12}
+/* contact: cards row sits close under the form */
+#form + .sec-tight{padding-top:0}
+
 /* ---- single-file router ---- */
 .pg[hidden]{display:none}
 .nv-links a.active{color:var(--gold)}
@@ -1767,7 +1773,7 @@ footer .fb img{height:auto;width:min(260px,64%);max-width:none}
       <a href="#/blog" data-pg="blog">Blog</a>
       <a href="#/about" data-pg="about">About</a>
       <a href="#/faqs" data-pg="faqs">FAQ</a>
-      <a href="#/contact" data-pg="contact">Contact</a>
+      <a href="#/contact" data-pg="contact">Contact us</a>
       <a href="#/home" style="pointer-events:none;opacity:0;width:0;padding:0"></a>
     </div>
     <div class="nv-act">
@@ -1785,7 +1791,7 @@ footer .fb img{height:auto;width:min(260px,64%);max-width:none}
   <a class="ml" href="#/blog" data-pg="blog">Blog <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
   <a class="ml" href="#/about" data-pg="about">About <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
   <a class="ml" href="#/faqs" data-pg="faqs">FAQ <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
-  <a class="ml" href="#/contact" data-pg="contact">Contact <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
+  <a class="ml" href="#/contact" data-pg="contact">Contact us <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
   <div class="mm-b">
     <a href="https://app.apolaki.ai/assessment" class="b b-blue">See my free estimate</a>
     <a href="https://app.apolaki.ai/login" class="b b-line">Log in</a>
@@ -2630,16 +2636,14 @@ footer .fb img{height:auto;width:min(260px,64%);max-width:none}
 </div>
 <div class="pg th-sun" id="pg-blog" hidden>
 
-<header class="phero v-bare th-sun">
+<header class="phero v-bare th-sun vh-big">
   <div class="w">
     <h1 class="r vh-lite">Solar in the Philippines, <em>explained properly.</em></h1>
-    <p class="psub r">No sales talk. Just the numbers, the rules and the trade-offs, written for people deciding whether to spend a few hundred thousand pesos.</p>
   </div>
 </header>
 
 <section class="sec" id="all">
   <div class="w">
-    <div class="sh r"><h2>Start here.</h2></div>
     <div class="postrow">
       <div class="post wide r np">
         <div class="thumb"><span class="tag">Guides</span>
@@ -3017,7 +3021,6 @@ footer .fb img{height:auto;width:min(260px,64%);max-width:none}
     <div class="pkick r"><span class="pill">Talk to us</span></div>
     <h1 class="r">Contact <em>us.</em></h1>
     <p class="psub r">We are a small team in Mandaluyong City. Email, Viber or the form below all reach us, usually within a working day.</p>
-    <div class="pcta r"><a href="#form" class="b b-blue">Send a message <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="mailto:hello@apolaki.ai" class="b b-glass">hello@apolaki.ai</a></div>
   </div>
   <div class="w">
     <div class="prail r">
@@ -3185,7 +3188,7 @@ footer .fb img{height:auto;width:min(260px,64%);max-width:none}
         <li><a href="#/blog">All guides</a></li></ul></div>
             <div class="fc"><h4>Company</h4><ul>
         <li><a href="#/about">About</a></li><li><a href="#/blog">Blog</a></li><li><a href="#/faqs">FAQ</a></li>
-        <li><a href="#/contact">Contact</a></li><li><a href="#/contact?type=installer">Become a partner</a></li></ul></div>
+        <li><a href="#/contact">Contact us</a></li><li><a href="#/contact?type=installer">Become a partner</a></li></ul></div>
     </div>
     <div class="fbot">
       <p>© 2026 Apolaki · VESS Corp. · Mandaluyong City, Metro Manila</p>
