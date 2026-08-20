@@ -1,14 +1,33 @@
-@font-face{font-family:'ApolakiSans';src:url('../fonts/figtree.woff2') format('woff2');font-weight:300 900;font-style:normal;font-display:swap}
+@font-face{font-family:'ApolakiSans';src:url('../fonts/apolaki-sans-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'ApolakiSans';src:url('../fonts/apolaki-sans-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'ApolakiSans';src:url('../fonts/apolaki-sans-600.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'ApolakiSans';src:url('../fonts/apolaki-sans-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'ApolakiSerif';src:url('../fonts/apolaki-serif-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
 
 :root{
-  --ink:#0A1729;
+  /* Apolaki colour ratio, per Josa: blue carries the site.
+     50%% #0E6CBD · 12.5%% #FDFDFD · 12.5%% #F2C94C · 12.5%% #193A70 · 12.5%% #00051C */
+  --paper-w:#FDFDFD;
+  --ink-black:#00051C;
+
+  /* sampled from the Apolaki pitch deck and social posts */
+  --cream:#FCF2D3;        /* soft tint only, used sparingly now */
+  --cream-2:#FDF7E4;      /* lighter cream for large fields */
+  --sky-1:#F1F6FA;        /* pale blue tint */
+  --sky-2:#E8F1F9;
+  --sky-3:#E3EEF8;
+  --hi:#FFDE58;           /* bright highlight yellow */
+
+  --serif:var(--disp);
+  --ink:#12203A;
   --ink-70:#4A5261;
-  --ink-45:#7C8493;
+  --ink-45:#6B7383;
   --ink-25:#AEB4BF;
+  --ink-35:#6E7686;
   --paper:#FFFFFF;
   --paper-2:#F8FAFC;
   --paper-3:#EBF1F8;
-  --night:#0A2247;
+  --night:#193A70;
   --night-2:#143460;
   --blue:#0E6CBD;
   --blue-lt:#3E92DC;
@@ -128,7 +147,7 @@ p{color:var(--ink-70);font-size:.975rem;line-height:1.62}
 .hero-scrim{
   position:absolute;inset:0;z-index:2;
   background:
-    linear-gradient(180deg,rgba(6,22,46,.86) 0%,rgba(8,28,58,.32) 26%,rgba(8,28,58,.30) 48%,rgba(7,24,48,.88) 84%,rgba(10,34,71,.97) 100%),
+    linear-gradient(180deg,rgba(6,22,46,.86) 0%,rgba(8,28,58,.32) 26%,rgba(8,28,58,.30) 48%,rgba(7,24,48,.88) 84%,rgba(25,58,112,.97) 100%),
     linear-gradient(96deg,rgba(8,28,58,.72) 0%,rgba(8,28,58,.16) 56%,transparent 82%);
 }
 .hero-in{position:relative;z-index:3;width:100%;padding-bottom:clamp(28px,4vw,44px);padding-top:calc(var(--nav) + 60px)}
@@ -161,9 +180,9 @@ p{color:var(--ink-70);font-size:.975rem;line-height:1.62}
 
 /* ---------- how (sticky scroll) ---------- */
 .how{border-top:1px solid var(--hair)}
-.how-grid{display:grid;grid-template-columns:1fr .92fr;gap:clamp(40px,5vw,72px);margin-top:clamp(44px,5vw,70px);align-items:start}
+.how-grid{display:grid;grid-template-columns:1fr .92fr;gap:clamp(40px,5vw,72px);margin-top:clamp(30px,3.4vw,48px);align-items:start}
 .how-steps{display:flex;flex-direction:column}
-.hstep{padding-block:clamp(34px,6vh,58px);min-height:44vh;display:flex;flex-direction:column;justify-content:center;border-top:1px solid var(--hair);opacity:.32;transition:opacity .8s var(--e)}
+.hstep{padding-block:clamp(20px,3.4vh,38px);min-height:31vh;display:flex;flex-direction:column;justify-content:center;border-top:1px solid var(--hair);opacity:.32;transition:opacity .8s var(--e)}
 .hstep:first-child{border-top:none;padding-top:0}
 .hstep.on{opacity:1}
 .hstep .k{
@@ -239,9 +258,9 @@ p{color:var(--ink-70);font-size:.975rem;line-height:1.62}
 .band p{color:rgba(255,255,255,.62)}
 .band-media{position:absolute;inset:0;z-index:0;opacity:.55}
 .band-media img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.band-fb{position:absolute;inset:0;background:radial-gradient(78% 110% at 82% 4%,rgba(20,130,220,.95),transparent 60%),radial-gradient(66% 86% at 6% 104%,rgba(242,201,76,.30),transparent 62%),linear-gradient(120deg,#0A2247,#16457C 62%,#0A2247)}
+.band-fb{position:absolute;inset:0;background:radial-gradient(78% 110% at 82% 4%,rgba(20,130,220,.95),transparent 60%),radial-gradient(66% 86% at 6% 104%,rgba(242,201,76,.30),transparent 62%),linear-gradient(120deg,#193A70,#16457C 62%,#193A70)}
 .band .w{position:relative;z-index:2}
-.band-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,34,71,.97) 0%,rgba(10,34,71,.82) 40%,rgba(10,34,71,.42) 100%),linear-gradient(180deg,rgba(10,34,71,.68),transparent 32%,rgba(10,34,71,.74))}
+.band-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(25,58,112,.97) 0%,rgba(25,58,112,.82) 40%,rgba(25,58,112,.42) 100%),linear-gradient(180deg,rgba(25,58,112,.68),transparent 32%,rgba(25,58,112,.74))}
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,20px);margin-top:clamp(44px,5vw,68px)}
 .th{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.11);border-radius:20px;
     padding:clamp(26px,2.6vw,32px) clamp(22px,2.2vw,28px);display:flex;flex-direction:column;
@@ -291,7 +310,7 @@ p{color:var(--ink-70);font-size:.975rem;line-height:1.62}
 .cta{padding-bottom:clamp(88px,10vw,140px)}
 .cta-media{position:absolute;inset:0;z-index:0;overflow:hidden}
 .cta-media img{width:100%;height:100%;object-fit:cover;opacity:.34}
-.cta-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,34,71,.95),rgba(10,34,71,.74) 42%,rgba(10,34,71,.97))}
+.cta-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(25,58,112,.95),rgba(25,58,112,.74) 42%,rgba(25,58,112,.97))}
 .cta .w{position:relative;z-index:2}
 .cta h2{color:#fff;max-width:18ch;margin-inline:auto;text-wrap:balance}
 .cta p{color:rgba(255,255,255,.62);margin:18px auto 0;max-width:42ch}
@@ -347,7 +366,7 @@ footer{background:var(--night);color:#fff;padding-top:clamp(52px,6vw,76px)}
   .cmp .cl{font-size:.6rem}
   .cmp .cn{font-size:.74rem}
   .cmp .cr{grid-template-columns:42px 1fr auto;gap:7px}
-  .hstep{padding-block:22px;min-height:34vh;justify-content:flex-start}
+  .hstep{padding-block:16px;min-height:25vh;justify-content:flex-start}
   .phone{width:238px;height:432px;border-radius:36px;padding:7px}
   .phone::after{top:15px;width:62px;height:4px}
   .scr{border-radius:29px}
@@ -386,10 +405,10 @@ footer{background:var(--night);color:#fff;padding-top:clamp(52px,6vw,76px)}
 .phero-fb{position:absolute;inset:0;background:
   radial-gradient(72% 100% at 80% 0%,rgba(20,130,220,.9),transparent 62%),
   radial-gradient(60% 80% at 4% 100%,rgba(242,201,76,.26),transparent 62%),
-  linear-gradient(125deg,#0A2247,#16457C 60%,#0A2247)}
+  linear-gradient(125deg,#193A70,#16457C 60%,#193A70)}
 .phero-scrim{position:absolute;inset:0;z-index:1;background:
-  linear-gradient(92deg,rgba(10,34,71,.95) 0%,rgba(10,34,71,.78) 46%,rgba(10,34,71,.42) 100%),
-  linear-gradient(180deg,rgba(10,34,71,.72),transparent 34%,rgba(10,34,71,.66))}
+  linear-gradient(92deg,rgba(25,58,112,.95) 0%,rgba(25,58,112,.78) 46%,rgba(25,58,112,.42) 100%),
+  linear-gradient(180deg,rgba(25,58,112,.72),transparent 34%,rgba(25,58,112,.66))}
 .phero .w{position:relative;z-index:2}
 .phero h1{color:#fff;max-width:19ch;text-wrap:balance}
 .phero h1 em{font-style:normal;color:var(--gold)}
@@ -480,7 +499,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;heigh
 input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--blue);
   border:3px solid #fff;box-shadow:0 1px 5px rgba(10,23,41,.28);cursor:grab;border-color:#fff}
 input[type=range]:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
-.fld-scale{display:flex;justify-content:space-between;margin-top:8px;font-size:.72rem;color:var(--ink-25)}
+.fld-scale{display:flex;justify-content:space-between;margin-top:8px;font-size:.72rem;color:var(--ink-35)}
 .seg{display:flex;gap:6px;flex-wrap:wrap}
 .seg button{flex:1;min-width:56px;padding:9px 6px;border-radius:10px;border:1px solid var(--hair);
   font-family:var(--disp);font-weight:600;font-size:.83rem;color:var(--ink-70);transition:.35s var(--e)}
@@ -571,7 +590,7 @@ details.tbl th{color:var(--ink-45);font-weight:600;font-size:.74rem;text-transfo
   display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:600;font-size:.85rem}
 .brief-act .ba2{width:96px;height:40px;border-radius:100px;border:1px solid var(--hair);color:var(--ink-45);
   display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:600;font-size:.85rem}
-.brief-note{margin-top:12px;font-size:.75rem;color:var(--ink-25);text-align:center}
+.brief-note{margin-top:12px;font-size:.75rem;color:var(--ink-35);text-align:center}
 .split-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px);align-items:center;
   margin-top:clamp(40px,5vw,60px)}
 .split-2 .s2-vis{display:flex;justify-content:center}
@@ -613,6 +632,20 @@ details.tbl th{color:var(--ink-45);font-weight:600;font-size:.74rem;text-transfo
    LIGHT & FRESH THEME  — overrides
    ============================================================ */
 :root{
+  /* Apolaki colour ratio, per Josa: blue carries the site.
+     50%% #0E6CBD · 12.5%% #FDFDFD · 12.5%% #F2C94C · 12.5%% #193A70 · 12.5%% #00051C */
+  --paper-w:#FDFDFD;
+  --ink-black:#00051C;
+
+  /* sampled from the Apolaki pitch deck and social posts */
+  --cream:#FCF2D3;        /* soft tint only, used sparingly now */
+  --cream-2:#FDF7E4;      /* lighter cream for large fields */
+  --sky-1:#F1F6FA;        /* pale blue tint */
+  --sky-2:#E8F1F9;
+  --sky-3:#E3EEF8;
+  --hi:#FFDE58;           /* bright highlight yellow */
+
+  --serif:var(--disp);
   --sun-50:#FFFDF6; --sun-100:#FFF7E2; --sun-200:#FFEFC4; --sun-300:#FFE39A;
   --cream:#FFFCF5;
 }
@@ -648,16 +681,33 @@ section+section{border-top:0}
 .phero-shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .pkicker{display:none}
 
-/* nav must read on a light hero */
-.nv .nv-lg{display:none}
-.nv .nv-lg.dark{display:block}
-.nv .nv-links a{color:var(--ink-70)}
-.nv .nv-links a:hover{color:var(--ink);background:var(--paper-3)}
-.nv .nv-act .lgin{color:var(--ink)}
-.nv .nv-act .lgin:hover{background:var(--paper-3)}
-.nv .b-glass{background:var(--ink);color:#fff;border-color:var(--ink)}
-.nv .b-glass:hover{background:#22304a}
-.nv .bg span{background:var(--ink)}
+/* nav must read on a light hero. Scoped: pages with a DARK hero (.hero) must
+   keep the white lockup and light links, so these rules must not apply there. */
+body:has(.phero) .nv .nv-lg,
+body:has(.chero) .nv .nv-lg{display:none}
+body:has(.phero) .nv .nv-lg.dark,
+body:has(.chero) .nv .nv-lg.dark{display:block}
+body:has(.phero) .nv .nv-links a,
+body:has(.chero) .nv .nv-links a{color:var(--ink-70)}
+body:has(.phero) .nv .nv-links a:hover,
+body:has(.chero) .nv .nv-links a:hover{color:var(--ink);background:var(--paper-3)}
+body:has(.phero) .nv .nv-act .lgin,
+body:has(.chero) .nv .nv-act .lgin{color:var(--ink)}
+body:has(.phero) .nv .nv-act .lgin:hover,
+body:has(.chero) .nv .nv-act .lgin:hover{background:var(--paper-3)}
+body:has(.phero) .nv .b-glass,
+body:has(.chero) .nv .b-glass{background:var(--ink);color:#fff;border-color:var(--ink)}
+body:has(.phero) .nv .b-glass:hover,
+body:has(.chero) .nv .b-glass:hover{background:#22304a}
+body:has(.phero) .nv .bg span,
+body:has(.chero) .nv .bg span{background:var(--ink)}
+/* no :has support: fall back to the light treatment, which is the common case */
+@supports not selector(body:has(.phero)){
+  .nv .nv-lg{display:none} .nv .nv-lg.dark{display:block}
+  .nv .nv-links a{color:var(--ink-70)} .nv .nv-act .lgin{color:var(--ink)}
+  .nv .b-glass{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .nv .bg span{background:var(--ink)}
+}
 .nv-links a.active{color:var(--blue)}
 
 /* alternate light section tint */
@@ -716,7 +766,7 @@ section+section{border-top:0}
 .callband .cb-act{display:flex;gap:9px;flex-wrap:wrap}
 
 /* dark bits soften on the light theme */
-.cta{background:linear-gradient(155deg,#0A2247,#16457C 58%,#0A2247)}
+.cta{background:linear-gradient(155deg,#193A70,#16457C 58%,#193A70)}
 .ba-col.after,.tile.lead,.card.big{background:var(--night)}
 
 @media(max-width:920px){
@@ -860,3 +910,793 @@ body{background:#fff}
 .legal h2{font-size:1.18rem;margin:34px 0 10px}
 .legal h2:first-child{margin-top:0}
 .legal p{font-size:.96rem;line-height:1.72;color:var(--ink-70);margin-bottom:12px}
+
+/* ===== catalyst hero: three frames on landing ===== */
+.chero{position:relative;padding:calc(var(--nav) + clamp(34px,3.6vw,54px)) 0 clamp(44px,4.4vw,64px);
+  background:linear-gradient(172deg,#FFFFFF 0%,#F1F7FD 40%,#FFFFFF 100%);overflow:hidden}
+.chero:before{content:"";position:absolute;top:-14%;right:-6%;width:52vw;height:52vw;border-radius:50%;
+  background:radial-gradient(circle,rgba(110,175,240,.30),rgba(110,175,240,0) 68%);pointer-events:none}
+.chero:after{content:"";position:absolute;top:6%;left:-10%;width:38vw;height:38vw;border-radius:50%;
+  background:radial-gradient(circle,rgba(242,201,76,.30),rgba(242,201,76,0) 68%);pointer-events:none}
+.chero .w{position:relative;z-index:1}
+.chero-top{max-width:min(100%,72ch);margin-bottom:clamp(26px,2.6vw,38px)}
+.chero-top h1{font-size:clamp(1.86rem,3.1vw,2.72rem);line-height:1.1;letter-spacing:-.024em;margin-bottom:13px}
+.chero-top h1 em{font-style:normal;color:var(--blue)}
+.chero-top p{font-size:clamp(1rem,1.15vw,1.12rem);line-height:1.6;color:var(--ink-70);max-width:56ch}
+
+.cframes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.5vw,22px)}
+.cf.r{opacity:0;transform:translateY(30px) scale(.982)}
+.cf.r.in{opacity:1;transform:none}
+.cf{position:relative;display:flex;flex-direction:column;border:1px solid var(--hair);border-radius:22px;
+  overflow:hidden;background:#fff;text-decoration:none;color:inherit;
+  transition:transform .55s var(--e),box-shadow .55s var(--e),border-color .55s var(--e)}
+.cf.r.in:hover,.cf:hover{transform:translateY(-6px);box-shadow:0 30px 64px -30px rgba(25,58,112,.34);border-color:transparent}
+.cf-media{position:relative;aspect-ratio:16/10;overflow:hidden;background:linear-gradient(150deg,#DCEBF9,#F6E7B4)}
+.cf-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform 1.1s var(--e)}
+.cf:hover .cf-media img{transform:scale(1.055)}
+.cf-media:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(25,58,112,.62) 0%,rgba(25,58,112,.06) 52%,transparent 100%)}
+.cf-tag{position:absolute;left:16px;bottom:14px;z-index:2;color:#fff;font-family:var(--disp);font-weight:700;
+  font-size:.66rem;letter-spacing:.15em;text-transform:uppercase}
+.cf-n{position:absolute;right:14px;top:14px;z-index:2;width:30px;height:30px;border-radius:50%;
+  display:grid;place-items:center;background:rgba(255,255,255,.9);color:var(--night);
+  font-family:var(--disp);font-weight:700;font-size:.74rem}
+.cf-body{padding:clamp(20px,2vw,26px) clamp(20px,2vw,26px) clamp(22px,2.2vw,28px);
+  display:flex;flex-direction:column;flex:1}
+.cf-body h2{font-size:clamp(1.06rem,1.35vw,1.28rem);line-height:1.24;margin-bottom:9px}
+.cf-body p{font-size:.9rem;line-height:1.6;color:var(--ink-70);flex:1}
+.cf-go{margin-top:18px;display:inline-flex;align-items:center;gap:8px;font-family:var(--disp);
+  font-weight:600;font-size:.86rem;color:var(--blue)}
+.cf-go svg{transition:transform .45s var(--e)}
+.cf:hover .cf-go svg{transform:translateX(4px)}
+
+.cbar{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,26px);
+  margin-top:clamp(34px,3.6vw,52px);padding-top:clamp(26px,2.8vw,36px);border-top:1px solid var(--hair)}
+.cbar .n{font-size:clamp(1.3rem,2vw,1.72rem);font-weight:700;color:var(--night);letter-spacing:-.02em}
+.cbar .n .u{font-size:.56em;font-weight:600;color:var(--ink-45);margin-left:5px;letter-spacing:0}
+.cbar .l{font-size:.83rem;line-height:1.5;color:var(--ink-70);margin-top:5px;max-width:34ch}
+
+@media(max-width:900px){
+  .cframes{grid-template-columns:1fr;gap:16px}
+  .cf-media{aspect-ratio:16/9}
+  .cbar{grid-template-columns:1fr;gap:18px}
+  .chero{padding-top:calc(var(--nav) + 40px)}
+}
+
+/* three-up frames used as a section rather than a hero */
+.three-up{position:relative;padding:clamp(34px,3.6vw,54px) 0 clamp(58px,6.2vw,90px);
+  background:linear-gradient(180deg,#FFFFFF 0%,#F3F8FD 100%);overflow:hidden}
+/* dark band runs from the hero down to the cards' waistline, so the cards sit
+   ON the seam instead of floating below it. Height is set by JS; 57% is the
+   no-JS fallback. */
+.three-up:before{content:"";position:absolute;left:0;right:0;top:-1px;height:var(--dband,57%);
+  background:linear-gradient(180deg,#193A70 0%,#102F58 78%,#193A70 100%)}
+.three-up:after{content:"";position:absolute;left:50%;top:-18%;width:70vw;height:46vw;
+  transform:translateX(-50%);pointer-events:none;
+  background:radial-gradient(ellipse at 50% 40%,rgba(242,201,76,.20),rgba(242,201,76,0) 62%)}
+.three-up .w{position:relative;z-index:2}
+.three-up .sh{margin-bottom:clamp(26px,2.8vw,40px)}
+.three-up .sh h2{color:#fff}
+.three-up .sh p{color:rgba(255,255,255,.74)}
+.three-up .cf{box-shadow:0 34px 70px -34px rgba(25,58,112,.62)}
+.three-up .cf:hover{box-shadow:0 44px 84px -32px rgba(25,58,112,.7)}
+/* each card's photo drifts at its own rate while you scroll */
+.cf-media img{will-change:transform}
+.cf-media.px img{transform:translate3d(0,var(--py,0),0) scale(1.1)}
+.cf:hover .cf-media.px img{transform:translate3d(0,var(--py,0),0) scale(1.14)}
+
+
+/* ============ SECTION BREATHERS ============
+   Three ways to give the eye a rest between dense sections:
+   .strip   full-bleed photo, no words
+   .qband   one big quote over a darkened photo
+   .bigtype one oversized line of type, no photo                         */
+
+.strip{position:relative;height:clamp(190px,23vw,340px);overflow:hidden;background:var(--night)}
+.strip img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transform:translate3d(0,var(--py,0),0) scale(1.16);will-change:transform}
+.strip:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(100deg,rgba(25,58,112,.30),rgba(25,58,112,0) 55%)}
+.strip .cap{position:absolute;left:0;right:0;bottom:clamp(16px,2vw,26px);z-index:2}
+.strip .cap span{display:inline-block;font-family:var(--disp);font-weight:600;font-size:.76rem;
+  letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.86);
+  background:rgba(25,58,112,.42);backdrop-filter:blur(6px);padding:7px 14px;border-radius:100px}
+
+.qband{position:relative;padding:clamp(64px,8vw,120px) 0;overflow:hidden;background:var(--night)}
+.qband img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.34;
+  transform:translate3d(0,var(--py,0),0) scale(1.14);will-change:transform}
+.qband:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(25,58,112,.78),rgba(25,58,112,.9))}
+.qband .w{position:relative;z-index:2}
+.qband .qm{display:block;font-family:var(--disp);font-weight:700;font-size:clamp(2.6rem,5vw,4.4rem);
+  line-height:.7;color:var(--gold);margin-bottom:10px}
+.qband blockquote{font-family:var(--disp);font-weight:600;letter-spacing:-.028em;color:#fff;
+  font-size:clamp(1.4rem,3.2vw,2.5rem);line-height:1.2;max-width:20ch;margin:0}
+.qband blockquote em{font-style:normal;color:var(--gold)}
+.qband cite{display:block;margin-top:clamp(18px,2vw,26px);font-style:normal;font-size:.88rem;
+  color:rgba(255,255,255,.62)}
+.qband.wide blockquote{max-width:26ch}
+
+.bigtype{padding:clamp(58px,7vw,104px) 0;background:linear-gradient(168deg,#FFFCF3,#FFF3D6 58%,#FFFFFF)}
+.bigtype p{font-family:var(--disp);font-weight:600;letter-spacing:-.03em;color:var(--night);
+  font-size:clamp(1.5rem,3.6vw,2.9rem);line-height:1.18;max-width:22ch}
+.bigtype p em{font-style:normal;color:var(--blue)}
+.bigtype .sub{font-family:var(--body);font-weight:400;font-size:clamp(.96rem,1.1vw,1.06rem);
+  line-height:1.62;color:var(--ink-70);max-width:52ch;margin-top:16px;letter-spacing:0}
+.bigtype.sky{background:linear-gradient(168deg,#F7FBFF,#DFEEFB 58%,#FFFFFF)}
+.bigtype.sky p em{color:var(--blue)}
+
+@media(max-width:760px){
+  .qband blockquote,.qband.wide blockquote{max-width:none}
+  .bigtype p{max-width:none}
+}
+
+/* ==========================================================================
+   ONE PAGE OPENER FOR EVERY SUB-PAGE  —  light, warm, and identical in
+   structure so index and sub-pages read as the same website.
+   ========================================================================== */
+.phero{padding:calc(var(--nav) + clamp(38px,4.6vw,66px)) 0 0;overflow:hidden;position:relative}
+.phero-in,.phero-shot,.phero-media,.phero-scrim{display:none!important}
+
+/* the sun: our signature mark, rises slowly behind the headline */
+.sunmark{position:absolute;top:-14%;right:-6%;width:min(620px,64vw);aspect-ratio:1;pointer-events:none;
+  background:
+    radial-gradient(circle at 50% 50%,var(--sunglow,rgba(242,201,76,.42)) 0%,transparent 58%),
+    conic-gradient(from 0deg,transparent 0 6deg,var(--sunray,rgba(242,201,76,.16)) 6deg 8deg,transparent 8deg 30deg);
+  border-radius:50%;animation:sunspin 190s linear infinite;opacity:.9}
+@keyframes sunspin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.sunmark{animation:none}}
+.th-sky .sunmark{--sunglow:rgba(96,170,240,.40);--sunray:rgba(96,170,240,.15)}
+.th-white .sunmark{--sunglow:rgba(120,180,244,.34);--sunray:rgba(120,180,244,.13)}
+
+.phero .pkick{display:flex;align-items:center;gap:14px;margin-bottom:clamp(14px,1.8vw,22px)}
+.phero .pkick span{font-family:var(--disp);font-weight:600;font-size:.67rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink-45);white-space:nowrap}
+.phero .pkick i{flex:1;height:1px;background:var(--hair)}
+.phero h1{color:var(--ink);max-width:19ch;font-size:clamp(2rem,4.3vw,3.5rem);line-height:1.03;
+  letter-spacing:-.035em}
+.phero .psub{margin-top:16px;font-size:clamp(1rem,1.2vw,1.1rem);color:var(--ink-70);max-width:54ch;line-height:1.6}
+.phero .pcta{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(22px,2.6vw,32px)}
+
+/* wide photo band, bleeding past the text column */
+.pband{margin-top:clamp(30px,3.6vw,50px);padding-inline:clamp(12px,2vw,26px)}
+.pband-in{position:relative;max-width:1560px;margin:0 auto;border-radius:clamp(16px,1.8vw,26px);
+  overflow:hidden;aspect-ratio:24/9;background:linear-gradient(140deg,var(--sun-200,#FFE9AE),#CFE6FA)}
+.pband-in img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transform:translate3d(0,var(--py,0),0) scale(1.1);will-change:transform}
+@media(max-width:760px){.pband-in{aspect-ratio:16/10}}
+
+/* hairline stat rail, no tiles */
+.prail{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--hair);
+  margin-top:clamp(30px,3.4vw,46px)}
+.prail > div{border-left:1px solid var(--hair);padding:clamp(18px,2vw,26px) clamp(14px,1.8vw,26px) clamp(26px,3vw,40px)}
+.prail > div:first-child{border-left:0;padding-left:0}
+.prail .pn{font-family:var(--disp);font-weight:700;color:var(--night);letter-spacing:-.032em;line-height:1;
+  font-size:clamp(1.45rem,2.7vw,2.3rem)}
+.prail .pn .u{font-size:.42em;font-weight:600;color:var(--ink-45);margin-left:5px;letter-spacing:0}
+.prail .pl{margin-top:8px;font-size:.82rem;line-height:1.5;color:var(--ink-70);max-width:28ch}
+@media(max-width:760px){
+  .phero h1,.phero .psub{max-width:none}
+  .prail{grid-template-columns:1fr}
+  .prail > div{border-left:0;border-top:1px solid var(--hair);padding-left:0;padding-bottom:20px}
+  .prail > div:first-child{border-top:0}
+}
+
+/* ---------- fact ticker: the same band on every page ---------- */
+.tick{background:var(--night);color:#fff;overflow:hidden;padding:clamp(13px,1.5vw,18px) 0;
+  border-block:1px solid rgba(255,255,255,.1)}
+.tick-tape{display:flex;width:max-content;animation:tickrun 46s linear infinite}
+.tick:hover .tick-tape{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.tick-tape{animation:none}}
+@keyframes tickrun{to{transform:translateX(-50%)}}
+.tick-run{display:flex;align-items:center;flex:none}
+.tick-run span{font-family:var(--disp);font-weight:600;font-size:clamp(.82rem,1vw,.95rem);
+  letter-spacing:-.012em;white-space:nowrap;padding:0 clamp(16px,2vw,26px);color:rgba(255,255,255,.9)}
+.tick-run i{width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none;display:block}
+
+/* a little grain so gradients read as crafted rather than default CSS */
+.phero:before,.stmt:before,.qband:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+  opacity:.5;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E")}
+.phero .w,.phero .pband,.stmt .w,.qband .w{position:relative;z-index:2}
+
+/* stat rows adopt the opener's rail language so a page cannot contain two
+   different treatments of the same idea */
+.statrow{grid-template-columns:repeat(3,1fr);gap:0;background:none;border:0;
+  border-top:1px solid var(--hair);border-radius:0;overflow:visible}
+.statrow .stat-c{background:none!important;border-left:1px solid var(--hair);
+  padding:clamp(18px,2vw,26px) clamp(14px,1.8vw,26px) clamp(22px,2.4vw,32px)}
+.statrow .stat-c:first-child{border-left:0;padding-left:0}
+.statrow.on-dark{border-top-color:rgba(255,255,255,.18)}
+.statrow.on-dark .stat-c{border-left-color:rgba(255,255,255,.18)}
+@media(max-width:760px){
+  .statrow .stat-c{border-left:0;border-top:1px solid var(--hair);padding-left:0}
+  .statrow .stat-c:first-child{border-top:0}
+}
+
+/* legal pages keep the opener's rhythm without the photo band */
+.phero .ph-in{padding-bottom:clamp(30px,3.6vw,50px)}
+.phero .ph-in h1{max-width:20ch}
+.phero .ph-in .lead{margin-top:14px;font-size:clamp(1rem,1.2vw,1.1rem);color:var(--ink-70);max-width:54ch;line-height:1.6}
+
+/* photo dividers: brand blue wash, no floating label */
+.strip.blued:after{background:linear-gradient(150deg,rgba(14,108,189,.72),rgba(25,58,112,.82))}
+.strip.blued img{filter:saturate(.35) contrast(1.06)}
+.strip.blued .cap{display:none}
+
+/* the bill bar sits on the dark hero */
+.hero .billbar{margin-top:clamp(42px,5vh,58px)}
+.hero .billnote{margin-top:16px;font-size:.82rem;color:rgba(255,255,255,.5)}
+
+/* ==========================================================================
+   FIVE OPENER COMPOSITIONS, ONE BRAND
+   Shared: kicker rule, type scale, palette, rail. Different: arrangement.
+   ========================================================================== */
+
+/* -- split: installers. Headline left, tall blue-washed portrait right -- */
+.v-split .psplit{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(30px,5vw,72px);
+  align-items:center;padding-bottom:clamp(34px,4vw,56px)}
+.v-split .psplit-i{position:relative;aspect-ratio:4/5;overflow:hidden;
+  border-radius:clamp(14px,1.6vw,22px);background:var(--night)}
+.v-split .psplit-i img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:saturate(.4) contrast(1.05)}
+.v-split .psplit-i:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(160deg,rgba(14,108,189,.62),rgba(25,58,112,.80))}
+.v-split .psplit-i:before{content:"";position:absolute;z-index:2;left:0;bottom:0;width:38%;height:4px;
+  background:var(--gold)}
+.v-split h1{max-width:15ch}
+
+/* -- numeric: financing. No photo. One figure does the work. -- */
+.v-numeric .pnum{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(30px,5vw,74px);
+  align-items:center;padding-bottom:clamp(36px,4.2vw,60px)}
+.v-numeric .pfig{border-left:3px solid var(--gold);padding-left:clamp(20px,2.4vw,34px)}
+.v-numeric .pfig-n{font-family:var(--disp);font-weight:700;line-height:.86;letter-spacing:-.05em;
+  color:var(--night);font-size:clamp(3.6rem,9vw,7.4rem)}
+.v-numeric .pfig-n .u{font-size:.3em;letter-spacing:-.02em;color:var(--ink-45);margin-left:.05em}
+.v-numeric .pfig-l{margin-top:14px;font-family:var(--disp);font-weight:500;font-size:clamp(.98rem,1.2vw,1.1rem);
+  line-height:1.55;color:var(--ink-70);max-width:34ch}
+.v-numeric h1{max-width:14ch}
+
+/* -- immersive: about. Photo behind the words. -- */
+.v-immersive{position:relative;background:var(--night);isolation:isolate;
+  padding-top:calc(var(--nav) + clamp(64px,9vw,120px));padding-bottom:clamp(40px,5vw,70px)}
+.v-immersive .pimm-bg{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.v-immersive .pimm-bg img{width:100%;height:100%;object-fit:cover;opacity:.5;
+  transform:translate3d(0,var(--py,0),0) scale(1.08)}
+.v-immersive:after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(25,58,112,.72),rgba(25,58,112,.90))}
+.v-immersive h1,.v-immersive .pkick span{color:#fff}
+.v-immersive h1{max-width:16ch}
+.v-immersive h1 em{color:var(--gold)}
+.v-immersive .psub{color:rgba(255,255,255,.80)}
+.v-immersive .pkick i{background:rgba(255,255,255,.24)}
+.v-immersive .prail{border-top-color:rgba(255,255,255,.2)}
+.v-immersive .prail > div{border-left-color:rgba(255,255,255,.2)}
+.v-immersive .prail .pn{color:#fff}
+.v-immersive .prail .pn .u,.v-immersive .prail .pl{color:rgba(255,255,255,.66)}
+.v-immersive .b-glass{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.28);color:#fff}
+
+/* -- compact: blog, faq, contact. Get out of the way. -- */
+.v-compact{padding-bottom:clamp(14px,2vw,26px)}
+.v-compact h1{font-size:clamp(1.9rem,3.6vw,2.9rem);max-width:20ch}
+.v-compact .psub{max-width:58ch}
+.v-compact .prail{margin-top:clamp(24px,2.8vw,38px)}
+
+/* serif is the second voice: pull quotes, figure captions, editorial asides */
+.qband blockquote{font-family:var(--disp);font-weight:600;letter-spacing:-.026em;line-height:1.2}
+
+
+@media(max-width:860px){
+  .v-split .psplit,.v-numeric .pnum{grid-template-columns:1fr;gap:26px}
+  .v-split .psplit-i{aspect-ratio:16/10}
+  .v-numeric .pfig{border-left:0;border-top:3px solid var(--gold);padding:20px 0 0}
+  .v-split h1,.v-numeric h1,.v-immersive h1{max-width:none}
+}
+
+/* ---------- the bill bar: one ruled line, not a boxed form ---------- */
+.billbar{display:flex;align-items:stretch;max-width:780px;
+  border-bottom:2px solid rgba(255,255,255,.32);transition:border-color .4s var(--e)}
+.billbar:focus-within{border-bottom-color:var(--gold)}
+.billbar .bf{position:relative;display:flex;align-items:center;flex:0 0 auto}
+.billbar .bf.grow{flex:1 1 auto;min-width:0}
+.billbar .bf + .bf:before{content:"";position:absolute;left:0;top:24%;bottom:24%;width:1px;
+  background:rgba(255,255,255,.22)}
+.billbar label{position:absolute;left:0;top:-20px;font-family:var(--disp);font-weight:600;font-size:.62rem;
+  letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);white-space:nowrap}
+.billbar .bf.grow label{left:20px}
+.billbar .peso{font-family:var(--disp);font-weight:600;color:rgba(255,255,255,.6);
+  font-size:clamp(1.3rem,2.1vw,1.75rem);padding-right:6px;line-height:1}
+.billbar input,.billbar select{background:none;border:0;outline:0;color:#fff;font-family:var(--disp);
+  font-weight:600;letter-spacing:-.02em;padding:15px 0;min-width:0}
+.billbar input#bAmt{font-size:clamp(1.3rem,2.1vw,1.75rem);width:6ch;flex:none}
+.billbar input#bAddr{font-size:clamp(.95rem,1.1vw,1.05rem);font-weight:500;letter-spacing:0;
+  padding-left:20px;width:100%}
+.billbar input::placeholder{color:rgba(255,255,255,.32)}
+.billbar select{font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  color:rgba(255,255,255,.68);padding-left:18px;padding-right:22px;width:auto;cursor:pointer;
+  -webkit-appearance:none;appearance:none}
+.billbar select option{color:var(--ink);background:#fff}
+.billbar .bf.util:after{content:"";position:absolute;right:6px;top:50%;width:6px;height:6px;margin-top:-5px;
+  border-right:1.6px solid rgba(255,255,255,.5);border-bottom:1.6px solid rgba(255,255,255,.5);
+  transform:rotate(45deg);pointer-events:none}
+.billbar .bgo{flex:none;display:inline-flex;align-items:center;gap:9px;background:var(--gold);
+  color:var(--night);border:0;cursor:pointer;font-family:var(--disp);font-weight:700;font-size:.9rem;
+  letter-spacing:-.01em;padding:0 clamp(16px,1.8vw,24px);margin-left:16px;border-radius:0;
+  transition:background .35s var(--e)}
+.billbar .bgo:hover{background:#FFD966}
+.billbar .bgo svg{transition:transform .35s var(--e)}
+.billbar .bgo:hover svg{transform:translateX(3px)}
+@media(max-width:820px){
+  .billbar{flex-wrap:wrap;border-bottom:0;max-width:none}
+  .billbar .bf{border-bottom:2px solid rgba(255,255,255,.3);width:100%;margin-top:26px}
+  .billbar .bf + .bf:before{display:none}
+  .billbar .bf.grow label{left:0}
+  .billbar input#bAddr,.billbar select{padding-left:0}
+  .billbar .bgo{margin:20px 0 0;width:100%;justify-content:center;padding:15px}
+}
+
+/* the immersive opener is dark, so the nav has to read light again */
+body:has(.v-immersive) .nv .nv-lg{display:block}
+body:has(.v-immersive) .nv .nv-lg.dark{display:none}
+body:has(.v-immersive) .nv .nv-links a{color:rgba(255,255,255,.72)}
+body:has(.v-immersive) .nv .nv-links a:hover{color:#fff;background:rgba(255,255,255,.1)}
+body:has(.v-immersive) .nv .nv-links a.active{color:var(--gold)}
+body:has(.v-immersive) .nv .nv-act .lgin{color:rgba(255,255,255,.86)}
+body:has(.v-immersive) .nv .nv-act .lgin:hover{background:rgba(255,255,255,.1)}
+body:has(.v-immersive) .nv .b-glass{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.3);color:#fff}
+body:has(.v-immersive) .nv .b-glass:hover{background:rgba(255,255,255,.22)}
+body:has(.v-immersive) .nv .bg span{background:#fff}
+body:has(.v-immersive) .nv.solid .nv-lg{display:none}
+body:has(.v-immersive) .nv.solid .nv-lg.dark{display:block}
+body:has(.v-immersive) .nv.solid .nv-links a{color:var(--ink-70)}
+body:has(.v-immersive) .nv.solid .nv-act .lgin{color:var(--ink)}
+body:has(.v-immersive) .nv.solid .b-glass{background:var(--ink);border-color:var(--ink);color:#fff}
+body:has(.v-immersive) .nv.solid .bg span{background:var(--ink)}
+
+/* ==========================================================================
+   BRAND DEVICES, taken from the social posts and the deck
+   1. the wave         organic curve between sections, gold or blue
+   2. the pill         gold rounded label, replaces bare uppercase kickers
+   3. the stamp        rough circular badge, for series and section marks
+   4. cream surfaces   the warm ground the posts are built on
+   ========================================================================== */
+
+/* -- 1 · WAVE ------------------------------------------------------------ */
+.wave{position:relative;line-height:0;height:clamp(54px,7vw,116px);overflow:hidden;margin-top:-1px}
+.wave svg{display:block;width:100%;height:100%}
+.wave path{transition:none}
+/* the double wave: a gold sliver riding over the main colour, as on the covers */
+.wave.duo{height:clamp(56px,8vw,130px)}
+
+/* -- 2 · PILL ------------------------------------------------------------ */
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--night);
+  font-family:var(--disp);font-weight:700;font-size:.74rem;letter-spacing:.02em;
+  padding:7px 16px;border-radius:100px;white-space:nowrap}
+.pill.ghost{background:rgba(241,200,75,.22);color:var(--night)}
+.pill.blue{background:var(--blue);color:#fff}
+.on-dark .pill.ghost,.v-immersive .pill.ghost{background:rgba(255,255,255,.16);color:#fff}
+
+/* -- 3 · STAMP ----------------------------------------------------------- */
+.stamp{width:clamp(88px,9vw,124px);aspect-ratio:1;flex:none;position:relative;
+  display:grid;place-items:center;color:var(--gold);transform:rotate(-9deg)}
+.stamp svg{position:absolute;inset:0;width:100%;height:100%}
+.stamp b{position:relative;font-family:var(--disp);font-weight:700;color:var(--blue);
+  font-size:clamp(.6rem,.72vw,.72rem);letter-spacing:.06em;text-align:center;line-height:1.15}
+
+/* -- 4 · CREAM SURFACES -------------------------------------------------- */
+.sec.cream,.cream{background:var(--cream)}
+.sec.cream-2{background:var(--cream-2)}
+.sec.skytint{background:var(--sky-2)}
+
+/* headline treatment from the posts: blue heads, navy body, bold key phrases */
+.cream h2,.cream-2 h2,.cream h3{color:var(--blue)}
+.cream p,.cream-2 p{color:var(--night)}
+.cream strong,.cream-2 strong{color:var(--blue);font-weight:700}
+
+
+/* ---------- openers rebuilt on the post palette: cream ground, blue heads ---------- */
+.phero{background:var(--cream);padding-bottom:0}
+.phero.th-sun{background:linear-gradient(168deg,var(--cream) 0%,#FEF8E6 62%,var(--cream) 100%)}
+.phero.th-sky{background:linear-gradient(168deg,var(--sky-2) 0%,var(--sky-1) 60%,#FFFFFF 100%)}
+.phero.th-white{background:linear-gradient(168deg,#FFFFFF 0%,var(--sky-1) 58%,#FFFFFF 100%)}
+.phero h1{color:var(--blue)}
+.phero h1 em{font-style:normal;color:var(--night);-webkit-text-fill-color:currentColor;background:none}
+.phero .psub{color:var(--night);opacity:.86}
+.phero .pkick{margin-bottom:clamp(16px,2vw,24px)}
+.phero .prail{border-top-color:rgba(24,58,111,.16)}
+.phero .prail > div{border-left-color:rgba(24,58,111,.16)}
+.phero .prail .pn{color:var(--blue)}
+.phero .prail .pl{color:var(--night);opacity:.78}
+.sunmark{--sunglow:rgba(241,200,75,.5);--sunray:rgba(241,200,75,.2)}
+.th-sky .sunmark{--sunglow:rgba(14,107,189,.22);--sunray:rgba(14,107,189,.12)}
+
+/* the split portrait uses the brand blue wash from the posts */
+.v-split .psplit-i:after{background:linear-gradient(155deg,rgba(14,107,189,.72),rgba(24,58,111,.86))}
+.v-split .psplit-i:before{background:var(--gold);height:6px;width:44%}
+
+/* numeric figure in brand blue with the gold rule */
+.v-numeric .pfig{border-left-color:var(--gold)}
+.v-numeric .pfig-n{color:var(--blue)}
+.v-numeric .pfig-l{color:var(--night);opacity:.8}
+
+/* the immersive opener is the blue photo post: blue gradient, white head, gold word */
+.v-immersive{background:var(--blue)}
+.v-immersive:after{background:linear-gradient(165deg,rgba(14,107,189,.86),rgba(24,58,111,.94))}
+.v-immersive h1{color:#fff}
+.v-immersive h1 em{color:var(--gold)}
+.v-immersive .pill{background:var(--gold);color:var(--night)}
+
+/* index hero: same blue photo treatment, not near-black */
+.hero .hero-scrim{background:linear-gradient(178deg,rgba(24,58,111,.62) 0%,rgba(14,107,189,.34) 34%,rgba(24,58,111,.88) 78%,var(--night) 100%)}
+.hero h1 em{color:var(--gold)}
+
+/* strip / quote bands ride the brand blue too */
+.strip.blued:after{background:linear-gradient(150deg,rgba(14,107,189,.74),rgba(24,58,111,.86))}
+.qband:after{background:linear-gradient(180deg,rgba(14,107,189,.74),rgba(24,58,111,.93))}
+.stmt{background:var(--gold);color:var(--night)}
+.bigtype{background:linear-gradient(168deg,var(--cream),#FEF8E6 58%,#FFFFFF)}
+.bigtype.sky{background:linear-gradient(168deg,var(--sky-2),var(--sky-1) 58%,#FFFFFF)}
+.bigtype p{color:var(--blue)}
+.bigtype p em{color:var(--night)}
+.tint,.tint-b{background:var(--sky-1)}
+
+
+/* the pill owns its own type; kill the old kicker styling underneath it */
+.phero .pkick span.pill{color:var(--night);font-size:.76rem;letter-spacing:.01em;
+  text-transform:none;font-weight:700}
+.phero .pkick i{display:none}
+/* nav CTA in brand blue, not near-black */
+.nv .b-glass,body:has(.phero) .nv .b-glass{background:var(--blue);border-color:var(--blue);color:#fff}
+.nv .b-glass:hover,body:has(.phero) .nv .b-glass:hover{background:#0B5EA6;border-color:#0B5EA6}
+.b-blue{background:var(--blue)}
+.b-blue:hover{background:#0B5EA6}
+
+
+/* feedback round 1: the pill kickers and the opener stat rails are gone */
+.phero .pkick{display:none}
+.phero .prail{display:none}
+.hero-bar{display:none}
+/* G4: navy is one swatch of eight, not the ground. lighter everywhere. */
+.hero .hero-scrim{background:linear-gradient(179deg,rgba(24,58,111,.42) 0%,rgba(14,107,189,.22) 38%,rgba(14,107,189,.62) 74%,rgba(24,58,111,.80) 100%)}
+
+
+/* footer: light ground, the real logo, navy type. Less navy overall (G4). */
+footer{background:var(--cream);color:var(--night);border-top:1px solid rgba(24,58,111,.12)}
+footer .fb p{color:rgba(24,58,111,.76)}
+footer .fc h4{color:rgba(24,58,111,.5)}
+footer .fc a{color:rgba(24,58,111,.78)}
+footer .fc a:hover{color:var(--blue)}
+footer .fc li{color:rgba(24,58,111,.78)}
+footer .fs a{color:var(--blue);background:rgba(14,107,189,.09);border-color:transparent}
+footer .fs a:hover{background:var(--blue);color:#fff}
+footer .fbot{border-top-color:rgba(24,58,111,.14)}
+footer .fbot p,footer .fl a{color:rgba(24,58,111,.6)}
+footer .fl a:hover{color:var(--blue)}
+footer img{filter:none}
+
+/* ---------- I1: the bill bar takes the brand's rounded shape, no utility picker ---------- */
+.billbar{border-bottom:0;background:rgba(255,255,255,.10);border:1.5px solid rgba(255,255,255,.30);
+  border-radius:100px;padding:6px 6px 6px 26px;backdrop-filter:blur(8px);align-items:center}
+.billbar:focus-within{border-color:var(--gold);background:rgba(255,255,255,.15)}
+.billbar .bf{border:0}
+.billbar .bf + .bf:before{left:0;top:26%;bottom:26%}
+.billbar label{top:auto;position:static;margin-right:0;display:none}
+.billbar input,.billbar select{padding:13px 0}
+.billbar input#bAddr{padding-left:24px}
+.billbar .bgo{border-radius:100px;padding:14px clamp(20px,2.2vw,30px);margin-left:14px}
+@media(max-width:820px){
+  .billbar{border-radius:24px;padding:18px 20px;flex-wrap:wrap}
+  .billbar .bf{width:100%;border-bottom:1px solid rgba(255,255,255,.22);margin-top:0;padding-bottom:6px}
+  .billbar .bf:first-child{padding-bottom:6px}
+  .billbar input#bAddr{padding-left:0}
+  .billbar .bgo{margin:16px 0 0;width:100%;justify-content:center}
+}
+
+/* ---------- I4: the three doors, built on the pattern Josa pointed at:
+   illustration, short title, one line, a solid button ---------- */
+.cframes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,1.8vw,26px)}
+.cf{display:flex;flex-direction:column;border:1px solid rgba(24,58,111,.10);border-radius:22px;
+  overflow:hidden;background:#fff;text-decoration:none;color:inherit;box-shadow:none;
+  transition:transform .5s var(--e),box-shadow .5s var(--e),border-color .5s var(--e)}
+.cf:hover{transform:translateY(-5px);border-color:rgba(14,107,189,.3);
+  box-shadow:0 24px 50px -28px rgba(24,58,111,.34)}
+.cf-art{background:var(--cream);padding:clamp(18px,2vw,26px);display:grid;place-items:center}
+.cf-art svg{width:100%;max-width:210px;height:auto;display:block;
+  transition:transform .6s var(--e)}
+.cf:hover .cf-art svg{transform:translateY(-4px) scale(1.03)}
+.cf:nth-child(2) .cf-art{background:var(--sky-2)}
+.cf:nth-child(3) .cf-art{background:#FFF6DC}
+.cf-body{padding:clamp(20px,2.1vw,28px);display:flex;flex-direction:column;flex:1}
+.cf-body h3{font-size:clamp(1.06rem,1.35vw,1.24rem);color:var(--blue);margin-bottom:9px;letter-spacing:-.02em}
+.cf-body p{font-size:.9rem;line-height:1.6;color:var(--night);opacity:.82;flex:1}
+.cf-btn{margin-top:18px;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;
+  background:var(--blue);color:#fff;font-family:var(--disp);font-weight:700;font-size:.85rem;
+  padding:11px 20px;border-radius:100px;transition:background .35s var(--e)}
+.cf:hover .cf-btn{background:#0B5EA6}
+.cf:nth-child(3) .cf-btn{background:var(--gold);color:var(--night)}
+.cf:nth-child(3):hover .cf-btn{background:#FFD966}
+@media(max-width:900px){.cframes{grid-template-columns:1fr}}
+
+
+/* G4 + G6: the navy band under the hero comes out. Cream ground, no colour jump. */
+.three-up:before,.three-up:after{display:none!important}
+.three-up{background:linear-gradient(180deg,var(--cream) 0%,#FEF8E6 52%,#FFFFFF 100%);
+  padding:clamp(52px,6vw,88px) 0 clamp(56px,6.4vw,94px)}
+.three-up .sh h2{color:var(--blue)}
+.three-up .sh p{color:var(--night);opacity:.8}
+.three-up .cf{box-shadow:0 18px 44px -30px rgba(24,58,111,.3)}
+.three-up .cf:hover{box-shadow:0 28px 56px -28px rgba(24,58,111,.4)}
+
+/* A2: 'i noticed a single sunray here. remove' */
+.sunmark{display:none}
+
+/* A7: step numbers in brand blue, with an icon plate for visual interest */
+.vstep .vn,.vsteps .vn,.jsteps .jn{color:var(--blue)!important}
+.feat .fcard:before,.vstep:before{color:var(--blue)}
+/* A11 + N11: Coming soon uses the deep blue so it pops and reads as anticipation */
+.soon.dark{background:linear-gradient(150deg,var(--night),#12305C);border:0;color:#fff;
+  border-radius:24px;padding:clamp(28px,3.2vw,44px)}
+.soon.dark h3{color:#fff}
+.soon.dark > p{color:rgba(255,255,255,.76);max-width:52ch}
+.soon.dark .soon-grid > *{background:rgba(255,255,255,.06)!important;border:0!important;
+  border-radius:16px!important;padding:18px!important}
+.soon.dark .soon-grid h4,.soon.dark .soon-grid strong{color:#fff}
+.soon.dark .soon-grid p{color:rgba(255,255,255,.68)}
+.soon.dark .soon-grid svg{color:var(--gold)}
+.soon.dark .wait input{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.24);color:#fff}
+.soon.dark .wait input::placeholder{color:rgba(255,255,255,.45)}
+.soon.dark .wait .b-blue{background:var(--gold);color:var(--night)}
+.soon.dark .wait .b-blue:hover{background:#FFD966}
+.soon.dark .wait-ok{color:var(--gold)}
+.soon-badge{display:none}
+
+/* G5: the other separators, so no two pages use the same device */
+.cut{position:relative;line-height:0;overflow:hidden;height:clamp(46px,5.4vw,88px);margin-top:-1px}
+.cut svg{display:block;width:100%;height:100%}
+.cut.arc{height:clamp(52px,6.4vw,104px)}
+.cut.rule{height:auto;padding:0;display:flex;justify-content:center}
+.cut.rule span{display:block;height:5px;width:min(88%,1400px);border-radius:100px}
+
+/* N9: join steps get a numeral, an icon plate and blue numerals */
+.jstep{display:grid;grid-template-columns:auto auto 1fr;gap:clamp(14px,1.6vw,22px);align-items:start}
+.jstep .jid{color:var(--blue);font-weight:700}
+.jstep .jic{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;
+  background:rgba(14,107,189,.09);color:var(--blue);flex:none}
+@media(max-width:640px){.jstep{grid-template-columns:auto 1fr}.jstep .jic{display:none}}
+
+/* F8: lender-type cards carry a photo */
+.fcard.photo{border:1px solid rgba(24,58,111,.1);border-radius:20px;padding:0;overflow:hidden;
+  background:#fff;border-top:1px solid rgba(24,58,111,.1)}
+.fcard.photo:before{display:none}
+.fcard.photo .fc-img{aspect-ratio:16/7;overflow:hidden;background:var(--sky-2)}
+.fcard.photo .fc-img img{width:100%;height:100%;object-fit:cover}
+.fcard.photo .fi{margin:clamp(18px,2vw,24px) clamp(18px,2vw,24px) 12px}
+.fcard.photo h3{padding-inline:clamp(18px,2vw,24px)}
+.fcard.photo p{padding:0 clamp(18px,2vw,24px) clamp(20px,2.2vw,26px);max-width:none}
+
+/* B1 + Q1: 'you dont need a headline for blogs' / 'straigt to the FAQs'.
+   The h1 stays for search engines and screen readers, sized right down. */
+.v-bare{padding:calc(var(--nav) + clamp(26px,3vw,40px)) 0 clamp(16px,2vw,26px);background:var(--cream)}
+.v-bare h1.vh-lite{font-size:clamp(1.35rem,2vw,1.8rem);color:var(--blue);max-width:26ch;
+  letter-spacing:-.025em;line-height:1.14}
+.v-bare .psub{margin-top:10px;font-size:clamp(.95rem,1.1vw,1.04rem);max-width:60ch}
+
+/* C5: the photo card beside the contact form becomes two plain links */
+.plinks{display:grid;gap:10px;margin-top:16px}
+.plinks a{display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:16px 20px;border-radius:16px;background:var(--sky-2);color:var(--blue);
+  font-family:var(--disp);font-weight:600;font-size:.95rem;transition:background .35s var(--e)}
+.plinks a:hover{background:var(--sky-3)}
+.plinks svg{transition:transform .35s var(--e);flex:none}
+.plinks a:hover svg{transform:translateX(4px)}
+/* C4: 'closer on top' */
+.v-compact + .sec,.v-compact + .sec-tight{padding-top:clamp(20px,2.4vw,34px)}
+
+/* ==========================================================================
+   COLOUR RATIO PASS
+   Blue is the site's dominant surface, not an accent. White is the rest.
+   Gold, navy and near-black each appear in small, deliberate doses.
+   "i want more white than more yellow" — cream drops to a rare soft tint.
+   ========================================================================== */
+body{background:var(--paper-w)}
+
+/* light sections become true white, not cream */
+.sec.tint,.sec.tint-b,.tint,.tint-b,.sec.cream,.cream,.sec.cream-2,.cream-2{background:var(--paper-w)}
+.three-up{background:linear-gradient(180deg,var(--paper-w) 0%,#F4F9FE 100%)}
+.phero,.phero.th-sun,.phero.th-sky,.phero.th-white{background:var(--paper-w)}
+.v-bare{background:var(--paper-w)}
+.bigtype{background:var(--paper-w)}
+.bigtype.sky{background:var(--paper-w)}
+
+/* THE BLUE BAND: the workhorse surface. Half the page area lives here. */
+.sec.brand{background:var(--blue);color:#fff}
+.sec.brand h2,.sec.brand h3,.sec.brand .sv,.sec.brand .pn{color:#fff}
+.sec.brand p,.sec.brand .sl,.sec.brand .pl{color:rgba(255,255,255,.80)}
+.sec.brand .sh p{color:rgba(255,255,255,.80)}
+.sec.brand em{color:var(--gold);font-style:normal}
+.sec.brand .fcard{border-top-color:rgba(255,255,255,.24)}
+.sec.brand .fcard h3{color:#fff}
+.sec.brand .fcard p{color:rgba(255,255,255,.74)}
+.sec.brand .fcard:before{color:rgba(255,255,255,.5)}
+.sec.brand .fcard .fi{color:var(--gold)}
+.sec.brand .b-blue{background:var(--gold);color:var(--night)}
+.sec.brand .b-blue:hover{background:#FFD966}
+.sec.brand .b-glass{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.34);color:#fff}
+.sec.brand .statrow,.sec.brand .prail{border-top-color:rgba(255,255,255,.26)}
+.sec.brand .stat-c,.sec.brand .prail > div{border-left-color:rgba(255,255,255,.26)}
+.sec.brand .fq,.sec.brand .fi{border-color:rgba(255,255,255,.22)}
+.sec.brand .fq-q{color:#fff}
+.sec.brand .fq-a p{color:rgba(255,255,255,.78)}
+.sec.brand .lnk,.sec.brand a{color:var(--gold)}
+
+/* near-black earns its 12.5% at the very bottom of the page */
+footer{background:var(--ink-black);color:#fff;border-top:0}
+footer .fb p{color:rgba(255,255,255,.62)}
+footer .fc h4{color:rgba(255,255,255,.42)}
+footer .fc a,footer .fc li{color:rgba(255,255,255,.72)}
+footer .fc a:hover{color:var(--gold)}
+footer .fs a{color:#fff;background:rgba(255,255,255,.1)}
+footer .fs a:hover{background:var(--gold);color:var(--ink-black)}
+footer .fbot{border-top-color:rgba(255,255,255,.14)}
+footer .fbot p,footer .fl a{color:rgba(255,255,255,.5)}
+footer .fl a:hover{color:var(--gold)}
+
+/* "make 9 bigger, add more space in 'in 10' so it doesnt look squeezed" */
+.v-numeric .pfig-n{font-size:clamp(4.4rem,11vw,9rem)}
+.v-numeric .pfig-n .u.wide{font-size:.26em;margin-left:.16em;letter-spacing:.02em;
+  display:inline-block;padding-left:.06em}
+/* the closing call band */
+.ctaband{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(26px,4vw,60px);align-items:center}
+.ctaband h2{font-size:clamp(1.5rem,2.8vw,2.3rem);letter-spacing:-.03em;margin-bottom:12px}
+.ctaband p{max-width:52ch;line-height:1.62}
+.ctaband-act{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.ctaband-act .b{width:100%;justify-content:center}
+@media(max-width:820px){.ctaband{grid-template-columns:1fr}}
+
+/* "coming soon in large text and center" */
+.soon.center{text-align:center}
+.soon.center .soon-h{justify-content:center;margin-bottom:14px}
+.soon.center .soon-h.big h3{font-size:clamp(2rem,5vw,3.6rem);letter-spacing:-.035em;line-height:1.02}
+.soon.center > p{margin-inline:auto;text-align:center}
+.soon.center .soon-grid{text-align:left;margin-inline:auto;max-width:820px}
+.soon.center .wait{justify-content:center;margin-inline:auto;max-width:520px}
+
+/* the trusted-installer logo wall, placeholders until Josa sends the marks */
+.logowall{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(10px,1.2vw,18px);
+  margin-top:clamp(24px,3vw,40px)}
+.lw{aspect-ratio:5/3;border:1px dashed rgba(14,108,189,.3);border-radius:14px;
+  display:grid;place-items:center;background:rgba(14,108,189,.04)}
+.lw span{font-family:var(--disp);font-weight:600;font-size:.68rem;letter-spacing:.06em;
+  color:rgba(14,108,189,.55);text-align:center;padding:0 8px}
+.lw-note{text-align:center;margin-top:18px;font-size:.85rem;color:var(--ink-70)}
+@media(max-width:900px){.logowall{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.logowall{grid-template-columns:repeat(2,1fr)}}
+
+/* gold earns its 12.5% on the closing call of every page */
+.sec.goldband{background:var(--gold);color:var(--night)}
+.sec.goldband h2,.sec.goldband h3{color:var(--night)}
+.sec.goldband p{color:rgba(25,58,112,.82)}
+.sec.goldband em{font-style:normal;color:var(--blue)}
+.sec.goldband .b-blue{background:var(--night);color:#fff;border-color:var(--night)}
+.sec.goldband .b-blue:hover{background:var(--ink-black)}
+.sec.goldband .b-glass{background:rgba(25,58,112,.1);border-color:rgba(25,58,112,.3);color:var(--night)}
+.sec.goldband .b-glass:hover{background:rgba(25,58,112,.18)}
+.sec.goldband .cta-in,.sec.goldband .ctaband{color:var(--night)}
+
+
+/* ==========================================================================
+   CORRECTION: 50% blue means the ELEMENTS, not the page.
+   Pages are white. Blue carries the components that sit on them.
+   ========================================================================== */
+body,.sec,.sec-tight,.tint,.tint-b,.cream,.cream-2{background:var(--paper-w)}
+.sec.brand{background:var(--paper-w);color:var(--ink)}
+.sec.brand h2,.sec.brand h3{color:var(--blue)}
+.sec.brand p,.sec.brand .sh p{color:var(--ink-70)}
+.sec.brand em{color:var(--night)}
+.sec.brand .b-blue{background:var(--blue);color:#fff}
+.sec.brand .b-glass{background:#fff;border-color:var(--hair);color:var(--ink)}
+.sec.brand .fcard{border-top-color:var(--rule)}
+.sec.brand .fcard h3{color:var(--ink)}
+.sec.brand .fcard p{color:var(--ink-70)}
+.sec.brand .fcard:before{color:var(--blue)}
+.sec.brand .fcard .fi{color:var(--blue)}
+.sec.brand .lnk,.sec.brand a{color:var(--blue)}
+.sec.brand .statrow,.sec.brand .prail{border-top-color:var(--rule)}
+.sec.brand .stat-c,.sec.brand .prail > div{border-left-color:var(--rule)}
+.sec.brand .fq-q{color:var(--ink)}
+.sec.brand .fq-a p{color:var(--ink-70)}
+.sec.goldband{background:var(--paper-w);color:var(--ink)}
+.sec.goldband h2,.sec.goldband h3{color:var(--blue)}
+.sec.goldband p{color:var(--ink-70)}
+.sec.goldband .b-blue{background:var(--blue);color:#fff;border-color:var(--blue)}
+.sec.goldband .b-glass{background:#fff;border-color:var(--hair);color:var(--ink)}
+
+/* blue is now doing the work at element level */
+h2,h3{color:var(--blue)}
+.sh h2{color:var(--blue)}
+.stat-c .sv,.prail .pn,.vstep .vn,.jstep .jid,.fcard:before{color:var(--blue)}
+.b-blue{background:var(--blue);color:#fff}
+.fcard .fi,.feat .fi{color:var(--blue)}
+.fq-q{color:var(--ink)}
+.lnk{color:var(--blue)}
+
+/* ---------- GALLERY: white ground, photo, blue card body ---------- */
+.gallery{display:grid;gap:clamp(16px,1.8vw,26px);margin-top:clamp(28px,3.2vw,44px)}
+.gallery.g3{grid-template-columns:repeat(3,1fr)}
+.gallery.g2{grid-template-columns:repeat(2,1fr)}
+.gallery.g4{grid-template-columns:repeat(4,1fr)}
+.gcard{margin:0;border-radius:20px;overflow:hidden;background:var(--blue);color:#fff;
+  display:flex;flex-direction:column;
+  transition:transform .5s var(--e),box-shadow .5s var(--e)}
+.gcard:hover{transform:translateY(-5px);box-shadow:0 26px 54px -28px rgba(14,108,189,.5)}
+.gc-img{aspect-ratio:4/3;overflow:hidden;background:var(--sky-2)}
+.gc-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--e)}
+.gcard:hover .gc-img img{transform:scale(1.05)}
+.gc-b{padding:clamp(18px,2vw,26px);flex:1;display:flex;flex-direction:column}
+.gc-b h3{color:#fff;font-size:clamp(1rem,1.25vw,1.16rem);margin-bottom:8px;letter-spacing:-.02em}
+.gc-b p{color:rgba(255,255,255,.82);font-size:.88rem;line-height:1.58;margin:0}
+@media(max-width:960px){.gallery.g3,.gallery.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.gallery.g3,.gallery.g2,.gallery.g4{grid-template-columns:1fr}}
+
+/* "use photos not icons" — the three doors carry photographs now */
+.cf-photo{aspect-ratio:4/3;overflow:hidden;background:var(--sky-2)}
+.cf-photo img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--e)}
+.cf:hover .cf-photo img{transform:scale(1.05)}
+.cf-art{display:none}
+/* "i cant read. make the text bigger" */
+.hero-sub.bigger{font-size:calc(clamp(1rem,1.28vw,1.16rem) * 1.02)}
+
+.three-up .cf{background:var(--blue);border-color:transparent}
+.three-up .cf .cf-body h3{color:#fff}
+.three-up .cf .cf-body p{color:rgba(255,255,255,.82)}
+.three-up .cf-btn{background:var(--gold);color:var(--night)}
+.three-up .cf:hover .cf-btn{background:#FFD966}
+.three-up{background:var(--paper-w)}
+
+/* "remove the line so it transitions to a soft gradient to white" */
+.fadeout{height:clamp(56px,7vw,120px);margin-top:-1px}
+/* "1 line only. why is the word ask on the bottom" */
+h2.oneline{white-space:nowrap;max-width:none;font-size:clamp(1.5rem,3.2vw,2.5rem)}
+@media(max-width:520px){h2.oneline{white-space:normal}}
+
+/* the disclaimer sits in the white space beside the payback timeline and
+   finishes level with it, rather than running the full width underneath */
+.tline-wrap{display:grid;grid-template-columns:1.35fr .65fr;gap:clamp(20px,2.6vw,40px);align-items:stretch}
+.disc-card{background:var(--sky-1);border:1px solid var(--rule);border-radius:16px;
+  padding:clamp(16px,1.8vw,22px);display:flex;align-items:center;margin:0}
+.disc-card p{font-size:.78rem;line-height:1.55;color:var(--ink-70);margin:0}
+.disc-card strong{color:var(--night)}
+@media(max-width:900px){.tline-wrap{grid-template-columns:1fr}}
+
+
+/* ---- BALANCE: disclaimer under the sliders, timeline full width beside it ---- */
+.disc-card{background:var(--sky-1);border:1px solid var(--rule);border-radius:16px;
+  padding:clamp(15px,1.7vw,20px);margin-top:16px}
+.disc-card p{font-size:.75rem;line-height:1.5;color:var(--ink-70);margin:0}
+.disc-card strong{color:var(--night)}
+.tline-wrap{display:block}
+
+/* ---- ABOUT: 'remove the circle. make the photo bigger' ---- */
+.phero::after,.v-immersive::before{display:none!important}
+.v-immersive{min-height:clamp(560px,80svh,860px);display:flex;align-items:center;
+  padding-top:calc(var(--nav) + clamp(40px,5vw,70px));padding-bottom:clamp(44px,5.5vw,80px)}
+.v-immersive .pimm-bg img{opacity:.62}
+.v-immersive:after{background:linear-gradient(100deg,rgba(24,58,111,.90) 0%,rgba(14,108,189,.62) 48%,rgba(24,58,111,.30) 100%)}
+
+/* ---- 'sections that are too white': a slim photo band as the separator ---- */
+.slimband{position:relative;height:clamp(120px,15vw,220px);overflow:hidden;background:var(--sky-2)}
+.slimband img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transform:translate3d(0,var(--py,0),0) scale(1.12)}
+.slimband:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(96deg,rgba(14,108,189,.55),rgba(24,58,111,.30) 60%,rgba(24,58,111,.55))}
+.rulesep{height:1px;background:var(--rule);max-width:1400px;margin:clamp(30px,4vw,56px) auto}
+
+/* ---- FOOTER: photo behind it, like the other pages, with the real logo ---- */
+footer{position:relative;background:var(--ink-black);overflow:hidden}
+footer .fbg{position:absolute;inset:0;z-index:0}
+footer .fbg img{width:100%;height:100%;object-fit:cover;opacity:.22}
+footer:before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(0,5,28,.86),rgba(0,5,28,.95))}
+footer .w{position:relative;z-index:2}
+footer .fb img{height:auto;width:min(260px,64%);max-width:none}

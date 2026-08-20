@@ -4,3 +4,6 @@ node_modules/
 *.log
 .vscode/
 .idea/
+
+_to_delete/
+__pycache__/
