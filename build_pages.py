@@ -94,6 +94,24 @@ def build_about():
   </div>
 </section>
 
+<section class="sec-tight">
+  <div class="w">
+    <div class="sh c r"><h2>Vision &amp; mission.</h2></div>
+    <div class="vm r">
+      <div class="vm-c">
+        <div class="vm-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <span class="vm-tag">Vision</span>
+        <p>A future where every Filipino can achieve energy independence through clean energy.</p>
+      </div>
+      <div class="vm-c">
+        <div class="vm-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20V10l6-6 6 6v10"/><path d="M10 20v-6h4v6"/></svg></div>
+        <span class="vm-tag">Mission</span>
+        <p>To remove the barriers that prevent Filipinos from adopting clean energy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sec" id="journey">
   <div class="w">
     <div class="sh r"><h2>How we got here.</h2><p>From a classroom in Makati to a roof in Metro Manila, in about sixteen months.</p></div>
@@ -297,34 +315,12 @@ def build_faqs():
 # ============================== CONTACT ==============================
 def build_contact():
     body = hero(
-        "Talk to <em>an actual person.</em>",
+        "Contact <em>us.</em>",
         "We are a small team in Mandaluyong City. Email, Viber or the form below all reach us, usually within a working day.",
         f'<a href="#form" class="b b-blue">Send a message {AR}</a><a href="mailto:hello@apolaki.ai" class="b b-glass">hello@apolaki.ai</a>',
         px(6961123, 1400, 1050), "Solar technicians working together on a rooftop", variant='compact', kicker='Talk to us', theme='th-sun', rail=[('<span data-c="1" data-d="0">1</span><span class="u">working day</span>', 'How long we take to reply'),
               ('&#8369;<span data-c="0" data-d="0">0</span>', 'What a conversation costs'),
               ('<span data-c="0" data-d="0">0</span><span class="u">cold calls</span>', 'Nobody rings you unless you ask')]) + f"""
-<section class="sec-tight">
-  <div class="w">
-    <div class="ccards">
-      <div class="ccard r">
-        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></div>
-        <h3>Email</h3><p>Best for anything detailed. A founder usually answers.</p>
-        <a href="mailto:hello@apolaki.ai">hello@apolaki.ai</a>
-      </div>
-      <div class="ccard r">
-        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8z"/></svg></div>
-        <h3>Viber</h3><p>Quick questions, quick answers. Mondays to Saturdays.</p>
-        <a href="viber://chat?number=%2B639178161707">+63 917 816 1707</a>
-      </div>
-      <div class="ccard r">
-        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z"/><circle cx="12" cy="11" r="3"/></svg></div>
-        <h3>Where we are</h3><p>Operated by VESS Corp. Built at the Asian Institute of Management.</p>
-        <a href="/about">Mandaluyong City, Metro Manila</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="sec" id="form">
   <div class="w">
     <div class="tlg">
@@ -364,6 +360,28 @@ def build_contact():
           <a href="/financing-partners"><span>Fund solar as a financing partner</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight">
+  <div class="w">
+    <div class="ccards">
+      <div class="ccard r">
+        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></div>
+        <h3>Email</h3><p>Best for anything detailed. A founder usually answers.</p>
+        <a href="mailto:hello@apolaki.ai">hello@apolaki.ai</a>
+      </div>
+      <div class="ccard r">
+        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8z"/></svg></div>
+        <h3>Viber</h3><p>Quick questions, quick answers. Mondays to Saturdays.</p>
+        <a href="viber://chat?number=%2B639178161707">+63 917 816 1707</a>
+      </div>
+      <div class="ccard r">
+        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z"/><circle cx="12" cy="11" r="3"/></svg></div>
+        <h3>Where we are</h3><p>Operated by VESS Corp. Built at the Asian Institute of Management.</p>
+        <a href="/about">Mandaluyong City, Metro Manila</a>
       </div>
     </div>
   </div>

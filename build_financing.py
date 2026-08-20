@@ -110,7 +110,7 @@ def build():
         <button role="tab" id="tab-p2p" aria-controls="panel-p2p" aria-selected="true">Individual lender</button>
         <button role="tab" id="tab-inst" aria-controls="panel-inst" aria-selected="false">Institution</button>
       </div>
-      <p class="dim" id="tabNote" style="font-size:.85rem;margin-top:14px;max-width:none">
+      <p class="dim" id="tabNote" style="font-size:.85rem;margin-top:14px;margin-bottom:34px;max-width:none">
         Peer-to-peer lending for individuals. Smaller tickets, spread across many borrowers, monthly repayments.
       </p>
     </div>
@@ -204,20 +204,6 @@ def build():
 {S.bigtype("Nobody in the Philippines offers solar with <em>no money down.</em>", "Every route to a rooftop today runs through a credit card promo or a government salary loan. That leaves out everyone who is neither. It is the widest gap in the market, and it is the one we want to close with you.")}
 
 
-<section class="sec">
-  <div class="w">
-    <div class="ctaband r">
-      <div>
-        <h2>Let us walk you through the numbers.</h2>
-        <p>Thirty minutes with our team. Your mandate, your ticket size, the cohorts open now, and exactly how repayment is secured against a real electricity bill.</p>
-      </div>
-      <div class="ctaband-act">
-        <a href="/contact?type=onboarding" class="b b-blue">Book an onboarding call {AR}</a>
-        <a href="/contact?type=financing" class="b b-glass">Send us a message</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="sec-tight">
   <div class="w">
@@ -239,7 +225,6 @@ def build():
       <a href="/contact?type=financing" class="b b-blue">Start a conversation {AR}</a>
       <a href="mailto:hello@apolaki.ai" class="b b-glass">hello@apolaki.ai</a>
     </div>
-    <p class="fine r">Nothing on this page is an offer of securities.</p>
   </div>
 </section>"""
 

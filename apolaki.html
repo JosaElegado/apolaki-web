@@ -1732,6 +1732,19 @@ footer .fb img{height:auto;width:min(260px,64%);max-width:none}
 #tabNote{white-space:nowrap}
 @media(max-width:860px){#tabNote{white-space:normal}}
 
+/* ==== Vision & Mission (About) ==== */
+.vm{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,28px);max-width:980px;margin:0 auto}
+.vm-c{position:relative;background:var(--paper);border:1px solid var(--hair);border-radius:20px;
+  padding:clamp(26px,3vw,40px);text-align:center}
+.vm-i{width:52px;height:52px;border-radius:14px;background:var(--cream);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.vm-tag{display:inline-block;font-family:var(--disp);font-weight:700;font-size:.72rem;
+  letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--blue);
+  padding:7px 18px;border-radius:100px;margin-bottom:14px}
+.vm-c p{font-family:var(--disp);font-weight:600;font-size:clamp(1.02rem,1.35vw,1.22rem);
+  letter-spacing:-.015em;line-height:1.5;color:var(--night);max-width:34ch;margin:0 auto}
+@media(max-width:760px){.vm{grid-template-columns:1fr}}
+
 /* ---- single-file router ---- */
 .pg[hidden]{display:none}
 .nv-links a.active{color:var(--gold)}
@@ -2488,7 +2501,7 @@ footer .fb img{height:auto;width:min(260px,64%);max-width:none}
         <button role="tab" id="tab-p2p" aria-controls="panel-p2p" aria-selected="true">Individual lender</button>
         <button role="tab" id="tab-inst" aria-controls="panel-inst" aria-selected="false">Institution</button>
       </div>
-      <p class="dim" id="tabNote" style="font-size:.85rem;margin-top:14px;max-width:none">
+      <p class="dim" id="tabNote" style="font-size:.85rem;margin-top:14px;margin-bottom:34px;max-width:none">
         Peer-to-peer lending for individuals. Smaller tickets, spread across many borrowers, monthly repayments.
       </p>
     </div>
@@ -2590,20 +2603,6 @@ footer .fb img{height:auto;width:min(260px,64%);max-width:none}
 
 
 
-<section class="sec">
-  <div class="w">
-    <div class="ctaband r">
-      <div>
-        <h2>Let us walk you through the numbers.</h2>
-        <p>Thirty minutes with our team. Your mandate, your ticket size, the cohorts open now, and exactly how repayment is secured against a real electricity bill.</p>
-      </div>
-      <div class="ctaband-act">
-        <a href="#/contact?type=onboarding" class="b b-blue">Book an onboarding call <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="#/contact?type=financing" class="b b-glass">Send us a message</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="sec-tight">
   <div class="w">
@@ -2625,7 +2624,6 @@ footer .fb img{height:auto;width:min(260px,64%);max-width:none}
       <a href="#/contact?type=financing" class="b b-blue">Start a conversation <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a href="mailto:hello@apolaki.ai" class="b b-glass">hello@apolaki.ai</a>
     </div>
-    <p class="fine r">Nothing on this page is an offer of securities.</p>
   </div>
 </section>
 
@@ -2775,6 +2773,24 @@ footer .fb img{height:auto;width:min(260px,64%);max-width:none}
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight">
+  <div class="w">
+    <div class="sh c r"><h2>Vision &amp; mission.</h2></div>
+    <div class="vm r">
+      <div class="vm-c">
+        <div class="vm-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <span class="vm-tag">Vision</span>
+        <p>A future where every Filipino can achieve energy independence through clean energy.</p>
+      </div>
+      <div class="vm-c">
+        <div class="vm-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20V10l6-6 6 6v10"/><path d="M10 20v-6h4v6"/></svg></div>
+        <span class="vm-tag">Mission</span>
+        <p>To remove the barriers that prevent Filipinos from adopting clean energy.</p>
       </div>
     </div>
   </div>
@@ -2999,7 +3015,7 @@ footer .fb img{height:auto;width:min(260px,64%);max-width:none}
   <div class="sunmark" aria-hidden="true"></div>
   <div class="w">
     <div class="pkick r"><span class="pill">Talk to us</span></div>
-    <h1 class="r">Talk to <em>an actual person.</em></h1>
+    <h1 class="r">Contact <em>us.</em></h1>
     <p class="psub r">We are a small team in Mandaluyong City. Email, Viber or the form below all reach us, usually within a working day.</p>
     <div class="pcta r"><a href="#form" class="b b-blue">Send a message <svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="mailto:hello@apolaki.ai" class="b b-glass">hello@apolaki.ai</a></div>
   </div>
@@ -3011,28 +3027,6 @@ footer .fb img{height:auto;width:min(260px,64%);max-width:none}
     </div>
   </div>
 </header>
-
-<section class="sec-tight">
-  <div class="w">
-    <div class="ccards">
-      <div class="ccard r">
-        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></div>
-        <h3>Email</h3><p>Best for anything detailed. A founder usually answers.</p>
-        <a href="mailto:hello@apolaki.ai">hello@apolaki.ai</a>
-      </div>
-      <div class="ccard r">
-        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8z"/></svg></div>
-        <h3>Viber</h3><p>Quick questions, quick answers. Mondays to Saturdays.</p>
-        <a href="viber://chat?number=%2B639178161707">+63 917 816 1707</a>
-      </div>
-      <div class="ccard r">
-        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z"/><circle cx="12" cy="11" r="3"/></svg></div>
-        <h3>Where we are</h3><p>Operated by VESS Corp. Built at the Asian Institute of Management.</p>
-        <a href="#/about">Mandaluyong City, Metro Manila</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="sec" id="form">
   <div class="w">
@@ -3073,6 +3067,28 @@ footer .fb img{height:auto;width:min(260px,64%);max-width:none}
           <a href="#/financing"><span>Fund solar as a financing partner</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight">
+  <div class="w">
+    <div class="ccards">
+      <div class="ccard r">
+        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></div>
+        <h3>Email</h3><p>Best for anything detailed. A founder usually answers.</p>
+        <a href="mailto:hello@apolaki.ai">hello@apolaki.ai</a>
+      </div>
+      <div class="ccard r">
+        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8z"/></svg></div>
+        <h3>Viber</h3><p>Quick questions, quick answers. Mondays to Saturdays.</p>
+        <a href="viber://chat?number=%2B639178161707">+63 917 816 1707</a>
+      </div>
+      <div class="ccard r">
+        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z"/><circle cx="12" cy="11" r="3"/></svg></div>
+        <h3>Where we are</h3><p>Operated by VESS Corp. Built at the Asian Institute of Management.</p>
+        <a href="#/about">Mandaluyong City, Metro Manila</a>
       </div>
     </div>
   </div>

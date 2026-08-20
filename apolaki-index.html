@@ -1747,6 +1747,19 @@ footer .fb img{height:auto;width:min(260px,64%);max-width:none}
 #tabNote{white-space:nowrap}
 @media(max-width:860px){#tabNote{white-space:normal}}
 
+/* ==== Vision & Mission (About) ==== */
+.vm{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,28px);max-width:980px;margin:0 auto}
+.vm-c{position:relative;background:var(--paper);border:1px solid var(--hair);border-radius:20px;
+  padding:clamp(26px,3vw,40px);text-align:center}
+.vm-i{width:52px;height:52px;border-radius:14px;background:var(--cream);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.vm-tag{display:inline-block;font-family:var(--disp);font-weight:700;font-size:.72rem;
+  letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--blue);
+  padding:7px 18px;border-radius:100px;margin-bottom:14px}
+.vm-c p{font-family:var(--disp);font-weight:600;font-size:clamp(1.02rem,1.35vw,1.22rem);
+  letter-spacing:-.015em;line-height:1.5;color:var(--night);max-width:34ch;margin:0 auto}
+@media(max-width:760px){.vm{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body class="th-white">
