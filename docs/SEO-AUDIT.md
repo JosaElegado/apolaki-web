@@ -52,7 +52,7 @@ Same intent, same keyword, two or three URLs. You're competing against yourself 
 You reference NASA POWER and Google Solar in prose but link to neither. No links to DOE, ERC, RA 9513, or MERALCO's rate archive anywhere on the site. For a financial-decision topic, that's an E-E-A-T failure. You're asking for trust while showing none of your work.
 
 ### 8. Your social links go to facebook.com and linkedin.com
-Not your pages. *The homepages.* Also means no LinkedIn company page — so no entity corroboration, no brand knowledge panel, no third-party signal that VESS Corp. exists.
+Not your pages. *The homepages.* Also means no LinkedIn company page — so no entity corroboration, no brand knowledge panel, no third-party signal that VESS Energy Corp. exists.
 
 ### 9. Fake app store buttons pointing at a Firebase URL
 "App Store — Soon" and "Google Play — Soon" both link to `apolaki-478302.web.app`. Two failures:

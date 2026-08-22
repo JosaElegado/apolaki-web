@@ -1,6 +1,6 @@
 # Apolaki Website
 
-Marketing site for [apolaki.ai](https://apolaki.ai). Built for VESS Corp.
+Marketing site for [apolaki.ai](https://apolaki.ai). Built for VESS Energy Corp.
 
 Four pages, one shared stylesheet, no build step and no dependencies.
 
@@ -135,4 +135,4 @@ Internal links point at `/homeowners`, not `/homeowners.html`. Most static hosts
 
 ---
 
-© 2026 Apolaki · VESS Corp. · Mandaluyong City, Metro Manila
+© 2026 Apolaki · VESS Energy Corp. · Mandaluyong City, Metro Manila

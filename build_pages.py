@@ -133,7 +133,7 @@ def build_about():
     <div class="callband r">
       <div>
         <h3>Built by three MIB students, and still building</h3>
-        <p>Apolaki is operated by VESS Corp. from Mandaluyong City. If you want to partner, invest, or just ask what we are up to, we answer our own email.</p>
+        <p>Apolaki is operated by VESS Energy Corp. from Mandaluyong City. If you want to partner, invest, or just ask what we are up to, we answer our own email.</p>
       </div>
       <div class="cb-act"><a href="/contact" class="b b-blue">Get in touch {AR}</a></div>
     </div>
@@ -267,12 +267,12 @@ FAQ_INST = [
     ("How do I join?", "Submit your company details, then we run verification and agree pilot terms. You can also book an onboarding call and we will walk you through it."),
 ]
 FAQ_GEN = [
-    ("What is Apolaki?", "A digital solar readiness and partner-matching platform for Philippine homes and small businesses, built at the Asian Institute of Management and operated by VESS Corp."),
+    ("What is Apolaki?", "A digital solar readiness and partner-matching platform for Philippine homes and small businesses, built at the Asian Institute of Management and operated by VESS Energy Corp."),
     ("What data sources do you use?", "Satellite rooftop analysis and location-specific solar irradiance data, anchored to your actual electricity bill."),
     ("What is net metering?", "It lets you export surplus solar to the grid in exchange for bill credits. Under RA 9513 systems up to 100 kW qualify, which covers every home installation."),
     ("Where is Apolaki available?", "Across the Philippines, with data and assumptions tuned locally. We are based in Mandaluyong City, Metro Manila."),
     ("Is there a mobile app?", "The web app is live now. Native iOS and Android apps are in development."),
-    ("Who built Apolaki?", "Three students from the Master in Innovation and Business programme at the Asian Institute of Management, operating as VESS Corp."),
+    ("Who built Apolaki?", "Three students from the Master in Innovation and Business programme at the Asian Institute of Management, operating as VESS Energy Corp."),
 ]
 
 def build_faqs():
@@ -379,7 +379,7 @@ def build_contact():
       </div>
       <div class="ccard r">
         <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z"/><circle cx="12" cy="11" r="3"/></svg></div>
-        <h3>Where we are</h3><p>Operated by VESS Corp. Built at the Asian Institute of Management.</p>
+        <h3>Where we are</h3><p>Operated by VESS Energy Corp. Built at the Asian Institute of Management.</p>
         <a href="/about">Mandaluyong City, Metro Manila</a>
       </div>
     </div>

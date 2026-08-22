@@ -39,12 +39,12 @@ PRIVACY = sec(
     "We use a small number of cookies to keep the site working and to count visits. No advertising trackers.",
 ) + sec(
     "Who to contact",
-    "VESS Corp., Mandaluyong City, Metro Manila. Email hello@apolaki.ai. If you are not happy with how we handled your data you can raise it with the National Privacy Commission.",
+    "VESS Energy Corp., Mandaluyong City, Metro Manila. Email hello@apolaki.ai. If you are not happy with how we handled your data you can raise it with the National Privacy Commission.",
 )
 
 TERMS = sec(
     "What Apolaki is",
-    "Apolaki is a platform run by VESS Corp. We give you an estimate of what solar could do for your electricity bill, and we connect you with installers. We are not an installer, a lender, or a licensed financial adviser.",
+    "Apolaki is a platform run by VESS Energy Corp. We give you an estimate of what solar could do for your electricity bill, and we connect you with installers. We are not an installer, a lender, or a licensed financial adviser.",
 ) + sec(
     "Estimates are estimates",
     "Every number on this site, including anything the calculators produce, is illustrative. It is based on the information you give us and on public data about rates and equipment prices. It is not a quote, not an offer, not a forecast, and not a promise of return. Your actual savings depend on your roof, your usage, your utility, the equipment installed and how rates move. Always rely on the written quote and contract from your installer, and on the terms from your lender.",
@@ -56,7 +56,7 @@ TERMS = sec(
     "Any financing shown or discussed comes from third-party lenders and partners on their own terms. We do not lend, and we do not give financial advice. Read the loan documents and, if you need to, get independent advice before you sign.",
 ) + sec(
     "Using the site",
-    "Do not scrape it, do not try to break it, and do not use it to mislead anyone. We can suspend access if you do. Everything on this site, including the Apolaki name and logo, belongs to VESS Corp.",
+    "Do not scrape it, do not try to break it, and do not use it to mislead anyone. We can suspend access if you do. Everything on this site, including the Apolaki name and logo, belongs to VESS Energy Corp.",
 ) + sec(
     "Changes and governing law",
     "We may update these terms. The version on this page is the one that applies. These terms are governed by the laws of the Republic of the Philippines.",

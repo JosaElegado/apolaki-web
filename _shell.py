@@ -333,7 +333,7 @@ FOOTER = """<footer>
         <li><a href="/contact">Contact us</a></li><li><a href="/contact?type=installer">Become a partner</a></li></ul></div>
     </div>
     <div class="fbot">
-      <p>&copy; 2026 Apolaki &middot; VESS Corp. &middot; Mandaluyong City, Metro Manila</p>
+      <p>&copy; 2026 Apolaki &middot; VESS Energy Corp. &middot; Mandaluyong City, Metro Manila</p>
       <div class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="mailto:hello@apolaki.ai">hello@apolaki.ai</a></div>
     </div>
   </div>
@@ -448,7 +448,7 @@ addEventListener('resize',d,{passive:true}); d();
 
 
 def org_schema():
-    return """{"@type":"Organization","@id":"https://apolaki.ai/#org","name":"Apolaki","legalName":"VESS Corp.","alternateName":["Apolaki Solar","Apolaki by VESS"],"url":"https://apolaki.ai/","logo":{"@type":"ImageObject","url":"https://apolaki.ai/assets/img/logo-512.png","width":512,"height":512},"slogan":"A catalyst for solar adoption","email":"hello@apolaki.ai","telephone":"+63-917-816-1707","address":{"@type":"PostalAddress","addressLocality":"Mandaluyong City","addressRegion":"Metro Manila","addressCountry":"PH"},"areaServed":{"@type":"Country","name":"Philippines"},"sameAs":["https://www.facebook.com/apolaki.ph","https://www.linkedin.com/company/apolaki"]}"""
+    return """{"@type":"Organization","@id":"https://apolaki.ai/#org","name":"Apolaki","legalName":"VESS Energy Corp.","alternateName":["Apolaki Solar","Apolaki by VESS Energy"],"url":"https://apolaki.ai/","logo":{"@type":"ImageObject","url":"https://apolaki.ai/assets/img/logo-512.png","width":512,"height":512},"slogan":"A catalyst for solar adoption","email":"hello@apolaki.ai","telephone":"+63-917-816-1707","address":{"@type":"PostalAddress","addressLocality":"Mandaluyong City","addressRegion":"Metro Manila","addressCountry":"PH"},"areaServed":{"@type":"Country","name":"Philippines"},"sameAs":["https://www.facebook.com/apolaki.ph","https://www.linkedin.com/company/apolaki"]}"""
 
 
 SLUGS = ["homeowners", "installers", "financing-partners", "blog", "about",
